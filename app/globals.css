@@ -1,26 +1,114 @@
 @import "tailwindcss";
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@layer utilities {
+	.flex-center {
+		@apply flex items-center justify-center;
+	}
+
+	.flex-between {
+		@apply flex items-center justify-between;
+	}
+
+	.flex-start {
+		@apply flex items-start justify-center;
+	}
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer components {
+	.btn {
+		@apply w-[295px] h-[52px] flex items-center justify-center rounded-xl px-8 py-2.5 gap-2 font-medium transition-colors duration-200 cursor-pointer;
+	}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+	.btn-light {
+		background-color: #E6E8F0;
+		color: #000000;
+	}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+	.btn-light:hover {
+		background-color: #D9DCE9;
+	}
+
+	.btn-light:active {
+		background-color: #B1B6D1;
+	}
+
+	.btn-normal {
+		background-color: #03156B;
+		color: #D8D8D8;
+	}
+
+	.btn-normal:hover {
+		background-color: #031360;
+	}
+
+	.btn-normal:active {
+		background-color: #021156;
+	}
+
+	.btn-dark {
+		background-color: #021050;
+		color: #D8D8D8;
+	}
+
+	.btn-dark:hover {
+		background-color: #020D40;
+	}
+
+	.btn-dark:active {
+		background-color: #010930;
+	}
+
+	.btn-darker {
+		background-color: #010725;
+		color: #D8D8D8;
+	}
+
+	/* .h1-bold {
+		@apply text-[64px] font-gt-bold;
+	}
+
+	.h2-bold {
+		@apply text-[48px] font-gt-bold;
+	}
+
+	.h3-bold {
+		@apply text-[32px] font-gt-bold;
+	}
+
+	.base-bold {
+		@apply text-[20px] font-gt-bold;
+	}
+
+	.base-medium {
+		@apply text-[20px] font-gt-medium;
+	}
+
+	.base-regular {
+		@apply text-[20px] font-gt;
+	}
+
+	.paragraph-bold {
+		@apply text-[16px] font-gt-bold;
+	}
+
+	.paragraph-medium {
+		@apply text-[16px] font-gt-medium;
+	}
+
+	.paragraph-regular {
+		@apply text-[16px] font-gt;
+	}
+
+	.body-bold {
+		@apply text-[14px] font-gt-bold;
+	}
+
+	.body-medium {
+		@apply text-[14px] font-gt-medium;
+	}
+
+	.body-regular {
+		@apply text-[14px] font-gt;
+	} */
 }
