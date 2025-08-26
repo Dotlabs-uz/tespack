@@ -1,0 +1,17 @@
+{
+    "Header": {
+        "menu": {
+            "products": "Mahsulotlar",
+            "about": "Kompaniya haqida",
+            "news": "Yangiliklar va maqolalar",
+            "vacancies": "Bo‘sh ish o‘rinlari",
+            "contacts": "Aloqa"
+        }
+    },
+    "Buttons": {
+        "apply": "Ariza qoldirish",
+        "details": "Batafsil",
+        "more": "Yana",
+        "send": "Yuborish"
+    }
+}

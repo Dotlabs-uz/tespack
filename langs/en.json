@@ -1,0 +1,17 @@
+{
+    "Header": {
+        "menu": {
+            "products": "Products",
+            "about": "About",
+            "news": "News & Articles",
+            "vacancies": "Vacancies",
+            "contacts": "Contacts"
+        }
+    },
+    "Buttons": {
+        "apply": "Apply",
+        "details": "Details",
+        "more": "More",
+        "send": "Send"
+    }
+}

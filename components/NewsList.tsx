@@ -1,3 +1,6 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FaArrowRight } from "react-icons/fa6";
 
@@ -6,6 +9,7 @@ type News = {
     date: string;
     title: { rendered: string };
     excerpt: { rendered: string };
+    link: string;
     _embedded?: {
         ["wp:featuredmedia"]?: { source_url: string }[];
         ["wp:term"]?: { name: string }[][];
@@ -13,44 +17,68 @@ type News = {
 };
 
 async function getNews(): Promise<News[]> {
-    const res = await fetch("http://localhost/wp-json/wp/v2/news?_embed", {
-        next: { revalidate: 60 },
-    });
+    const res = await fetch(
+        "http://tespack.infinityfreeapp.com/wp-json/wp/v2/news?_embed&per_page=100",
+        { next: { revalidate: 60 } }
+    );
     if (!res.ok) return [];
     return res.json();
 }
 
-export default async function NewsList() {
-    const news = await getNews();
+export default function NewsList() {
+    const [news, setNews] = useState<News[]>([]);
+    const [currentLang, setCurrentLang] = useState("ru");
+
+    useEffect(() => {
+        getNews().then((data) => setNews(data));
+
+        const langFromCookie = document.cookie.match(/locale=(\w{2,5})/)?.[1];
+        if (langFromCookie) setCurrentLang(langFromCookie);
+    }, []);
+
+    const langMap: Record<string, string | null> = {
+        ru: null,
+        en: "/en/",
+        uz: "/uz/",
+    };
+
+    const filteredNews = news.filter((item) => {
+        const langSuffix = langMap[currentLang];
+        if (!langSuffix) {
+            return !item.link?.includes("/en/") && !item.link?.includes("/uz/");
+        }
+        return item.link?.includes(langSuffix);
+    });
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 justify-items-center">
-            {news.map((item) => {
+        <div className="flex gap-5 flex-wrap justify-start">
+            {filteredNews.map((item) => {
                 const image =
                     item._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
                     "/placeholder.jpg";
-
                 const category =
                     item._embedded?.["wp:term"]?.[0]?.[0]?.name || "Без категории";
 
                 return (
                     <div
                         key={item.id}
-                        className="w-[312px] h-[498px] flex flex-col bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow"
+                        className="w-[300px] flex flex-col bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden hover:shadow-xl transition-shadow"
                     >
-                        <img
-                            src={image}
-                            alt={item.title.rendered}
-                            className="rounded-xl object-cover"
-                        />
+                        <div className="relative p-3">
+                            <img
+                                src={image}
+                                alt={item.title.rendered}
+                                className="rounded-xl object-fill w-full h-[256px]"
+                            />
 
-                        <div className="flex flex-col flex-1 p-4">
-                            <span className="text-xs font-medium px-2 py-1 bg-gray-100 rounded w-fit mb-2">
+                            <span className="absolute top-[20px] left-[20px] w-[112px] h-[30px] bg-[#E1E1E1] rounded-full flex items-center justify-center px-[20px] py-[8px] gap-[10px] text-xs font-medium">
                                 {category}
                             </span>
+                        </div>
 
+                        <div className="flex flex-col flex-1 p-4">
                             <p className="text-sm text-[#697586]">
-                                {new Date(item.date).toLocaleDateString("ru-RU", {
+                                {new Date(item.date).toLocaleDateString(currentLang, {
                                     year: "numeric",
                                     month: "long",
                                     day: "numeric",
@@ -64,21 +92,17 @@ export default async function NewsList() {
 
                             {item.excerpt?.rendered ? (
                                 <div
-                                    className="text-sm "
-                                    dangerouslySetInnerHTML={{
-                                        __html: item.excerpt.rendered,
-                                    }}
+                                    className="text-sm text-[#333]"
+                                    dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }}
                                 />
                             ) : (
-                                <p className="text-sm italic">
-                                    Нет описания
-                                </p>
+                                <p className="text-sm italic text-gray-500">Нет описания</p>
                             )}
 
                             <div className="mt-auto">
                                 <Link
                                     href={`/news/${item.id}`}
-                                    className="flex items-center gap-2 text-[#03156B] font-medium"
+                                    className="flex items-center gap-2 text-[#03156B] font-medium mt-4"
                                 >
                                     Подробнее <FaArrowRight />
                                 </Link>
@@ -90,3 +114,4 @@ export default async function NewsList() {
         </div>
     );
 }
+
