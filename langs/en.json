@@ -1,10 +1,11 @@
 {
     "Header": {
         "menu": {
+            "home": "Home",
             "products": "Products",
-            "about": "About",
-            "news": "News & Articles",
-            "vacancies": "Vacancies",
+            "about": "About Us",
+            "news": "News",
+            "features": "Features",
             "contacts": "Contacts"
         }
     },
@@ -13,5 +14,75 @@
         "details": "Details",
         "more": "More",
         "send": "Send"
+    },
+    "Footer": {
+        "cooperation_title": "Want to propose cooperation?",
+        "cooperation_text": "Offering a wide range of reliable and economical PET products",
+        "form": {
+            "name": "Your name",
+            "phone": "+998 91 123 45 67",
+            "send": "Send"
+        },
+        "address_title": "Address:",
+        "address_text": "2774 Oak Drive, Plattsburgh, New York",
+        "contact_title": "Contact:",
+        "contact_phone": "+998 91 123 45 67",
+        "contact_email": "contact@tespack.com",
+        "menu": {
+            "home": "Home",
+            "products": "Products",
+            "about": "About Us",
+            "features": "Features",
+            "contacts": "Contacts & Address",
+            "catalog": "Download Catalog",
+            "certificates": "Certificates",
+            "licenses": "Licenses",
+            "docs": "Documentation"
+        },
+        "bottom": {
+            "privacy": "Privacy Policy",
+            "terms": "Terms of Service",
+            "cookies": "Cookies Settings",
+            "copy": "© 2025 Tespack",
+            "designed": "Designed by Bek Musabaev"
+        }
+    },
+    "Hero": {
+        "title": "Leaders in PET packaging",
+        "title_span": "for your business!",
+        "text1": "We create innovative PET preforms, bottles and",
+        "text2": "caps with a focus on quality and sustainability. A reliable",
+        "text3": "B2B partner with 20 years of experience."
+    },
+    "Products": {
+        "title": "Our product",
+        "title_span": "categories",
+        "description": "Our products include bottles, caps and drinkware created using technologies of global leaders",
+        "button": "Open catalog",
+        "items": {
+            "caps_title": "Polymer\nclosures",
+            "caps_text": "Reliable caps of various diameters with built-in seal. Suitable for carbonated drinks, water, oils and dairy products.",
+            "preforms_title": "PET Preforms",
+            "preforms_text": "The base element for manufacturing PET bottles. We offer a range of preforms from 7 to 125 grams.",
+            "cups_title": "Polypropylene cups",
+            "cups_text": "Ready-made solutions for bottling and storage. Capacity range from 180 to 1000 milliliters.",
+            "bottles_title": "PET\nBottles",
+            "bottles_text": "Universal solutions for water, beverages, oils, vinegar and other liquids. We produce bottles from 50 ml to 19 liters."
+        }
+    },
+    "News": {
+        "title": "News and Articles",
+        "description": "Stay tuned for our updates — more innovations, technological solutions, and opportunities are on the way. This is just the beginning — the most exciting events are yet to come!",
+        "no_category": "Uncategorized",
+        "no_excerpt": "No description",
+        "read_more": "Read more"
+    },
+    "Vacancies": {
+        "title": "Open Vacancies",
+        "no_department": "No department",
+        "no_excerpt": "No description",
+        "department_prefix": "#department",
+        "apply": "Apply now",
+        "details": "Details"
     }
 }

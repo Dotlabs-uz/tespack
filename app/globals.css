@@ -17,7 +17,7 @@
 
 @layer components {
 	.btn {
-		@apply w-[295px] h-[52px] flex items-center justify-center rounded-xl px-8 py-2.5 gap-2 font-medium transition-colors duration-200 cursor-pointer;
+		@apply w-[212px] h-[52px] flex items-center justify-center rounded-xl px-8 py-2.5 gap-2 font-medium transition-colors duration-200 cursor-pointer;
 	}
 
 	.btn-light {
@@ -111,4 +111,13 @@
 	.body-regular {
 		@apply text-[14px] font-gt;
 	} */
+}
+
+.no-scrollbar {
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+	display: none;
 }

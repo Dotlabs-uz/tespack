@@ -1,10 +1,11 @@
 {
     "Header": {
         "menu": {
+            "home": "Bosh sahifa",
             "products": "Mahsulotlar",
             "about": "Kompaniya haqida",
-            "news": "Yangiliklar va maqolalar",
-            "vacancies": "Bo‘sh ish o‘rinlari",
+            "news": "Yangiliklar",
+            "features": "Imkoniyatlar",
             "contacts": "Aloqa"
         }
     },
@@ -13,5 +14,75 @@
         "details": "Batafsil",
         "more": "Yana",
         "send": "Yuborish"
+    },
+    "Footer": {
+        "cooperation_title": "Hamkorlikni taklif qilmoqchimisiz?",
+        "cooperation_text": "PET mahsulotlarining ishonchli va tejamkor turlarini taqdim etamiz",
+        "form": {
+            "name": "Ismingiz",
+            "phone": "+998 91 123 45 67",
+            "send": "Yuborish"
+        },
+        "address_title": "Manzil:",
+        "address_text": "2774 Oak Drive, Plattsburgh, New York",
+        "contact_title": "Aloqa:",
+        "contact_phone": "+998 91 123 45 67",
+        "contact_email": "contact@tespack.com",
+        "menu": {
+            "home": "Bosh sahifa",
+            "products": "Mahsulotlar",
+            "about": "Biz haqimizda",
+            "features": "Imkoniyatlar",
+            "contacts": "Kontaktlar va manzil",
+            "catalog": "Katalogni yuklab olish",
+            "certificates": "Sertifikatlar",
+            "licenses": "Litsenziyalar",
+            "docs": "Hujjatlar"
+        },
+        "bottom": {
+            "privacy": "Maxfiylik siyosati",
+            "terms": "Foydalanish shartlari",
+            "cookies": "Cookies sozlamalari",
+            "copy": "© 2025 Tespack",
+            "designed": "Bek Musabaev tomonidan ishlab chiqilgan"
+        }
+    },
+    "Hero": {
+        "title": "PET qadoqlashda yetakchilar",
+        "title_span": "sizning biznesingiz uchun!",
+        "text1": "Biz innovatsion PET preformalar, butilkalar va",
+        "text2": "qopqoqlarni sifat va ekologiyaga e’tibor qaratib yaratamiz. Ishonchli",
+        "text3": "20 yillik tajribaga ega B2B hamkor."
+    },
+    "Products": {
+        "title": "Bizning mahsulot",
+        "title_span": "kategoriyalari",
+        "description": "Mahsulotlarimizga butilkalar, qopqoqlar va dunyo yetakchilari texnologiyalaridan foydalangan holda yaratilgan ichimlik idishlari kiradi",
+        "button": "Katalogni ochish",
+        "items": {
+            "caps_title": "Polimer\nqopqoqlar",
+            "caps_text": "Turli diametrdagi ishonchli qopqoqlar. Gazlangan ichimliklar, suv, moy va sut mahsulotlari uchun mos.",
+            "preforms_title": "PET Preformalar",
+            "preforms_text": "PET butilkalar ishlab chiqarish uchun asosiy element. 7 dan 125 grammgacha bo‘lgan preformalar taklif qilamiz.",
+            "cups_title": "Polipropilen stakanlar",
+            "cups_text": "Mahsulotni to‘ldirish va saqlash uchun tayyor yechimlar. 180 ml dan 1000 ml gacha sig‘imlar.",
+            "bottles_title": "PET\nButilkalar",
+            "bottles_text": "Suv, ichimliklar, moylar, sirka va boshqa suyuqliklar uchun universal yechimlar. 50 ml dan 19 litr gacha butilkalar ishlab chiqaramiz."
+        }
+    },
+    "News": {
+        "title": "Yangiliklar va maqolalar",
+        "description": "Yangiliklarimizdan xabardor bo‘ling — oldinda yanada ko‘proq yangiliklar, texnologik yechimlar va imkoniyatlar kutmoqda. Bu faqatgina boshlanishi — eng qiziqarli voqealar hali oldinda!",
+        "no_category": "Toifasiz",
+        "no_excerpt": "Tavsif yo‘q",
+        "read_more": "Batafsil"
+    },
+    "Vacancies": {
+        "title": "Ochiq vakansiyalar",
+        "no_department": "Bo‘limsiz",
+        "no_excerpt": "Tavsif yo‘q",
+        "department_prefix": "#bo‘lim",
+        "apply": "Ariza qoldirish",
+        "details": "Batafsil"
     }
 }
