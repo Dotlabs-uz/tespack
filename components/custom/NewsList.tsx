@@ -19,7 +19,7 @@ type News = {
 
 async function getNews(): Promise<News[]> {
     const res = await fetch(
-        "http://tespack.infinityfreeapp.com/wp-json/wp/v2/news?_embed&per_page=100",
+        "https://tespack.uz/wp/wp-json/wp/v2/news?_embed&per_page=100",
         { next: { revalidate: 60 } }
     );
     if (!res.ok) return [];

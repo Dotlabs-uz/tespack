@@ -84,5 +84,23 @@
         "department_prefix": "#department",
         "apply": "Apply now",
         "details": "Details"
+    },
+    "Company": {
+        "about": {
+            "title": "ABOUT THE COMPANY",
+            "description": "Tespack started its operations in 2006. It was founded by the Munisov brothers — Abduaziz and Abduhafiz."
+        },
+        "activity": {
+            "title": "ACTIVITIES",
+            "description": "We are here to deliver high-quality packaging. Any of your ideas, no matter how crazy they may seem — we can make them real."
+        },
+        "facts": {
+            "title": "FACTS",
+            "description": "Plastic packaging: systems, bottles, caps, molded products, as well as the companies we cooperate with."
+        },
+        "advantages": {
+            "title": "ADVANTAGES",
+            "description": "Since 2006, Tespack has confidently held its place in the plastic packaging market."
+        }
     }
 }

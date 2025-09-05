@@ -84,5 +84,23 @@
         "department_prefix": "#bo‘lim",
         "apply": "Ariza qoldirish",
         "details": "Batafsil"
+    },
+    "Company": {
+        "about": {
+            "title": "KOMPANIYA HAQIDA",
+            "description": "Tespack kompaniyasi 2006-yilda o‘z faoliyatini boshlagan. Uni Munisovlar aka-ukalari — Abduaziz va Abduhafiz asos solgan."
+        },
+        "activity": {
+            "title": "FAOLIYAT",
+            "description": "Biz sifatli qadoqlashni amalga oshiramiz. Sizning istalgan g‘oyangiz, u qanchalik noodatiy bo‘lmasin — biz uni yaratishimiz mumkin."
+        },
+        "facts": {
+            "title": "FAKTLAR",
+            "description": "Plastik qadoqlash: tizimlar, butilkalar, qopqoqlar, quyma buyumlar hamda hamkorlik qiladigan kompaniyalar."
+        },
+        "advantages": {
+            "title": "AFZALLIKLAR",
+            "description": "2006-yildan beri Tespack kompaniyasi plastik qadoqlash bozorida o‘z o‘rnini mustahkam egallab kelmoqda."
+        }
     }
 }

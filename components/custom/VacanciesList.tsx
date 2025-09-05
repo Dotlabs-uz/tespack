@@ -17,7 +17,7 @@ type Vacancy = {
 
 async function getVacancies(): Promise<Vacancy[]> {
     const res = await fetch(
-        "http://tespack.infinityfreeapp.com/wp-json/wp/v2/vacancy?_embed&per_page=100",
+        "https://tespack.uz/wp/wp-json/wp/v2/vacancy?_embed&per_page=100",
         { next: { revalidate: 60 } }
     );
     if (!res.ok) return [];
