@@ -91,16 +91,58 @@
             "description": "Tespack started its operations in 2006. It was founded by the Munisov brothers — Abduaziz and Abduhafiz."
         },
         "activity": {
-            "title": "ACTIVITIES",
-            "description": "We are here to deliver high-quality packaging. Any of your ideas, no matter how crazy they may seem — we can make them real."
+            "title": "ACTIVITY",
+            "description": "We are here to deliver high-quality packaging. Any of your ideas, no matter how unusual — we can make them real.",
+            "hero": {
+                "title": "Everything you need — we are ready to implement"
+            },
+            "section": {
+                "title": "What Tespack does",
+                "paragraph1": "We operate at a global level and recognize our responsibility. Our identity is based on values such as objectivity and honesty, partnership and respect. Equal treatment of all people and law-abiding business conduct are of vital importance to us.",
+                "paragraph2": "TESPACK is a family-owned company. We strive for balanced growth of profitability and for strengthening our global positions. By establishing and developing strategic partnerships, we aim to become the No.1 supplier for our clients. The foundation of our business is sustainable and environmentally responsible use of resources, which ensures a healthy environment for future generations."
+            }
         },
         "facts": {
             "title": "FACTS",
-            "description": "Plastic packaging: systems, bottles, caps, molded products, as well as the companies we cooperate with."
+            "description": "Plastic packaging: systems, bottles, caps, molded products, as well as partner companies.",
+            "stats": {
+                "clients": "Corporate clients",
+                "area": "Production areas",
+                "countries": "Countries of product supply",
+                "employees": "Employees"
+            },
+            "partners_text": "We work with Puremilk, Sofin, Musaffo, Saxovat, Agro Bravo, Ever, Sayhun and many other well-known brands. We value the trust of every client and strive for long-term cooperation.",
+            "paragraphs": {
+                "p1": "Since 2006, TESPACK has been confidently developing in the field of plastic packaging production, offering reliable and environmentally safe solutions. We do not just manufacture packaging — we create standards of quality, reliability, and sustainable growth in Central Asia.",
+                "p2": "For more than 18 years, we have invested in modern technologies, expanded production capacities, and built long-term relationships with clients. Thanks to these efforts, we have become one of the industry leaders."
+            }
         },
         "advantages": {
             "title": "ADVANTAGES",
-            "description": "Since 2006, Tespack has confidently held its place in the plastic packaging market."
+            "description": "Since 2006, Tespack has confidently held its place in the plastic packaging market. In almost two decades of work, we have become one of the largest manufacturers in Uzbekistan.",
+            "hero": {
+                "title": "Advantages",
+                "subtitle": "of our products"
+            },
+            "grid": {
+                "item1": "High-quality plastic bottles",
+                "item2": "Environmentally friendly packaging",
+                "item3": "Recyclable plastic without harm to ecology",
+                "item4": "Customized solutions for clients",
+                "item5": "Hermetic and durable packaging",
+                "item6": "Fast logistics and stable supply"
+            },
+            "paragraphs": {
+                "p1": "TESPACK products are the result of many years of experience, technological innovation, and deep responsibility to clients and the environment. We offer not just packaging, but comprehensive solutions that meet the highest requirements of the modern market.",
+                "p2": "Our packaging is used in various industries: from the food industry to pharmaceuticals and household chemicals. We are proud that our products combine quality, safety, eco-friendliness, and reliability.",
+                "p3": "Every bottle, cap, and package undergoes strict quality control. We use only certified materials, ensuring reliability and long service life."
+            }
         }
+    },
+    "SubHeader": {
+        "history": "History",
+        "activity": "Activity",
+        "facts": "Facts",
+        "advantages": "Advantages"
     }
 }

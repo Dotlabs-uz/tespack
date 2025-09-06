@@ -92,15 +92,57 @@
         },
         "activity": {
             "title": "FAOLIYAT",
-            "description": "Biz sifatli qadoqlashni amalga oshiramiz. Sizning istalgan g‘oyangiz, u qanchalik noodatiy bo‘lmasin — biz uni yaratishimiz mumkin."
+            "description": "Biz sifatli qadoqlashni amalga oshiramiz. Sizning istalgan g‘oyangiz, u qanchalik noodatiy bo‘lmasin — biz uni yaratishimiz mumkin.",
+            "hero": {
+                "title": "Sizga kerak bo‘lgan barcha narsalarni amalga oshirishga tayyormiz"
+            },
+            "section": {
+                "title": "Tespack nimani amalga oshiradi",
+                "paragraph1": "Biz o‘z faoliyatimizni jahon darajasida olib boramiz va mas’uliyatni chuqur his qilamiz. Bizning qadriyatlarimiz ob’ektivlik va halollik, hamkorlik va hurmatga asoslanadi. Har bir inson uchun teng munosabat va qonunlarga amal qilish biz uchun muhim ahamiyat kasb etadi.",
+                "paragraph2": "TESPACK oilaviy korxona hisoblanadi. Biz kompaniya rentabelligini muvozanatli oshirish va global pozitsiyalarimizni mustahkamlashga intilamiz. Strategik hamkorliklarni yo‘lga qo‘yib, mijozlarimiz uchun birinchi raqamli yetkazib beruvchi bo‘lishni maqsad qilganmiz. Shu orqali biz xodimlarimizga, mijozlarimizga va hamkorlarimizga ishonch bag‘ishlaymiz. Biznesimizning asosi barqaror, ekologik ongli resurslardan foydalanishga tayanadi, bu esa kelajak avlodlar uchun ham sog‘lom muhitni ta’minlaydi."
+            }
         },
         "facts": {
             "title": "FAKTLAR",
-            "description": "Plastik qadoqlash: tizimlar, butilkalar, qopqoqlar, quyma buyumlar hamda hamkorlik qiladigan kompaniyalar."
+            "description": "Plastik qadoqlash: tizimlar, butilkalar, qopqoqlar, quyma buyumlar hamda hamkorlik qiladigan kompaniyalar.",
+            "stats": {
+                "clients": "Korporativ mijozlar",
+                "area": "Ishlab chiqarish maydonlari",
+                "countries": "Mahsulot yetkazib beriladigan davlatlar",
+                "employees": "Xodimlar"
+            },
+            "partners_text": "Biz bilan Puremilk, Sofin, Musaffo, Saxovat, Agro Bravo, Ever, Sayhun va boshqa mashhur brendlar ishlaydi. Har bir mijozimizning ishonchini qadrlaymiz va uzoq muddatli hamkorlikka intilamiz.",
+            "paragraphs": {
+                "p1": "2006 yildan beri TESPACK plastik qadoqlash ishlab chiqarish sohasida muvaffaqiyatli rivojlanib kelmoqda, turli sohalar uchun ishonchli va ekologik xavfsiz yechimlarni taklif qilmoqda. Biz faqat qadoqlash ishlab chiqarmaymiz — Markaziy Osiyoda sifat, ishonchlilik va barqaror o‘sish standartlarini yaratamiz.",
+                "p2": "18 yildan ortiq vaqt davomida biz zamonaviy texnologiyalarga sarmoya kiritib, ishlab chiqarish quvvatlarini kengaytirdik va mijozlar bilan uzoq muddatli aloqalar o‘rnatdik. Shu sa’y-harakatlar tufayli biz sohaning yetakchilaridan biriga aylandik."
+            }
         },
         "advantages": {
             "title": "AFZALLIKLAR",
-            "description": "2006-yildan beri Tespack kompaniyasi plastik qadoqlash bozorida o‘z o‘rnini mustahkam egallab kelmoqda."
+            "description": "2006-yildan beri Tespack plastik qadoqlash bozorida o‘z o‘rnini mustahkam egallab kelmoqda. Deyarli yigirma yil davomida biz O‘zbekistondagi eng yirik ishlab chiqaruvchilardan biriga aylandik.",
+            "hero": {
+                "title": "Mahsulotlarimizning",
+                "subtitle": "afzalliklari"
+            },
+            "grid": {
+                "item1": "Yuqori sifatli plastik butilkalar",
+                "item2": "Ekologik xavfsiz qadoqlar",
+                "item3": "Atrof-muhitga zarar keltirmaydigan qayta ishlanadigan plastmassa",
+                "item4": "Mijoz uchun individual yechimlar",
+                "item5": "Qadoqlarning germetikligi va mustahkamligi",
+                "item6": "Tezkor logistika va barqaror yetkazib berish"
+            },
+            "paragraphs": {
+                "p1": "TESPACK mahsulotlari — bu ko‘p yillik tajriba, texnologik innovatsiyalar va mijozlar hamda atrof-muhit oldidagi chuqur mas’uliyat natijasidir. Biz nafaqat qadoqlash, balki zamonaviy bozorning eng yuqori talablariga javob beradigan kompleks yechimlarni taklif etamiz.",
+                "p2": "Bizning qadoqlarimiz turli sohalarda qo‘llaniladi: oziq-ovqat sanoatidan tortib farmatsevtika va maishiy kimyogacha. Biz mahsulotlarimiz sifat, xavfsizlik, ekologik tozalik va ishonchlilikni o‘zida mujassam etganidan faxrlanamiz.",
+                "p3": "Har bir butilka, qopqoq va qadoq qat’iy sifat nazoratidan o‘tadi. Biz faqat sertifikatlangan materiallardan foydalanamiz, bu esa ishonchlilik va uzoq xizmat muddatini kafolatlaydi."
+            }
         }
+    },
+    "SubHeader": {
+        "history": "Tarix",
+        "activity": "Faoliyat",
+        "facts": "Faktlar",
+        "advantages": "Afzalliklar"
     }
 }

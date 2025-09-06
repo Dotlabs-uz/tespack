@@ -2,30 +2,30 @@ import InfoCard from "@/components/custom/InfoCard";
 import { useTranslations } from "next-intl";
 
 export default function Company() {
-    const t = useTranslations("Company");
+    const с = useTranslations("Company");
 
     const images = ["/Company.png", "/Activity.png"];
 
     const sections = [
         {
-            title: t("about.title"),
-            description: t("about.description"),
-            link: "/history",
+            title: с("about.title"),
+            description: с("about.description"),
+            link: "/company/history",
         },
         {
-            title: t("activity.title"),
-            description: t("activity.description"),
-            link: "/activity",
+            title: с("activity.title"),
+            description: с("activity.description"),
+            link: "/company/activity",
         },
         {
-            title: t("facts.title"),
-            description: t("facts.description"),
-            link: "/facts",
+            title: с("facts.title"),
+            description: с("facts.description"),
+            link: "/company/facts",
         },
         {
-            title: t("advantages.title"),
-            description: t("advantages.description"),
-            link: "/advantages",
+            title: с("advantages.title"),
+            description: с("advantages.description"),
+            link: "/company/advantages",
         },
     ];
 
