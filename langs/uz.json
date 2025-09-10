@@ -88,7 +88,27 @@
     "Company": {
         "about": {
             "title": "KOMPANIYA HAQIDA",
-            "description": "Tespack kompaniyasi 2006-yilda o‘z faoliyatini boshlagan. Uni Munisovlar aka-ukalari — Abduaziz va Abduhafiz asos solgan."
+            "description": "Tespack kompaniyasi 2006-yilda o‘z faoliyatini boshlagan. Uni Munisovlar aka-ukalari — Abduaziz va Abduhafiz asos solgan.",
+            "History": {
+                "title": "TESPACK TARIXI",
+                "intro": [
+                    "Tespack o‘z faoliyatini 2006-yilda boshlagan. Uni Munisovlar aka-ukalari — Abduaziz va Abduhafiz o‘z ishlab chiqarishini yaratish maqsadida asos solishgan.",
+                    "Bugungi kunda kompaniya keng turdagi mahsulotlar — PET-preformalardan tortib polimer qopqoqlargacha ishlab chiqaradi.",
+                    "Talab ortib borishi bilan ular yangi zavodlar ochishdi, bu esa ishlab chiqarish hajmini sezilarli darajada oshirdi va logistika jarayonini yaxshiladi."
+                ],
+                "events": {
+                    "2006": "Tesko Plus kompaniyasi tashkil etildi.",
+                    "2008": "Xitoydan yangi texnologiyalar xarid qilindi",
+                    "2010": "Ikkinchi ishlab chiqarish zavodi ishga tushirildi",
+                    "2012": "Polipropilen stakanlar ishlab chiqarila boshlandi",
+                    "2014": "Polimer yopqichlar ishlab chiqarish boshlandi",
+                    "2016": "O‘zbekistonda birinchi bo‘lib 1881 formatli qopqoqlar ishlab chiqarildi.",
+                    "2018": "Uchinchi ishlab chiqarish zavodi ishga tushirildi",
+                    "2020": "Zamonaviy yapon uskunalari xarid qilindi.",
+                    "2022": "To‘rtinchi ishlab chiqarish zavodi ishga tushirildi",
+                    "2024": "Yevropa uskunalari xarid qilindi (SIPA, ENGEL, SMI)."
+                }
+            }
         },
         "activity": {
             "title": "FAOLIYAT",
@@ -144,5 +164,76 @@
         "activity": "Faoliyat",
         "facts": "Faktlar",
         "advantages": "Afzalliklar"
+    },
+    "Features": {
+        "title": "Imkoniyatlar",
+        "description": "Plastik mahsulotlar, polimer qoplamalar, PET-preformalar va boshqa ko‘plab narsalar bitta katalogda.",
+        "overview": {
+            "title": "BARQAROR RIVOJLANISH KO‘RISHI",
+            "text1": "Biz kelajak plastik qadoqlashini yaratishga intilamiz, ekologik va barqarorlikka e'tibor qaratamiz.",
+            "text2": "Biz qayta ishlangan materiallar va energiya tejamkor texnologiyalarni ishlatib, atrof-muhitga ta’sirni minimallashtirishga intilamiz. Maqsadimiz – global ekologik standartlarga mos barqaror ishlab chiqarish."
+        },
+        "partnerships": {
+            "title": "HAMKORLIKLAR VA MAQSADLAR",
+            "description": "Biz xalqaro hamkorlar bilan yopiq aylanishli qayta ishlash tizimlarini yaratish uchun ishlaymiz. Missiyamiz – resurs iste'molini kamaytirish va ekologik qadoqlashga o‘tishni rag‘batlantirish.",
+            "items": [
+                {
+                    "title": "Yopiq aylanish:",
+                    "text": "Ishlatilgan qadoqlashni ishlab chiqarishga qaytaradigan tizimlarni rivojlantirish, aylanuvchi iqtisodiyotni qo‘llab-quvvatlash."
+                },
+                {
+                    "title": "Ekologik texnologiyalar:",
+                    "text": "Resurs iste’molini kamaytirish uchun ilg‘or shakllantirish va issiqlik bilan ishlov berish usullaridan foydalanish."
+                },
+                {
+                    "title": "Sertifikatlash:",
+                    "text": "ISO 14001 kabi xalqaro standartlarga va ekologik xavfsizlik standartlariga mos kelishi."
+                }
+            ]
+        },
+        "innovation": {
+            "title": "Barqarorlikdagi innovatsiyalar",
+            "text": "Biz qayta ishlash, logistika va ishlab chiqarishda doimiy innovatsiyalarni joriy etamiz, chiqindilar va emissiyalarni kamaytirish bo‘yicha eng yaxshi natijalarga erishamiz."
+        },
+        "items": [
+            {
+                "num": "01",
+                "title": "Materiallarni qayta ishlash",
+                "text": "Shishalar, qopqoqlar va preformalarni ishlab chiqarishda rPET va rHDPE dan foydalanish, 90% gacha qayta ishlangan tarkibni ta’minlash."
+            },
+            {
+                "num": "02",
+                "title": "Energiya samaradorligi",
+                "text": "Ishlab chiqarish liniyalarida energiya tejaydigan texnologiyalarni joriy etish, jumladan qayta tiklanadigan energiya manbalariga o‘tish."
+            },
+            {
+                "num": "03",
+                "title": "Chiqindilarni kamaytirish",
+                "text": "Chiqindilarni minimallashtirish uchun jarayonlarni optimallashtirish, kesik va nosozliklarni qayta ishlash tizimi bilan."
+            },
+            {
+                "num": "04",
+                "title": "Ekologik yondashuv",
+                "text": "Xavfsiz texnologiyalarni qo‘llash va uglerod izini kamaytirish."
+            }
+        ],
+        "technology": {
+            "title": "Texnologiya va ishlab chiqarish",
+            "text": "Biz SIPA (Yevropa), TOYO (Yaponiya), Engel (Yevropa) va SMI (Italiya) kabi sanoat yetakchilari ilhomlantirgan zamonaviy texnologiyalar va ishlab chiqarish tizimlarini taqdim etamiz. Plastik mahsulotlar, shu jumladan qopqoqlar va PET-preformalarni ishlab chiqarishda innovatsion yechimlar taklif qilamiz, eng yaxshi global standartlarga muvofiq."
+        },
+        "steps": [
+            {
+                "title": "Xomashyoni tayyorlash"
+            },
+            {
+                "title": "Shakllantirish"
+            },
+            {
+                "title": "Qadoqlash"
+            },
+            {
+                "title": "Nazorat va sifat"
+            }
+        ]
     }
 }

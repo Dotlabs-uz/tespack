@@ -37,7 +37,12 @@ export default function Footer() {
                 </div>
 
                 <div className="flex flex-col md:flex-row md:justify-between items-start gap-10 mt-10">
-                    <Image src="/FooterLogo.png" alt="Tespack" width={120} height={50} />
+                    <Image 
+                        src="/FooterLogo.webp" 
+                        alt="Tespack" 
+                        width={120} 
+                        height={50} 
+                    />
                     <div className="flex flex-row md:flex-col gap-10 md:w-1/2">
                         <div className="flex flex-col md:items-start mb-4 md:mb-0">
                             <p className="text-sm text-[#868686] bold">{t("address_title")}</p>

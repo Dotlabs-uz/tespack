@@ -1,9 +1,10 @@
 import { notFound } from "next/navigation";
 
+const WP_API_URL = process.env.NEXT_PUBLIC_WORDPRESS_URL;
+
 async function getNewsItem(id: string) {
 	const res = await fetch(
-		`https://tespack.uz/wp/wp-json/wp/v2/news/${id}?_embed`,
-		{ next: { revalidate: 60 } }
+		`${WP_API_URL}/news/${id}?_embed`,
 	);
 	if (!res.ok) return null;
 	return res.json();
@@ -18,12 +19,9 @@ export default async function NewsDetail({
 
 	if (!newsItem) return notFound();
 
-	const image =
-		newsItem._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
-		"/placeholder.jpg";
+	const image = newsItem._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "";
 
-	const category =
-		newsItem._embedded?.["wp:term"]?.[0]?.[0]?.name || "Без категории";
+	const category = newsItem._embedded?.["wp:term"]?.[0]?.[0]?.name || "Без категории";
 
 	const date = new Date(newsItem.date).toLocaleDateString("ru-RU", {
 		year: "numeric",

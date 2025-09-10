@@ -14,7 +14,7 @@ export default function Activity() {
             <main className="container mx-auto px-4 md:px-0 py-10">
                 <div className="grid md:grid-cols-2 gap-8 items-center mb-10 bg-[#03156B] rounded-3xl p-6">
                     <Image
-                        src="/Activity.png"
+                        src="/Activity.webp"
                         alt="Activity"
                         width={600}
                         height={560}

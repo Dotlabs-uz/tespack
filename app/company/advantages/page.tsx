@@ -2,6 +2,9 @@
 
 import SubHeader from "@/components/custom/SubHeader";
 import { useTranslations } from "next-intl";
+import { LuMilk } from "react-icons/lu";
+import { FiPackage } from "react-icons/fi";
+import { PiRecycle } from "react-icons/pi";
 
 export default function AdvantagesPage() {
     const d = useTranslations("Company.advantages");
@@ -24,27 +27,27 @@ export default function AdvantagesPage() {
 
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mb-12 text-center text-xs md:text-base">
                     <div>
-                        <img src="/BottleIcon.png" alt="" className="mx-auto mb-3 h-12 w-12" />
+                        <LuMilk  className="mx-auto mb-3 h-12 w-12 text-[#062BD9]"/>
                         <p>{d("grid.item1")}</p>
                     </div>
                     <div>
-                        <img src="/PackageIcon.png" alt="" className="mx-auto mb-3 h-12 w-12" />
+                        <FiPackage className="mx-auto mb-3 h-12 w-12 text-[#062BD9]"/>
                         <p>{d("grid.item2")}</p>
                     </div>
                     <div>
-                        <img src="/RecycleIcon.png" alt="" className="mx-auto mb-3 h-12 w-12" />
+                        <PiRecycle  className="mx-auto mb-3 h-12 w-12 text-[#062BD9]"/>
                         <p>{d("grid.item3")}</p>
                     </div>
                     <div>
-                        <img src="/BottleIcon.png" alt="" className="mx-auto mb-3 h-12 w-12" />
+                        <LuMilk  className="mx-auto mb-3 h-12 w-12 text-[#062BD9]"/>
                         <p>{d("grid.item4")}</p>
                     </div>
                     <div>
-                        <img src="/PackageIcon.png" alt="" className="mx-auto mb-3 h-12 w-12" />
+                        <FiPackage className="mx-auto mb-3 h-12 w-12 text-[#062BD9]"/>
                         <p>{d("grid.item5")}</p>
                     </div>
                     <div>
-                        <img src="/PackageIcon.png" alt="" className="mx-auto mb-3 h-12 w-12" />
+                        <FiPackage className="mx-auto mb-3 h-12 w-12 text-[#062BD9]"/>
                         <p>{d("grid.item6")}</p>
                     </div>
                 </div>

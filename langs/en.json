@@ -88,7 +88,27 @@
     "Company": {
         "about": {
             "title": "ABOUT THE COMPANY",
-            "description": "Tespack started its operations in 2006. It was founded by the Munisov brothers — Abduaziz and Abduhafiz."
+            "description": "Tespack started its operations in 2006. It was founded by the Munisov brothers — Abduaziz and Abduhafiz.",
+            "History": {
+                "title": "TESPACK HISTORY",
+                "intro": [
+                    "Tespack started its operations in 2006. It was founded by the Munisov brothers — Abduaziz and Abduhafiz, who combined their efforts and desire to create their own production.",
+                    "Today, the company produces a wide range of products — from PET preforms to polymer caps, meeting modern quality standards.",
+                    "As demand grew, they opened new factories, which significantly increased production volumes and improved logistics."
+                ],
+                "events": {
+                    "2006": "Foundation of Tesko Plus company.",
+                    "2008": "Acquired new technologies from China",
+                    "2010": "Launched the second production plant",
+                    "2012": "Started producing polypropylene cups",
+                    "2014": "Began production of polymer closures",
+                    "2016": "First in Uzbekistan to produce 1881 format caps.",
+                    "2018": "Launched the third production plant",
+                    "2020": "Acquired modern Japanese machines.",
+                    "2022": "Launched the fourth production plant",
+                    "2024": "Purchased European equipment (SIPA, ENGEL, SMI)."
+                }
+            }
         },
         "activity": {
             "title": "ACTIVITY",
@@ -144,5 +164,76 @@
         "activity": "Activity",
         "facts": "Facts",
         "advantages": "Advantages"
+    },
+    "Features": {
+        "title": "Features",
+        "description": "Plastic products, polymer coatings, PET preforms and much more in one catalog.",
+        "overview": {
+            "title": "SUSTAINABILITY OVERVIEW",
+            "text1": "We aim to create the plastic packaging of the future, focusing on eco-friendliness and sustainability.",
+            "text2": "We strive to minimize environmental impact by using recycled materials and energy-efficient technologies. Our goal is sustainable production that meets global environmental standards."
+        },
+        "partnerships": {
+            "title": "PARTNERSHIPS AND GOALS",
+            "description": "We collaborate with international partners to create closed-loop recycling systems. Our mission is to reduce resource consumption and promote eco-friendly packaging.",
+            "items": [
+                {
+                    "title": "Closed-loop:",
+                    "text": "Developing systems where used packaging is returned to production, supporting a circular economy."
+                },
+                {
+                    "title": "Eco-technologies:",
+                    "text": "Using advanced forming and thermal processing methods to reduce resource consumption."
+                },
+                {
+                    "title": "Certification:",
+                    "text": "Compliance with international standards such as ISO 14001 and environmental safety standards."
+                }
+            ]
+        },
+        "innovation": {
+            "title": "Innovation in sustainability",
+            "text": "We continuously implement innovations in recycling, logistics, and production to achieve better performance in reducing emissions and waste."
+        },
+        "items": [
+            {
+                "num": "01",
+                "title": "Material recycling",
+                "text": "Using rPET and rHDPE to produce bottles, caps, and preforms, ensuring up to 90% recycled content."
+            },
+            {
+                "num": "02",
+                "title": "Energy efficiency",
+                "text": "Implementing energy-saving technologies in production lines, including the transition to renewable energy sources."
+            },
+            {
+                "num": "03",
+                "title": "Waste reduction",
+                "text": "Optimizing processes to minimize waste, with a system for reusing offcuts and rejects."
+            },
+            {
+                "num": "04",
+                "title": "Eco approach",
+                "text": "Applying safe technologies and reducing the carbon footprint."
+            }
+        ],
+        "technology": {
+            "title": "Technology and production",
+            "text": "We present state-of-the-art technologies and production systems inspired by industry leaders such as SIPA (Europe), TOYO (Japan), Engel (Europe), and SMI (Italy). We offer innovative solutions in plastic production, including caps, PET preforms, and more, following the best global standards."
+        },
+        "steps": [
+            {
+                "title": "Raw material preparation"
+            },
+            {
+                "title": "Molding"
+            },
+            {
+                "title": "Packaging"
+            },
+            {
+                "title": "Quality control"
+            }
+        ]
     }
 }

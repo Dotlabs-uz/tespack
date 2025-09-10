@@ -15,9 +15,11 @@ type Vacancy = {
     };
 };
 
+const WP_API_URL = process.env.NEXT_PUBLIC_WORDPRESS_URL;
+
 async function getVacancies(): Promise<Vacancy[]> {
     const res = await fetch(
-        "https://tespack.uz/wp/wp-json/wp/v2/vacancy?_embed&per_page=100",
+        `${WP_API_URL}/vacancy?_embed&per_page=100`,
         { next: { revalidate: 60 } }
     );
     if (!res.ok) return [];

@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 export default function Company() {
     const с = useTranslations("Company");
 
-    const images = ["/Company.png", "/Activity.png"];
+    const images = ["/Company.webp", "/Activity.webp"];
 
     const sections = [
         {

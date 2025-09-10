@@ -28,11 +28,18 @@ export default function Home() {
 					</div>
 					<div className="mt-3 md:mt-10 flex justify-center">
 						<Image
-							src="/HeroImg.png"
-							alt="Hero"
+							src="/HeroImg.webp"
+							alt=""
+							width={1320}
+							height={565}
+							className="hidden md:flex w-full object-cover rounded-3xl"
+						/>
+						<Image
+							src="/HeroMobileImg.webp"
+							alt=""
 							width={384}
 							height={413}
-							className="w-full h-[413px] object-cover md:w-full md:h-[585px] rounded-3xl"
+							className="w-full h-[413px] object-cover md:w-full md:h-[585px] rounded-3xl md:hidden"
 						/>
 					</div>
 				</div>
@@ -61,21 +68,21 @@ export default function Home() {
 							<div className="flex-1 flex flex-col justify-between">
 								<div className="relative flex justify-center items-center h-30 translate-x-12 sm:translate-x-8 md:translate-x-10">
 									<Image
-										src="/BottleCap.png"
+										src="/BottleCap.webp"
 										alt=""
 										width={150}
 										height={130}
 										className="absolute right-1/2 translate-x-1/2 object-contain z-10 sm:w-[230px] sm:h-[209px]"
 									/>
 									<Image
-										src="/BottleCap.png"
+										src="/BottleCap.webp"
 										alt=""
 										width={120}
 										height={100}
 										className="absolute bottom-[50%] right-[25%] object-contain rotate-12 z-9 sm:w-[190px] sm:h-[170px]"
 									/>
 									<Image
-										src="/BottleCap.png"
+										src="/BottleCap.webp"
 										alt=""
 										width={100}
 										height={90}
@@ -110,7 +117,7 @@ export default function Home() {
 							<div className="flex-1 flex flex-col justify-between">
 								<div className="relative flex justify-center items-center translate-x-6 sm:translate-x-8 md:translate-x-10">
 									<Image
-										src="/Bottles.png"
+										src="/Bottles.webp"
 										alt=""
 										width={300}
 										height={200}

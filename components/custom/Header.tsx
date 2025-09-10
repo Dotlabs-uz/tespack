@@ -42,7 +42,15 @@ export default function Header() {
         window.location.reload();
     };
 
-    const headerClass = pathname === "/" ? "bg-[#03156B] text-white" : "bg-[#03156B] text-white rounded-b-xl md:rounded-b-3xl";
+    const mobileNoRound = ["/", "/features", "/contacts", "/news"];
+    const desktopNoRound = ["/"]; 
+
+    const isMobileNoRound = mobileNoRound.includes(pathname);
+    const isDesktopNoRound = desktopNoRound.includes(pathname);
+
+    const headerClass = `bg-[#03156B] text-white ${isMobileNoRound ? "rounded-b-none" : "rounded-b-xl"} ${isDesktopNoRound ? "" : "md:rounded-b-3xl"}`;
+
+
 
     return (
         <header className={`${headerClass} relative z-[1000]`}>
@@ -57,7 +65,7 @@ export default function Header() {
 
                     <Link href="/" className="mx-auto">
                         <Image
-                            src="/TespackLogo.png"
+                            src="/TespackLogo.webp"
                             alt="Tespack Logo"
                             width={120}
                             height={40}
@@ -94,7 +102,7 @@ export default function Header() {
                 <div className="hidden xl:flex w-full items-center justify-between gap-6">
                     <Link href="/">
                         <Image
-                            src="/TespackLogo.png"
+                            src="/TespackLogo.webp"
                             alt="Tespack Logo"
                             width={150}
                             height={50}
@@ -167,7 +175,7 @@ export default function Header() {
                 >
                     <div className="flex items-center justify-between mb-6">
                         <Image
-                            src="/TespackLogo.png"
+                            src="/TespackLogo.webp"
                             alt="Tespack Logo"
                             width={120}
                             height={40}

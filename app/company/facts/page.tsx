@@ -47,13 +47,13 @@ export default function FactsPage() {
                     </p>
 
                     <div className="flex flex-wrap justify-around items-center gap-8 md:gap-0">
-                        <Image src="/PureMilkyLogo.png" alt="Puremilk" width={100} height={60} />
-                        <Image src="/SofinLogo.png" alt="Sofin" width={80} height={60} />
-                        <Image src="/MusaffoLogo.png" alt="Musaffo" width={100} height={60} />
-                        <Image src="/AgroBravoLogo.png" alt="Agro Bravo" width={100} height={60} />
-                        <Image src="/SaxovatLogo.png" alt="Saxovat" width={100} height={60} />
-                        <Image src="/EverLogo.png" alt="Ever" width={80} height={60} />
-                        <Image src="/SayhunLogo.png" alt="Sayhun" width={100} height={60} />
+                        <Image src="/PureMilkyLogo.webp" alt="Puremilk" width={100} height={60} />
+                        <Image src="/SofinLogo.webp" alt="Sofin" width={80} height={60} />
+                        <Image src="/MusaffoLogo.webp" alt="Musaffo" width={100} height={60} />
+                        <Image src="/AgroBravoLogo.webp" alt="Agro Bravo" width={100} height={60} />
+                        <Image src="/SaxovatLogo.webp" alt="Saxovat" width={100} height={60} />
+                        <Image src="/EverLogo.webp" alt="Ever" width={80} height={60} />
+                        <Image src="/SayhunLogo.webp" alt="Sayhun" width={100} height={60} />
                     </div>
                 </div>
 

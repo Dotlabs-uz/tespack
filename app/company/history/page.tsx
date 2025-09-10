@@ -1,104 +1,103 @@
+"use client";
+
 import SubHeader from "@/components/custom/SubHeader";
 import VideoSection from "@/components/custom/VideoSection";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 export default function History() {
-    const intro = `Компания Tespаck начала свою работу в 2006 году. Её основали братья Мунисовы — Абдуазиз и Абдухафиз, объединив усилия и стремление к созданию собственного производства. С самого начала Tespack сосредоточилась на качестве, надежности и инновациях в сфере пластмассовых изделий.
-
-Сегодня компания производит широкий ассортимент продукции — от ПЭТ-преформ до полимерных крышек, соответствующих современным стандартам качества. За годы работы Tespack наладила сотрудничество с десятками предприятий по всему региону и зарекомендовала себя как надёжный и стабильный поставщик.
-
-По мере роста и расширения спроса, они открыли новые заводы, что позволило значительно увеличить объёмы производства и улучшить логистику. Tespack продолжает активно развиваться, внедряя новые технологии и отвечая на современные потребности рынка.
-`;
+    const h = useTranslations("Company.about.History");
 
     const events = [
-        { year: "2006", text: "Основание компании Tesko Plus.", img: "/TescoPlus.png", position: "left" },
-        { year: "2008", text: "Покупаем новые технологии из Китая", img: "/NewTechnologies.png", position: "right" },
-        { year: "2010", text: "В 2010 году был запущен второй производственный завод", img: "/OtherInformation.png", position: "left" },
-        { year: "2012", text: "Начали производить полипропиленовые стаканы", img: "/OtherInformation2.png", position: "right" },
-        { year: "2014", text: "Начало производства полимерных закрытий", img: "/OtherInformation.png", position: "left" },
-        { year: "2016", text: "Мы первыми в Узбекистане начали производить крышки формата 1881.", img: "/OtherInformation2.png", position: "right" },
-        { year: "2018", text: "В 2018 году был запущен третий производственный завод", img: "/OtherInformation.png", position: "left" },
-        { year: "2020", text: "Приобретали современные японские станки.", img: "/OtherInformation2.png", position: "right" },
-        { year: "2022", text: "В 2022 году был запущен четвёртый производственный завод", img: "/OtherInformation.png", position: "left" },
-        { year: "2024", text: "Закупка европейского оборудования (SIPA, ENGEL, SMI).", img: "/OtherInformation2.png", position: "right" },
+        { year: "2006", img: "/TescoPlus.webp", position: "left" },
+        { year: "2008", img: "/NewTechnologies.webp", position: "right" },
+        { year: "2010", img: "/OtherInformation.webp", position: "left" },
+        { year: "2012", img: "/OtherInformation2.webp", position: "right" },
+        { year: "2014", img: "/OtherInformation.webp", position: "left" },
+        { year: "2016", img: "/OtherInformation2.webp", position: "right" },
+        { year: "2018", img: "/OtherInformation.webp", position: "left" },
+        { year: "2020", img: "/OtherInformation2.webp", position: "right" },
+        { year: "2022", img: "/OtherInformation.webp", position: "left" },
+        { year: "2024", img: "/OtherInformation2.webp", position: "right" },
     ];
 
     return (
         <>
             <SubHeader />
             <VideoSection />
-
             <main className="container mx-auto px-4 md:px-0">
                 <h1 className="text-[#03156B] text-4xl md:text-5xl font-bold text-center mb-8">
-                    История TESPACK
+                    {h("title")}
                 </h1>
 
                 <div className="max-w-2xl mx-auto text-justify mb-16 space-y-4">
-                    {intro.split("\n").map((p, i) => (
+                    {h.raw("intro").map((p: string, i: number) => (
                         <p className="text-base md:text-xl" key={i}>{p}</p>
                     ))}
                 </div>
 
                 <div className="relative">
-                    <div className="absolute left-1/2 top-0 h-full w-[2px] bg-[#03156B] -translate-x-1/2" />
-
+                    <div className="absolute left-4 md:left-1/2 top-0 h-full w-[2px] bg-[#03156B] -translate-x-0 md:-translate-x-1/2" />
                     <div className="space-y-20">
                         {events.map((event, i) => (
-                            <div
-                                key={i}
-                                className="relative flex items-center"
-                            >
-                                {event.position === "left" ? (
-                                    <>
-                                        <div className="w-1/2 flex justify-end pr-8">
-                                            <div className="flex items-center space-x-4">
-                                                <div className="flex flex-col max-w-xs">
-                                                    <Image
-                                                        src={event.img}
-                                                        alt={event.year}
-                                                        width={424}
-                                                        height={286}
-                                                    />
-                                                    <p className="mt-3">{event.text}</p>
-                                                </div>
-                                                <span className="text-[#03156B] text-6xl">
-                                                    {event.year}
-                                                </span>
-                                            </div>
+                            <div key={i} className="relative">
+                                <div className="flex md:hidden ml-12">
+                                    <div className="flex items-start space-x-4">
+                                        <span className="text-[#03156B] text-2xl">{event.year}</span>
+                                        <div className="flex flex-col max-w-xs">
+                                            <Image 
+                                                src={event.img} 
+                                                alt={event.year} 
+                                                width={424} 
+                                                height={286} 
+                                                className="w-full h-auto" 
+                                            />
+                                            <p className="mt-3 text-sm">{h(`events.${event.year}`)}</p>
                                         </div>
+                                    </div>
+                                </div>
 
-                                        <div className="relative flex justify-center items-center">
-                                            <span className="w-6 h-6 bg-[#03156B] rounded-full absolute left-1/2 -translate-x-1/2 z-10" />
-                                        </div>
-
-                                        <div className="w-1/2" />
-                                    </>
-                                ) : (
-                                    <>
-                                        <div className="w-1/2" />
-
-                                        <div className="relative flex justify-center items-center">
-                                            <span className="w-6 h-6 bg-[#03156B] rounded-full absolute left-1/2 -translate-x-1/2 z-10" />
-                                        </div>
-
-                                        <div className="pl-8">
-                                            <div className="flex items-center space-x-4">
-                                                <span className="text-[#03156B] text-6xl">
-                                                    {event.year}
-                                                </span>
-                                                <div className="flex flex-col max-w-xs">
-                                                    <Image
-                                                        src={event.img}
-                                                        alt={event.year}
-                                                        width={424}
-                                                        height={286}
-                                                    />
-                                                    <p className="mt-3">{event.text}</p>
+                                <div className="hidden md:flex items-center">
+                                    {event.position === "left" ? (
+                                        <>
+                                            <div className="w-1/2 flex justify-end pr-8">
+                                                <div className="flex space-x-4">
+                                                    <div className="flex flex-col max-w-xs">
+                                                        <Image 
+                                                            src={event.img} 
+                                                            alt={event.year} 
+                                                            width={424} 
+                                                            height={286} 
+                                                        />
+                                                        <p className="mt-3">{h(`events.${event.year}`)}</p>
+                                                    </div>
+                                                    <span className="text-[#03156B] text-6xl">{event.year}</span>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </>
-                                )}
+                                            <div className="w-1/2" />
+                                        </>
+                                    ) : (
+                                        <>
+                                            <div className="w-1/2" />
+                                            <div className="pl-8 w-1/2 flex space-x-4">
+                                                <span className="text-[#03156B] text-6xl">{event.year}</span>
+                                                <div className="flex flex-col max-w-xs">
+                                                    <Image 
+                                                        src={event.img} 
+                                                        alt={event.year} 
+                                                        width={424} 
+                                                        height={286} 
+                                                    />
+                                                    <p className="mt-3">{h(`events.${event.year}`)}</p>
+                                                </div>
+                                            </div>
+                                        </>
+                                    )}
+                                </div>
+
+                                <div className="absolute left-4 md:left-1/2 top-3 -translate-x-1/2 md:-translate-x-1/2">
+                                    <span className="w-4 h-4 md:w-6 md:h-6 bg-[#03156B] rounded-full block z-10" />
+                                </div>
                             </div>
                         ))}
                     </div>
@@ -107,6 +106,3 @@ export default function History() {
         </>
     );
 }
-
-
-

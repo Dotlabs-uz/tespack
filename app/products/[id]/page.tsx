@@ -1,9 +1,10 @@
 import { notFound } from "next/navigation";
 
+const API_URL = process.env.NEXT_PUBLIC_WORDPRESS_URL;
+
 async function getProduct(id: string) {
 	const res = await fetch(
-		`https://tespack.uz/wp/wp-json/wp/v2/products/${id}?_embed`,
-		{ next: { revalidate: 60 } }
+		`${API_URL}/wp/wp-json/wp/v2/products/${id}?_embed`,
 	);
 	if (!res.ok) return null;
 	return res.json();

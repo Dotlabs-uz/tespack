@@ -17,10 +17,11 @@ type News = {
     };
 };
 
+const WP_API_URL = process.env.NEXT_PUBLIC_WORDPRESS_URL;
+
 async function getNews(): Promise<News[]> {
     const res = await fetch(
-        "https://tespack.uz/wp/wp-json/wp/v2/news?_embed&per_page=100",
-        { next: { revalidate: 60 } }
+        `${WP_API_URL}/news?_embed&per_page=100`,
     );
     if (!res.ok) return [];
     return res.json();
@@ -93,11 +94,8 @@ export default function NewsList() {
                 className="flex gap-5 overflow-x-auto scroll-smooth pb-4 no-scrollbar"
             >
                 {filteredNews.map((item) => {
-                    const image =
-                        item._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
-                        "/placeholder.jpg";
-                    const category =
-                        item._embedded?.["wp:term"]?.[0]?.[0]?.name || t("no_category");
+                    const image = item._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "/placeholder.jpg";
+                    const category = item._embedded?.["wp:term"]?.[0]?.[0]?.name || t("no_category");
 
                     return (
                         <div
