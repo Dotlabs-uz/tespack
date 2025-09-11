@@ -235,5 +235,17 @@
                 "title": "Quality control"
             }
         ]
+    },
+    "FAQ": {
+        "contacts_title": "CONTACTS & LOCATION",
+        "contacts_description": "Plastic products, polymer coatings, PET preforms, and more in one catalog.",
+        "address_label": "Address:",
+        "address_text": "2774 Oak Drive, Plattsburgh, New York",
+        "contact_label": "Contact:",
+        "phone_1": "+998 91 123 45 67",
+        "phone_2": "+998 91 123 45 67",
+        "email": "contact@tespack.com",
+        "faq_title": "FREQUENTLY ASKED QUESTIONS",
+        "no_faq": "No FAQs found"
     }
 }

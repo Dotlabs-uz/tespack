@@ -50,8 +50,6 @@ export default function Header() {
 
     const headerClass = `bg-[#03156B] text-white ${isMobileNoRound ? "rounded-b-none" : "rounded-b-xl"} ${isDesktopNoRound ? "" : "md:rounded-b-3xl"}`;
 
-
-
     return (
         <header className={`${headerClass} relative z-[1000]`}>
             <div className="container mx-auto flex items-center justify-between py-3 px-4 md:px-6 lg:px-0">

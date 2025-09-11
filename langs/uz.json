@@ -235,5 +235,17 @@
                 "title": "Nazorat va sifat"
             }
         ]
+    },
+    "FAQ": {
+        "contacts_title": "ALOQA VA MANZIL",
+        "contacts_description": "Plastik mahsulotlar, polimer qoplamalar, PET-preformalar va boshqa ko‘plab mahsulotlar bitta katalogda.",
+        "address_label": "Manzil:",
+        "address_text": "2774 Oak Drive, Plattsburgh, New York",
+        "contact_label": "Aloqa:",
+        "phone_1": "+998 91 123 45 67",
+        "phone_2": "+998 91 123 45 67",
+        "email": "contact@tespack.com",
+        "faq_title": "TEZ-TEZ SO'RALADIGAN SAVOLLAR",
+        "no_faq": "Savollar topilmadi"
     }
 }
