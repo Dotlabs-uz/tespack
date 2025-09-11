@@ -43,7 +43,7 @@ export default function Header() {
     };
 
     const mobileNoRound = ["/", "/features", "/contacts", "/news"];
-    const desktopNoRound = ["/"]; 
+    const desktopNoRound = ["/"];
 
     const isMobileNoRound = mobileNoRound.includes(pathname);
     const isDesktopNoRound = desktopNoRound.includes(pathname);
@@ -77,7 +77,7 @@ export default function Header() {
                                     {languages.find((l) => l.code === currentLang)?.label || "RU"}
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent className="bg-gray-300">
-                                    <ul className="grid w-[120px]">
+                                    <ul className="grid">
                                         {languages.map(({ code, label }) => (
                                             <li
                                                 key={code}
@@ -132,11 +132,10 @@ export default function Header() {
                             <NavigationMenuList>
                                 <NavigationMenuItem>
                                     <NavigationMenuTrigger className="bg-gray-300 rounded-lg text-black cursor-pointer">
-                                        {languages.find((l) => l.code === currentLang)?.label ||
-                                            "RU"}
+                                        {languages.find((l) => l.code === currentLang)?.label || "RU"}
                                     </NavigationMenuTrigger>
                                     <NavigationMenuContent className="bg-gray-300">
-                                        <ul className="grid w-[120px]">
+                                        <ul className="grid w-full md:w-[120px]">
                                             {languages.map(({ code, label }) => (
                                                 <li
                                                     key={code}

@@ -4,6 +4,7 @@ import NewsList from "@/components/custom/NewsList";
 import VideoSection from "@/components/custom/VideoSection";
 import VacanciesList from "@/components/custom/VacanciesList";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 export default function Home() {
 	const b = useTranslations("Buttons");
@@ -54,9 +55,9 @@ export default function Home() {
 					<p className="text-base md:text-xl max-w-lg mt-4 md:mt-0 text-[#3F3B3A]">
 						{p("description")}
 					</p>
-					<button className="btn mt-4 md:mt-0 px-6 py-2 border border-[#03156B] text-[#03156B] text-sm">
+					<Link href="/products" className="btn mt-4 md:mt-0 px-6 py-2 border border-[#03156B] text-[#03156B] text-sm">
 						{p("button")}
-					</button>
+					</Link>
 				</div>
 
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
