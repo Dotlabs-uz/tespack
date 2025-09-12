@@ -39,7 +39,7 @@ export default function Features() {
             <main className="container mx-auto px-4 md:px-0 py-10">
                 <section className="mb-12">
                     <Carousel opts={{ loop: true }}>
-                        <div className="flex flex-col md:flex-row justify-between items-start gap-8">
+                        <div className="flex flex-col xl:flex-row justify-between items-start xl:gap-8">
                             <div className="max-w-xl">
                                 <h2 className="text-4xl md:text-5xl font-bold text-[#03156B] uppercase mb-4">
                                     {t("overview.title")}
@@ -49,7 +49,7 @@ export default function Features() {
                                 </p>
                             </div>
 
-                            <div className="max-w-xl">
+                            <div className="max-w-xl mb-8 xl:mb-0">
                                 <p className="text-base md:text-lg">
                                     {t("overview.text2")}
                                 </p>
@@ -82,7 +82,7 @@ export default function Features() {
                 </section>
 
                 <section>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                    <div className="grid grid-cols-1 xl:grid-cols-2 xl:gap-8 mb-10">
                         <h2 className="text-4xl md:text-5xl font-bold text-[#03156B] uppercase mb-5">
                             {t("partnerships.title")}
                         </h2>
@@ -90,7 +90,7 @@ export default function Features() {
                             {t("partnerships.description")}
                         </p>
                     </div>
-                    <div className="grid md:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-2 gap-8">
                         {t.raw("partnerships.items").map((item: any, i: number) => (
                             <div key={i}>
                                 <h3 className="text-base md:text-xl font-bold text-[#03156B] mb-2">
@@ -128,7 +128,7 @@ export default function Features() {
                     </div>
 
                     <div>
-                        <div className="hidden md:flex items-start gap-15 mt-12">
+                        <div className="hidden md:grid grid-cols-2 gap-15 mt-12">
                             {items.map((item: any, i: number) => (
                                 <div key={i} className="space-y-4 max-w-[350px] text-white">
                                     <span className="text-5xl md:text-6xl text-[#5FB1FF] font-bold">{item.num}</span>
@@ -156,7 +156,7 @@ export default function Features() {
 
             <main className="container mx-auto px-4 md:px-0 py-10">
                 <section className="py-12">
-                    <div className="flex flex-col md:flex-row justify-between gap-8 items-start mb-12">
+                    <div className="flex flex-col xl:flex-row justify-between gap-8 items-start mb-12">
                         <h2 className="text-4xl md:text-5xl font-bold uppercase text-[#03156B] max-w-lg">
                             {t("technology.title")}
                         </h2>

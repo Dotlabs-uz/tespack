@@ -42,7 +42,7 @@ export default function Header() {
         window.location.reload();
     };
 
-    const mobileNoRound = ["/", "/features", "/contacts", "/news"];
+    const mobileNoRound = ["/", "/products", "/features", "/contacts", "/news"];
     const desktopNoRound = ["/"];
 
     const isMobileNoRound = mobileNoRound.includes(pathname);
@@ -107,7 +107,7 @@ export default function Header() {
                         />
                     </Link>
 
-                    <div className="flex items-center border-b border-white w-[240px]">
+                    <div className="flex items-center border-b border-white w-[150px] 2xl:w-[240px]">
                         <IoIosSearch className="text-white text-lg cursor-pointer" />
                         <input
                             type="text"
@@ -154,7 +154,7 @@ export default function Header() {
                             </NavigationMenuList>
                         </NavigationMenu>
 
-                        <button className="btn w-[200px] bg-[#FFFFFF] text-black">
+                        <button className="btn w-[150px] md:w-[200px] bg-[#FFFFFF] text-black">
                             {b("apply")}
                         </button>
                     </div>

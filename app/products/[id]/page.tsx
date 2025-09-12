@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
+import ModelView from "./ModelView";
 
-const WP_API_URL = process.env.NEXT_PUBLIC_WORDPRESS_URL;
+const WP_API_URL = process.env.WORDPRESS_URL;
 
 export interface ProductType {
 	id: number;
@@ -10,6 +11,7 @@ export interface ProductType {
 	product_category?: { id: number; name: string }[];
 	imageUrl?: string;
 	drawingUrl?: string;
+	glbUrl?: string;
 
 	neckFinish?: string;
 	beverageType?: string;
@@ -42,22 +44,19 @@ export default async function ProductPage({
 	const product = await getProduct((await params).id);
 	if (!product) return notFound();
 
-	const imageUrl =
-		product.imageUrl ||
-		product._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
-		null;
+	const imageUrl = product.glbUrl || null;
 
 	return (
 		<main className="container mx-auto px-4 md:px-0 py-10">
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-				{imageUrl ? (
-					<img
-						src={imageUrl}
-						alt={product.title.rendered}
-						className="w-full rounded shadow"
-					/>
-				) : (
-					<img src="/" alt="" />
+				{imageUrl && (
+					<div className="sticky max-w-2xl flex items-center justify-center bg-white rounded-3xl shadow-[0_0_4px_0_rgba(2,15,35,0.3),0_2px_6px_0_rgba(0,0,0,0.2)]">
+						<ModelView
+							imageUrl={imageUrl}
+							product={product}
+							height="h-150"
+						/>
+					</div>
 				)}
 
 				<div className="">
