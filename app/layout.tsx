@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/custom/Header";
 import { NextIntlClientProvider } from "next-intl";
 import Footer from "@/components/custom/Footer";
+import Script from "next/script";
 
 export default async function RootLayout({
 	children,
@@ -20,7 +21,10 @@ export default async function RootLayout({
 					{children}
 					<Footer />
 				</NextIntlClientProvider>
-				<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+				<script
+					type="module"
+					src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+				></script>
 			</body>
 		</html>
 	);

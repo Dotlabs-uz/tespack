@@ -21,11 +21,17 @@ export interface ProductType {
 }
 
 async function getProduct(id: string): Promise<ProductType | null> {
-	const res = await fetch(`${WP_API_URL}/products/${id}?_embed`, {
-		cache: "no-store",
-	});
-	if (!res.ok) return null;
-	return res.json();
+	try {
+		const res = await fetch(`${WP_API_URL}/products/${id}?_embed`, {
+			cache: "no-store",
+		});
+
+		return res.json();
+	} catch (e) {
+		console.log(e);
+
+		return null;
+	}
 }
 
 export default async function ProductPage({
@@ -61,7 +67,9 @@ export default async function ProductPage({
 
 					{product._embedded?.["wp:term"]?.[0]?.length > 0 && (
 						<p className="text-[#999999] mb-4">
-							{product._embedded["wp:term"][0].map((cat: any) => cat.name).join(", ")}
+							{product._embedded["wp:term"][0]
+								.map((cat: any) => cat.name)
+								.join(", ")}
 						</p>
 					)}
 
@@ -88,26 +96,42 @@ export default async function ProductPage({
 								<tbody>
 									{product.neckFinish && (
 										<tr>
-											<td className="border px-4 py-2 font-medium">Neck Finish</td>
-											<td className="border px-4 py-2">{product.neckFinish}</td>
+											<td className="border px-4 py-2 font-medium">
+												Neck Finish
+											</td>
+											<td className="border px-4 py-2">
+												{product.neckFinish}
+											</td>
 										</tr>
 									)}
 									{product.beverageType && (
 										<tr>
-											<td className="border px-4 py-2 font-medium">Beverage Type</td>
-											<td className="border px-4 py-2">{product.beverageType}</td>
+											<td className="border px-4 py-2 font-medium">
+												Beverage Type
+											</td>
+											<td className="border px-4 py-2">
+												{product.beverageType}
+											</td>
 										</tr>
 									)}
 									{product.numberOfParts && (
 										<tr>
-											<td className="border px-4 py-2 font-medium">Number of Parts</td>
-											<td className="border px-4 py-2">{product.numberOfParts}</td>
+											<td className="border px-4 py-2 font-medium">
+												Number of Parts
+											</td>
+											<td className="border px-4 py-2">
+												{product.numberOfParts}
+											</td>
 										</tr>
 									)}
 									{product.material && (
 										<tr>
-											<td className="border px-4 py-2 font-medium">Material</td>
-											<td className="border px-4 py-2">{product.material}</td>
+											<td className="border px-4 py-2 font-medium">
+												Material
+											</td>
+											<td className="border px-4 py-2">
+												{product.material}
+											</td>
 										</tr>
 									)}
 								</tbody>
@@ -117,20 +141,32 @@ export default async function ProductPage({
 								<tbody>
 									{product.slipAgent && (
 										<tr>
-											<td className="border px-4 py-2 font-medium">Slip Agent</td>
-											<td className="border px-4 py-2">{product.slipAgent}</td>
+											<td className="border px-4 py-2 font-medium">
+												Slip Agent
+											</td>
+											<td className="border px-4 py-2">
+												{product.slipAgent}
+											</td>
 										</tr>
 									)}
 									{product.weight && (
 										<tr>
-											<td className="border px-4 py-2 font-medium">Weight</td>
-											<td className="border px-4 py-2">{product.weight}</td>
+											<td className="border px-4 py-2 font-medium">
+												Weight
+											</td>
+											<td className="border px-4 py-2">
+												{product.weight}
+											</td>
 										</tr>
 									)}
 									{product.tetheredCap && (
 										<tr>
-											<td className="border px-4 py-2 font-medium">Tethered Cap</td>
-											<td className="border px-4 py-2">{product.tetheredCap}</td>
+											<td className="border px-4 py-2 font-medium">
+												Tethered Cap
+											</td>
+											<td className="border px-4 py-2">
+												{product.tetheredCap}
+											</td>
 										</tr>
 									)}
 								</tbody>
@@ -141,7 +177,9 @@ export default async function ProductPage({
 
 				{product.drawingUrl && (
 					<div className="md:col-start-2">
-						<h2 className="text-2xl text-[#7A7A7A] font-bold mb-4">Чертёж</h2>
+						<h2 className="text-2xl text-[#7A7A7A] font-bold mb-4">
+							Чертёж
+						</h2>
 						<img
 							src={product.drawingUrl}
 							alt="Чертёж продукта"
@@ -153,4 +191,3 @@ export default async function ProductPage({
 		</main>
 	);
 }
-

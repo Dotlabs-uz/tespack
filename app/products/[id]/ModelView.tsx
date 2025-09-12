@@ -1,25 +1,28 @@
 "use client";
-import React from "react";
-import "@google/model-viewer";
+
+import React, { Suspense } from "react";
+import dynamic from "next/dynamic";
+
+const ModelViewer = dynamic(
+	() => import("@/components/custom/ModelViewer").then((mod) => mod.default),
+	{ ssr: false }
+);
 
 interface ModelViewProps {
-	imageUrl: string;
-	product: { title: { rendered: string } };
+	imageUrl?: string;
+	product?: { title: { rendered: string } };
 }
 
 const ModelView: React.FC<ModelViewProps> = ({ imageUrl, product }) => {
 	return (
-		<>
-			<model-viewer
-				src={imageUrl}
-				alt={product.title.rendered}
-				camera-controls
-				auto-rotate
-				environment-image="neutral"
-				exposure="1"
-				className="w-full h-96"
-			/>
-		</>
+		// <Suspense fallback={<span>loading...</span>}>
+		<ModelViewer
+			src={imageUrl || ""}
+			alt="{product?.title?.rendered ?? }"
+			camera-controls
+			className="w-full h-96"
+		/>
+		// </Suspense>
 	);
 };
 
