@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
+import Forms from "./Forms";
 
 type Vacancy = {
     id: number;
@@ -30,6 +31,7 @@ export default function VacanciesList() {
     const [vacancies, setVacancies] = useState<Vacancy[]>([]);
     const [currentLang, setCurrentLang] = useState("ru");
     const t = useTranslations("Vacancies");
+    const [openModal, setOpenModal] = useState<"feedback" | "vacancies" | null>(null);
 
     useEffect(() => {
         getVacancies().then((data) => setVacancies(data));
@@ -99,21 +101,17 @@ export default function VacanciesList() {
                                 )}
 
                                 <div className="mt-auto flex items-center justify-between gap-4">
-                                    <button className="w-[184px] h-[52px] bg-[#03156B] text-white text-sm rounded-xl px-8 py-2.5 flex items-center justify-center whitespace-nowrap cursor-pointer">
+                                    <button className="w-[184px] h-[52px] bg-[#03156B] text-white text-sm rounded-xl px-8 py-2.5 flex items-center justify-center whitespace-nowrap cursor-pointer" onClick={() => setOpenModal("feedback")}>
                                         {t("apply")}
                                     </button>
-                                    <Link
-                                        href={`/vacancy/${item.id}`}
-                                        className="w-[184px] h-[52px] text-[#03156B] text-sm px-8 py-2.5 flex items-center justify-center font-medium"
-                                    >
-                                        {t("details")}
-                                    </Link>
+                                    
                                 </div>
                             </div>
                         </div>
                     );
                 })}
             </div>
+            <Forms openModal={openModal} setOpenModal={setOpenModal} />
         </div>
     );
 }

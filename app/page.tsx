@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image";
 import "./globals.css";
 import NewsList from "@/components/custom/NewsList";
@@ -5,11 +7,15 @@ import VideoSection from "@/components/custom/VideoSection";
 import VacanciesList from "@/components/custom/VacanciesList";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
+import Forms from "@/components/custom/Forms";
+import { useState } from "react";
 
 export default function Home() {
 	const b = useTranslations("Buttons");
 	const h = useTranslations("Hero");
 	const p = useTranslations("Products");
+
+	const [openModal, setOpenModal] = useState<"feedback" | "vacancies" | null>(null);
 
 	return (
 		<main>
@@ -105,7 +111,7 @@ export default function Home() {
 					<div className="bg-white text-[#03156B] rounded-2xl p-6 border border-gray-200 flex flex-col justify-between">
 						<h3 className="text-2xl md:text-3xl font-bold mb-3">{p("items.cups_title")}</h3>
 						<p className="text-sm md:text-base mt-auto max-w-xs">{p("items.cups_text")}</p>
-						<button className="btn w-full bg-[#03156B] text-white mt-5 md:hidden">
+						<button className="btn w-full bg-[#03156B] text-white mt-5 md:hidden" onClick={() => setOpenModal("feedback")}>
 							{b("apply")}
 						</button>
 					</div>
@@ -130,10 +136,9 @@ export default function Home() {
 								</p>
 							</div>
 						</div>
-						<button className="hidden md:flex btn w-[160px] sm:w-[200px] bg-[#FFFFFF] text-black absolute bottom-6 right-6 z-10">
+						<button className="hidden md:flex btn w-[160px] sm:w-[200px] bg-[#FFFFFF] text-black absolute bottom-6 right-6 z-10" onClick={() => setOpenModal("feedback")}>
 							{b("apply")}
 						</button>
-						
 					</div>
 				</div>
 			</section>
@@ -141,6 +146,7 @@ export default function Home() {
 			<VideoSection />
 			<NewsList />
 			<VacanciesList />
+			<Forms openModal={openModal} setOpenModal={setOpenModal} />
 		</main>
 	);
 }

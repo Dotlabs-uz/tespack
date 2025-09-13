@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
+import Forms from "./Forms";
 
 export default function Header() {
     const [query, setQuery] = useState("");
@@ -24,6 +25,7 @@ export default function Header() {
     const t = useTranslations("Header");
     const b = useTranslations("Buttons");
     const pathname = usePathname();
+    const [openModal, setOpenModal] = useState<"feedback" | "vacancies" | null>(null);
 
     useEffect(() => {
         const lang = document.cookie.match(/locale=(\w{2,5})/)?.[1];
@@ -107,7 +109,7 @@ export default function Header() {
                         />
                     </Link>
 
-                    <div className="flex items-center border-b border-white w-[150px] 2xl:w-[240px]">
+                    {/* <div className="flex items-center border-b border-white w-[150px] 2xl:w-[240px]">
                         <IoIosSearch className="text-white text-lg cursor-pointer" />
                         <input
                             type="text"
@@ -116,14 +118,13 @@ export default function Header() {
                             placeholder="PET-Преформы"
                             className="px-2 py-1 bg-transparent text-white text-sm outline-none w-full"
                         />
-                    </div>
+                    </div> */}
 
                     <nav className="flex gap-8 text-sm">
                         <Link href="/">{t("menu.home")}</Link>
                         <Link href="/products">{t("menu.products")}</Link>
                         <Link href="/company">{t("menu.about")}</Link>
                         <Link href="/features">{t("menu.features")}</Link>
-                        <Link href="/news">{t("menu.news")}</Link>
                         <Link href="/contacts">{t("menu.contacts")}</Link>
                     </nav>
 
@@ -154,7 +155,7 @@ export default function Header() {
                             </NavigationMenuList>
                         </NavigationMenu>
 
-                        <button className="btn w-[150px] md:w-[200px] bg-[#FFFFFF] text-black">
+                        <button className="btn w-[150px] md:w-[200px] bg-[#FFFFFF] text-black" onClick={() => setOpenModal("feedback")}>
                             {b("apply")}
                         </button>
                     </div>
@@ -185,7 +186,7 @@ export default function Header() {
                         </button>
                     </div>
 
-                    <div className="flex items-center border-b border-[#03156B]/40 mb-5">
+                    {/* <div className="flex items-center border-b border-[#03156B]/40 mb-5">
                         <IoIosSearch className="text-[#03156B] text-lg" />
                         <input
                             type="text"
@@ -194,7 +195,7 @@ export default function Header() {
                             placeholder="PET-Преформы"
                             className="px-2 py-2 bg-transparent text-[#03156B] text-sm outline-none w-full placeholder:text-[#03156B]/70"
                         />
-                    </div>
+                    </div> */}
 
                     <nav className="flex flex-col gap-4 text-base">
                         <Link href="/" onClick={() => setMenuOpen(false)}>
@@ -217,11 +218,12 @@ export default function Header() {
                         </Link>
                     </nav>
 
-                    <button className="btn w-full mt-6 bg-[#03156B] text-white">
+                    <button className="btn w-full mt-6 bg-[#03156B] text-white" onClick={() => {setOpenModal("feedback");  setMenuOpen(false)}}>
                         {b("apply")}
                     </button>
                 </div>
             </div>
+            <Forms openModal={openModal} setOpenModal={setOpenModal} />
         </header>
     );
 }
