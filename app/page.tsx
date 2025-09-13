@@ -10,6 +10,7 @@ export default function Home() {
 	const b = useTranslations("Buttons");
 	const h = useTranslations("Hero");
 	const p = useTranslations("Products");
+	
 
 	return (
 		<main>
