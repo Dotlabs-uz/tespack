@@ -5,7 +5,7 @@ export default function VideoSection() {
             <div className="w-full max-w-5xl relative rounded-3xl overflow-hidden shadow-lg">
                 <iframe
                     className="w-full aspect-video"
-                    src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                    src="https://www.youtube.com/embed/Ur8k5__PdA0"
                     title="YouTube video"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
