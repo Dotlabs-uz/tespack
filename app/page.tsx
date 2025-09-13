@@ -133,6 +133,7 @@ export default function Home() {
 						<button className="hidden md:flex btn w-[160px] sm:w-[200px] bg-[#FFFFFF] text-black absolute bottom-6 right-6 z-10">
 							{b("apply")}
 						</button>
+						
 					</div>
 				</div>
 			</section>
