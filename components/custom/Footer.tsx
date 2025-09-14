@@ -37,20 +37,37 @@ export default function Footer() {
                 </div>
 
                 <div className="flex flex-col md:flex-row md:justify-between items-start gap-10 mt-10">
-                    <Image 
-                        src="/FooterLogo.webp" 
-                        alt="Tespack" 
-                        width={120} 
-                        height={50} 
+                    <Image
+                        src="/FooterLogo.webp"
+                        alt="Tespack"
+                        width={120}
+                        height={50}
                     />
-                    <div className="flex flex-row md:flex-col gap-10 md:w-1/2">
-                        <div className="flex flex-col md:items-start mb-4 md:mb-0">
-                            <p className="text-sm text-[#868686] bold">{t("address_title")}</p>
+
+                    <div className="order-1 md:order-2 flex flex-row gap-35 md:gap-20 text-sm md:text-xl">
+                        <div className="flex flex-col gap-2 mb-4 md:mb-0">
+                            <a href="/">{t("menu.home")}</a>
+                            <a href="/products">{t("menu.products")}</a>
+                            <a href="/company">{t("menu.about")}</a>
+                            <a href="/features">{t("menu.features")}</a>
+                            <a href="/contacts">{t("menu.contacts")}</a>
+                        </div>
+                        <div className="flex flex-col gap-2">
+                            <a href="#">{t("menu.catalog")}</a>
+                            <a href="#">{t("menu.certificates")}</a>
+                            <a href="#">{t("menu.licenses")}</a>
+                            <a href="#">{t("menu.docs")}</a>
+                        </div>
+                    </div>
+
+                    <div className="order-2 md:order-1 flex flex-row md:flex-col gap-25 md:gap-10 md:w-1/2">
+                        <div className="flex flex-col md:items-start mb-4 md:mb-0 md:max-w-3xs">
+                            <p className="text-sm text-[#868686] font-bold">{t("address_title")}</p>
                             <p className="text-sm md:text-2xl text-[#03156B]">{t("address_text")}</p>
                         </div>
 
                         <div className="flex flex-col">
-                            <p className="text-sm text-[#868686] bold">{t("contact_title")}</p>
+                            <p className="text-sm text-[#868686] font-bold">{t("contact_title")}</p>
                             <p className="text-sm md:text-2xl text-[#03156B]">{t("contact_phone")}</p>
                             <p className="text-sm md:text-2xl text-[#03156B]">{t("contact_email")}</p>
                             <div className="flex gap-4 text-[#03156B] text-xl mt-2">
@@ -59,22 +76,6 @@ export default function Footer() {
                                 <a href="#"><FaInstagram /></a>
                                 <a href="#"><FaLinkedinIn /></a>
                             </div>
-                        </div>
-                    </div>
-
-                    <div className="flex flex-row gap-10 text-sm md:text-xl">
-                        <div className="flex flex-col gap-2 mb-4 md:mb-0">
-                            <a href="#">{t("menu.home")}</a>
-                            <a href="#">{t("menu.products")}</a>
-                            <a href="#">{t("menu.about")}</a>
-                            <a href="#">{t("menu.features")}</a>
-                            <a href="#">{t("menu.contacts")}</a>
-                        </div>
-                        <div className="flex flex-col gap-2">
-                            <a href="#">{t("menu.catalog")}</a>
-                            <a href="#">{t("menu.certificates")}</a>
-                            <a href="#">{t("menu.licenses")}</a>
-                            <a href="#">{t("menu.docs")}</a>
                         </div>
                     </div>
                 </div>
