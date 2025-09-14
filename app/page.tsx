@@ -137,7 +137,7 @@ export default function Home() {
 								</p>
 							</div>
 						</div>
-						<button className="hidden md:flex btn w-[160px] sm:w-[200px] bg-[#FFFFFF] text-black absolute bottom-6 right-6 z-10" onClick={() => setOpenModal("feedback")}>
+						<button className="hidden md:flex btn w-[160px] sm:w-[200px] bg-[#FFFFFF] text-black absolute bottom-6 right-6 z-10" onClick={() => setOpenModal("vacancies")}>
 							{b("apply")}
 						</button>
 					</div>

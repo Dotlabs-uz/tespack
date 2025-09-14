@@ -247,5 +247,43 @@
         "email": "contact@tespack.com",
         "faq_title": "TEZ-TEZ SO'RALADIGAN SAVOLLAR",
         "no_faq": "Savollar topilmadi"
+    },
+    "Forms": {
+        "feedback": {
+            "title": "ALOQA SO'ROVI",
+            "description": "O'zingiz haqingizda ma'lumot yuboring va biz",
+            "descriptionLine2": "hamkorlik bo'yicha siz bilan bog'lanamiz",
+            "placeholders": {
+                "name": "Ism",
+                "phone": "+998 XX XXX-XX-XX"
+            },
+            "submitButton": "Formani yuborish",
+            "submitting": "Yuborish",
+            "agreement": "Men shartlarga roziman va shaxsiy ma'lumotlarni qayta ishlashga ruxsat beraman"
+        },
+        "vacancies": {
+            "title": "ANKETANI TO'LDIRING",
+            "description": "O'zingiz haqingizda ma'lumot yuboring va biz",
+            "descriptionLine2": "sizni bo'sh lavozimga ko'rib chiqamiz",
+            "placeholders": {
+                "vacancy": "Vakansiya",
+                "education": "Ta'lim",
+                "source": "Vakansiya haqida qayerdan bildingiz",
+                "file": "Fayl",
+                "fullName": "F.I.Sh",
+                "birthDate": "Tug'ilgan sana",
+                "email": "Elektron pochta",
+                "phone": "Telefon"
+            },
+            "submitButton": "Formani yuborish",
+            "submitting": "Yuborish",
+            "agreement": "Men shartlarga roziman va shaxsiy ma'lumotlarni qayta ishlashga ruxsat beraman"
+        },
+        "validation": {
+            "required": "Bu maydon majburiy",
+            "nameShort": "Ism juda qisqa",
+            "emailInvalid": "Noto'g'ri email formati",
+            "phoneInvalid": "Noto'g'ri telefon raqami"
+        }
     }
 }

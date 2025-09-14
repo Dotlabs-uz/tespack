@@ -247,5 +247,43 @@
         "email": "contact@tespack.com",
         "faq_title": "FREQUENTLY ASKED QUESTIONS",
         "no_faq": "No FAQs found"
+    },
+    "Forms": {
+        "feedback": {
+            "title": "FEEDBACK REQUEST",
+            "description": "Send us your information and we will contact",
+            "descriptionLine2": "you regarding cooperation",
+            "placeholders": {
+                "name": "Name",
+                "phone": "+998 XX XXX-XX-XX"
+            },
+            "submitButton": "Send Form",
+            "submitting": "Submitting",
+            "agreement": "I agree to the terms and give permission to process personal data"
+        },
+        "vacancies": {
+            "title": "FILL OUT THE FORM",
+            "description": "Send us your information and we will consider",
+            "descriptionLine2": "you for a vacant position",
+            "placeholders": {
+                "vacancy": "Vacancy",
+                "education": "Education",
+                "source": "How did you learn about the vacancy",
+                "file": "File",
+                "fullName": "Full Name",
+                "birthDate": "Date of Birth",
+                "email": "Email",
+                "phone": "Phone"
+            },
+            "submitButton": "Send Form",
+            "submitting": "Submitting",
+            "agreement": "I agree to the terms and give permission to process personal data"
+        },
+        "validation": {
+            "required": "This field is required",
+            "nameShort": "Name is too short",
+            "emailInvalid": "Invalid email format",
+            "phoneInvalid": "Invalid phone number"
+        }
     }
 }
