@@ -210,9 +210,6 @@ export default function Header() {
                         <Link href="/features" onClick={() => setMenuOpen(false)}>
                             {t("menu.features")}
                         </Link>
-                        <Link href="/news" onClick={() => setMenuOpen(false)}>
-                            {t("menu.news")}
-                        </Link>
                         <Link href="/contacts" onClick={() => setMenuOpen(false)}>
                             {t("menu.contacts")}
                         </Link>
