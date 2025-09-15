@@ -16,6 +16,7 @@ export default function Home() {
 	const p = useTranslations("ProductsCategories");
 
 	const [openModal, setOpenModal] = useState<"feedback" | "vacancies" | null>(null);
+	
 
 	return (
 		<main>
