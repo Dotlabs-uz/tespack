@@ -13,7 +13,7 @@ import { useState } from "react";
 export default function Home() {
 	const b = useTranslations("Buttons");
 	const h = useTranslations("Hero");
-	const p = useTranslations("Products");
+	const p = useTranslations("ProductsCategories");
 
 	const [openModal, setOpenModal] = useState<"feedback" | "vacancies" | null>(null);
 

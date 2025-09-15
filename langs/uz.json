@@ -21,7 +21,8 @@
         "form": {
             "name": "Ismingiz",
             "phone": "+998 91 123 45 67",
-            "send": "Yuborish"
+            "send": "Yuborish",
+            "submitting": "Yuborish"
         },
         "address_title": "Manzil:",
         "address_text": "2774 Oak Drive, Plattsburgh, New York",
@@ -54,7 +55,7 @@
         "text2": "qopqoqlarni sifat va ekologiyaga e’tibor qaratib yaratamiz. Ishonchli",
         "text3": "20 yillik tajribaga ega B2B hamkor."
     },
-    "Products": {
+    "ProductsCategories": {
         "title": "Bizning mahsulot",
         "title_span": "kategoriyalari",
         "description": "Mahsulotlarimizga butilkalar, qopqoqlar va dunyo yetakchilari texnologiyalaridan foydalangan holda yaratilgan ichimlik idishlari kiradi",
@@ -284,6 +285,26 @@
             "nameShort": "Ism juda qisqa",
             "emailInvalid": "Noto'g'ri email formati",
             "phoneInvalid": "Noto'g'ri telefon raqami"
+        }
+    },
+    "Products": {
+        "title": "TESPACK MAHSULOTLARI",
+        "description": "Plastik mahsulotlar, polimer qoplamalar, PET preformalar va boshqa ko'p narsalar bitta katalogda.",
+        "pet_containers": "PET Konteynerlar",
+        "polymer_closures": "Polimer Yopgichlar",
+        "categories": {
+            "noncarbonated": "Gazlanmagan",
+            "sensitive": "Sezgir",
+            "sparkling": "Gazlangan",
+            "low_calorie": "Kam kaloriyali",
+            "organic": "Organik",
+            "sugar_free": "Shakarsiz",
+            "flavored": "Xushbo'y",
+            "caffeine_free": "Kofeinsiz"
+        },
+        "pagination": {
+            "previous": "Oldingi",
+            "next": "Keyingi"
         }
     }
 }

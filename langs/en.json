@@ -21,7 +21,8 @@
         "form": {
             "name": "Your name",
             "phone": "+998 91 123 45 67",
-            "send": "Send"
+            "send": "Send",
+            "submitting": "Submitting"
         },
         "address_title": "Address:",
         "address_text": "2774 Oak Drive, Plattsburgh, New York",
@@ -54,7 +55,7 @@
         "text2": "caps with a focus on quality and sustainability. A reliable",
         "text3": "B2B partner with 20 years of experience."
     },
-    "Products": {
+    "ProductsCategories": {
         "title": "Our product",
         "title_span": "categories",
         "description": "Our products include bottles, caps and drinkware created using technologies of global leaders",
@@ -284,6 +285,26 @@
             "nameShort": "Name is too short",
             "emailInvalid": "Invalid email format",
             "phoneInvalid": "Invalid phone number"
+        }
+    },
+    "Products": {
+        "title": "TESPACK PRODUCTS",
+        "description": "Plastic products, polymer coatings, PET preforms and much more in one catalog.",
+        "pet_containers": "PET Containers",
+        "polymer_closures": "Polymer Closures",
+        "categories": {
+            "noncarbonated": "Non-carbonated",
+            "sensitive": "Sensitive",
+            "sparkling": "Sparkling",
+            "low_calorie": "Low-calorie",
+            "organic": "Organic",
+            "sugar_free": "Sugar-free",
+            "flavored": "Flavored",
+            "caffeine_free": "Caffeine-free"
+        },
+        "pagination": {
+            "previous": "Previous",
+            "next": "Next"
         }
     }
 }
