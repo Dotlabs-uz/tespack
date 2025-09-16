@@ -25,10 +25,10 @@
             "submitting": "Submitting"
         },
         "address_title": "Address:",
-        "address_text": "2774 Oak Drive, Plattsburgh, New York",
+        "address_text": "Tespack LLC, Republic of Uzbekistan, Samarkand city, Bahodir Yalangtosh Makhalla, Obod Maskan Street, House 126V",
         "contact_title": "Contact:",
-        "contact_phone": "+998 91 123 45 67",
-        "contact_email": "contact@tespack.com",
+        "contact_phone": "+998 93 330 22 12",
+        "contact_email": "savlat_voseev@tespack.uz",
         "menu": {
             "home": "Home",
             "products": "Products",
@@ -241,13 +241,17 @@
         "contacts_title": "CONTACTS & LOCATION",
         "contacts_description": "Plastic products, polymer coatings, PET preforms, and more in one catalog.",
         "address_label": "Address:",
-        "address_text": "2774 Oak Drive, Plattsburgh, New York",
+        "address_text_1": "126В Obod Maskan St, Bahodir Yalangtosh, Samarkand, Uzbekistan",
+        "address_text_2": "Urgut-2 SEZ, Tepakul QFY, Nurabad, Samarkand, Uzbekistan",
+        "address_text_3": "25 Dakhbed, Pakhtaobod, Okdarya, Samarkand, Uzbekistan",
         "contact_label": "Contact:",
-        "phone_1": "+998 91 123 45 67",
-        "phone_2": "+998 91 123 45 67",
-        "email": "contact@tespack.com",
+        "phone_1": "+998 93 330 22 12",
+        "phone_2": "+998 99 776 80 06",
+        "phone_3": "+998 93 550 22 44",
+        "email": "savlat_voseev@tespack.uz",
         "faq_title": "FREQUENTLY ASKED QUESTIONS",
-        "no_faq": "No FAQs found"
+        "no_faq": "No FAQs found",
+        "show_on_map": "Show on map"
     },
     "Forms": {
         "feedback": {

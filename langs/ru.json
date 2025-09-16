@@ -25,10 +25,10 @@
             "submitting": "Отправка"
         },
         "address_title": "Адрес:",
-        "address_text": "2774 Oak Drive, Plattsburgh, New York",
+        "address_text": "Tespack ООО, Республика Узбекистан, город Самарканд, МФЙ Баҳодир Ялангтош, улица Обод маскан, дом 126В",
         "contact_title": "Контакты:",
-        "contact_phone": "+998 91 123 45 67",
-        "contact_email": "contact@tespack.com",
+        "contact_phone": "+998 93 330 22 12",
+        "contact_email": "savlat_voseev@tespack.uz",
         "menu": {
             "home": "Главная",
             "products": "Продукция",
@@ -241,13 +241,17 @@
         "contacts_title": "КОНТАКТЫ И ЛОКАЦИЯ",
         "contacts_description": "Пластиковые изделия, полимерные покрытия, PET-Преформы и многое другое в одном каталоге.",
         "address_label": "Адрес:",
-        "address_text": "2774 Oak Drive, Plattsburgh, New York",
+        "address_text_1": "ул. Обод Маскан 126В, МФЙ Баҳодир Ялангтош, Самарканд, Узбекистан",
+        "address_text_2": "СЭЗ Уругут-2, Тепакўл КФЙ, Нурабад, Самарканд, Узбекистан",
+        "address_text_3": "ул. Дахбед 25, МФЙ Пахтаобод, Окдарья, Самарканд, Узбекистан",
         "contact_label": "Контакт:",
-        "phone_1": "+998 91 123 45 67",
-        "phone_2": "+998 91 123 45 67",
-        "email": "contact@tespack.com",
+        "phone_1": "+998 93 330 22 12",
+        "phone_2": "+998 99 776 80 06",
+        "phone_3": "+998 93 550 22 44",
+        "email": "savlat_voseev@tespack.uz",
         "faq_title": "ЧАСТЫЕ ВОПРОСЫ",
-        "no_faq": "Вопросы не найдены"
+        "no_faq": "Вопросы не найдены",
+        "show_on_map": "Показать на карте"
     },
     "Forms": {
         "feedback": {

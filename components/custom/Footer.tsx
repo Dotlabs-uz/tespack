@@ -154,7 +154,7 @@ export default function Footer() {
                     </div>
 
                     <div className="order-2 md:order-1 flex flex-row md:flex-col gap-25 md:gap-10 md:w-1/2">
-                        <div className="flex flex-col md:items-start mb-4 md:mb-0 md:max-w-3xs">
+                        <div className="flex flex-col md:items-start mb-4 md:mb-0 md:max-w-lg">
                             <p className="text-sm text-[#868686] font-bold">{t("address_title")}</p>
                             <p className="text-sm md:text-2xl text-[#03156B]">{t("address_text")}</p>
                         </div>

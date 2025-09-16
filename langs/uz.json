@@ -25,10 +25,10 @@
             "submitting": "Yuborish"
         },
         "address_title": "Manzil:",
-        "address_text": "2774 Oak Drive, Plattsburgh, New York",
+        "address_text": "Tespack MChJ O‘zbekiston Respublikasi, Samarqand shahri, Bahodir Yalangtoʻsh MFY, Obod maskan ko'chasi, 126 V uy",
         "contact_title": "Aloqa:",
-        "contact_phone": "+998 91 123 45 67",
-        "contact_email": "contact@tespack.com",
+        "contact_phone": "+998 93 330 22 12",
+        "contact_email": "savlat_voseev@tespack.uz",
         "menu": {
             "home": "Bosh sahifa",
             "products": "Mahsulotlar",
@@ -241,13 +241,17 @@
         "contacts_title": "ALOQA VA MANZIL",
         "contacts_description": "Plastik mahsulotlar, polimer qoplamalar, PET-preformalar va boshqa ko‘plab mahsulotlar bitta katalogda.",
         "address_label": "Manzil:",
-        "address_text": "2774 Oak Drive, Plattsburgh, New York",
+        "address_text_1": "Obod Maskan 126V, Bahodir Yalangtosh MFY, Samarqand, Oʻzbekiston",
+        "address_text_2": "Urgut-2 SEZ, Tepakўl QFY, Nurobod, Samarqand, Oʻzbekiston",
+        "address_text_3": "Daxbed 25, Paxtaobod MFY, Oqdaryo, Samarqand, Oʻzbekiston",
         "contact_label": "Aloqa:",
-        "phone_1": "+998 91 123 45 67",
-        "phone_2": "+998 91 123 45 67",
-        "email": "contact@tespack.com",
+        "phone_1": "+998 93 330 22 12",
+        "phone_2": "+998 99 776 80 06",
+        "phone_3": "+998 93 550 22 44",
+        "email": "savlat_voseev@tespack.uz",
         "faq_title": "TEZ-TEZ SO'RALADIGAN SAVOLLAR",
-        "no_faq": "Savollar topilmadi"
+        "no_faq": "Savollar topilmadi",
+        "show_on_map": "Xaritada ko‘rsatish"
     },
     "Forms": {
         "feedback": {

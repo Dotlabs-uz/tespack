@@ -9,6 +9,19 @@ import { useTranslations } from "next-intl";
 import Link from "next/link";
 import Forms from "@/components/custom/Forms";
 import { useState } from "react";
+import {
+	Carousel,
+	CarouselContent,
+	CarouselItem
+} from "@/components/ui/carousel";
+
+const images = [
+	{ src: "/Hero1.webp", alt: "hero" },
+	{ src: "/Hero2.webp", alt: "hero" },
+	{ src: "/Hero3.webp", alt: "hero" },
+	{ src: "/Hero4.webp", alt: "hero" },
+];
+
 
 export default function Home() {
 	const b = useTranslations("Buttons");
@@ -16,7 +29,7 @@ export default function Home() {
 	const p = useTranslations("ProductsCategories");
 
 	const [openModal, setOpenModal] = useState<"feedback" | "vacancies" | null>(null);
-	
+
 
 	return (
 		<main>
@@ -35,20 +48,23 @@ export default function Home() {
 						</p>
 					</div>
 					<div className="mt-3 md:mt-10 flex justify-center">
-						<Image
-							src="/HeroImg.webp"
-							alt=""
-							width={1320}
-							height={565}
-							className="hidden md:flex w-full object-cover rounded-3xl"
-						/>
-						<Image
-							src="/HeroMobileImg.webp"
-							alt=""
-							width={384}
-							height={413}
-							className="w-full h-[413px] object-cover md:w-full md:h-[585px] rounded-3xl md:hidden"
-						/>
+						<Carousel opts={{ loop: true }}>
+							<div className="py-10 overflow-hidden mx-auto">
+								<CarouselContent className="flex">
+									{images.map((img, i) => (
+										<CarouselItem key={i} className="shrink-0 basis-full">
+											<Image
+												src={img.src}
+												alt={img.alt}
+												width={1320}
+												height={565}
+												className="w-full h-[413px] md:h-[650px] object-cover rounded-3xl"
+											/>
+										</CarouselItem>
+									))}
+								</CarouselContent>
+							</div>
+						</Carousel>
 					</div>
 				</div>
 			</section>

@@ -3,7 +3,6 @@ import "./globals.css";
 import Header from "@/components/custom/Header";
 import { NextIntlClientProvider } from "next-intl";
 import Footer from "@/components/custom/Footer";
-import Script from "next/script";
 
 export default async function RootLayout({
 	children,

@@ -9,23 +9,23 @@ export default function History() {
     const h = useTranslations("Company.about.History");
 
     const events = [
-        { year: "2006", img: "/TescoPlus.webp", position: "left" },
-        { year: "2008", img: "/NewTechnologies.webp", position: "right" },
-        { year: "2010", img: "/OtherInformation.webp", position: "left" },
-        { year: "2012", img: "/OtherInformation2.webp", position: "right" },
-        { year: "2014", img: "/OtherInformation.webp", position: "left" },
-        { year: "2016", img: "/OtherInformation2.webp", position: "right" },
-        { year: "2018", img: "/OtherInformation.webp", position: "left" },
-        { year: "2020", img: "/OtherInformation2.webp", position: "right" },
-        { year: "2022", img: "/OtherInformation.webp", position: "left" },
-        { year: "2024", img: "/OtherInformation2.webp", position: "right" },
+        { year: "2006", img: "/History2006.webp", position: "left" },
+        { year: "2008", img: "/History2008.webp", position: "right" },
+        { year: "2010", img: "/History2010.webp", position: "left" },
+        { year: "2012", img: "/History2012.webp", position: "right" },
+        { year: "2014", img: "/History2014.webp", position: "left" },
+        { year: "2016", img: "/History2016.webp", position: "right" },
+        { year: "2018", img: "/History2018.webp", position: "left" },
+        { year: "2020", img: "/History2020.webp", position: "right" },
+        { year: "2022", img: "/History2022.webp", position: "left" },
+        { year: "2024", img: "/History2024.webp", position: "right" },
     ];
 
     return (
         <>
             <SubHeader />
-            <VideoSection />
-            <main className="container mx-auto px-4 md:px-0">
+
+            <main className="container mx-auto px-4 md:px-0 mt-10">
                 <h1 className="text-[#03156B] text-4xl md:text-5xl font-bold text-center mb-8">
                     {h("title")}
                 </h1>

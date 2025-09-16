@@ -14,10 +14,18 @@ import { GoClock } from "react-icons/go";
 import { useTranslations } from "next-intl";
 import React from "react";
 
-const images = [
-    { src: "/Company.webp", alt: "company" },
-    { src: "/Activity.webp", alt: "activity" },
-    { src: "/Company.webp", alt: "company" },
+const images_first = [
+    { src: "/Features1.webp", alt: "features" },
+    { src: "/Features2.webp", alt: "features" },
+    { src: "/Features3.webp", alt: "features" },
+    { src: "/Features4.webp", alt: "features" },
+];
+
+const images_second = [
+    { src: "/Features5.webp", alt: "features" },
+    { src: "/Features6.webp", alt: "features" },
+    { src: "/Features7.webp", alt: "features" },
+    { src: "/Features8.webp", alt: "features" },
 ];
 
 export default function Features() {
@@ -27,13 +35,22 @@ export default function Features() {
 
     return (
         <div>
-            <section className="w-full rounded-b-3xl md:container mx-auto bg-[#03156B] text-white p-8 md:rounded-3xl flex flex-col md:gap-30 md:mt-8">
-                <h1 className="text-4xl md:text-6xl font-bold uppercase">
-                    {t("title")}
-                </h1>
-                <p className="mt-4 text-base md:text-xl max-w-lg">
-                    {t("description")}
-                </p>
+            <section className="w-full rounded-b-3xl md:container mx-auto bg-[#03156B] text-white p-8 md:rounded-3xl flex justify-between md:mt-8">
+                <div className="flex flex-col justify-between">
+                    <h1 className="text-4xl md:text-6xl font-bold uppercase">
+                        {t("title")}
+                    </h1>
+                    <p className="mt-4 text-base md:text-xl max-w-lg">
+                        {t("description")}
+                    </p>
+                </div>
+                <Image
+                    src="/FeaturesHero.webp"
+                    alt="plant"
+                    width={646}
+                    height={400}
+                    className="object-cover rounded-3xl h-[323px]"
+                />
             </section>
 
             <main className="container mx-auto px-4 md:px-0 py-10">
@@ -65,7 +82,7 @@ export default function Features() {
 
                         <div className="py-10 overflow-hidden">
                             <CarouselContent className="flex">
-                                {images.map((img, i) => (
+                                {images_first.map((img, i) => (
                                     <CarouselItem key={i} className="shrink-0 basis-full md:basis-1/2">
                                         <Image
                                             src={img.src}
@@ -119,7 +136,7 @@ export default function Features() {
                         </div>
 
                         <Image
-                            src="/PlantImg.webp"
+                            src="/FeaturesInnovation.webp"
                             alt="plant"
                             width={646}
                             height={343}
@@ -128,7 +145,7 @@ export default function Features() {
                     </div>
 
                     <div>
-                        <div className="hidden md:grid grid-cols-2 gap-15 mt-12">
+                        <div className="hidden md:flex gap-15 mt-12">
                             {items.map((item: any, i: number) => (
                                 <div key={i} className="space-y-4 max-w-[350px] text-white">
                                     <span className="text-5xl md:text-6xl text-[#5FB1FF] font-bold">{item.num}</span>
@@ -185,7 +202,7 @@ export default function Features() {
                     <Carousel opts={{ loop: true }}>
                         <div className="py-10 overflow-hidden mx-auto">
                             <CarouselContent className="flex">
-                                {images.map((img, i) => (
+                                {images_second.map((img, i) => (
                                     <CarouselItem key={i} className="shrink-0 basis-full md:basis-1/2">
                                         <Image
                                             src={img.src}
