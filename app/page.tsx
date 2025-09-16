@@ -30,7 +30,6 @@ export default function Home() {
 
 	const [openModal, setOpenModal] = useState<"feedback" | "vacancies" | null>(null);
 
-
 	return (
 		<main>
 			<section className="relative text-white overflow-hidden">
