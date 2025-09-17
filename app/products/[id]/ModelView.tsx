@@ -8,6 +8,8 @@ const ModelViewer = dynamic(() => import("@/components/custom/ModelViewer"), { s
 
 interface ModelViewProps {
 	imageUrl?: string;
+	product?: { title: { rendered: string } };
+	showWheel?: boolean;
 	height?: string;
 }
 
