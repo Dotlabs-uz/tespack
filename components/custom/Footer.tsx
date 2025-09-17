@@ -4,6 +4,7 @@ import { useState } from "react"
 import { FaYoutube, FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa"
 import Image from "next/image"
 import { useTranslations } from "next-intl"
+import Link from "next/link"
 
 function useForm(initialValues: Record<string, string>) {
     const [values, setValues] = useState(initialValues)
@@ -182,7 +183,7 @@ export default function Footer() {
 
                     <div className="flex justify-between w-full md:justify-start order-2 md:gap-50 md:order-1 mt-2 md:mt-0">
                         <p>{t("bottom.copy")}</p>
-                        <p>{t("bottom.designed")}</p>
+                        <Link href={"https://dotlabs.uz"}>{t("bottom.designed")}</Link>
                     </div>
                 </div>
             </div>
