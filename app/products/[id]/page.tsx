@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
 import ModelView from "./ModelView";
+import { getTranslations } from "next-intl/server";
+import VolumeSelector from "./VolumeSelector";
 
 const WP_API_URL = process.env.WORDPRESS_URL;
 
@@ -12,14 +14,7 @@ export interface ProductType {
 	imageUrl?: string;
 	drawingUrl?: string;
 	glbUrl?: string;
-
-	neckFinish?: string;
-	beverageType?: string;
-	numberOfParts?: string;
-	material?: string;
-	slipAgent?: string;
-	weight?: string;
-	tetheredCap?: string;
+	volume?: number;
 }
 
 async function getProduct(id: string): Promise<ProductType | null> {
@@ -45,6 +40,8 @@ export default async function ProductPage({
 	if (!product) return notFound();
 
 	const imageUrl = product.glbUrl || null;
+	const t = await getTranslations("Product");
+	const volume = product.volume ? Number(product.volume) : 0
 
 	return (
 		<main className="container mx-auto px-4 md:px-0 py-10">
@@ -72,10 +69,22 @@ export default async function ProductPage({
 						</p>
 					)}
 
+					<VolumeSelector
+						value={volume}
+						title={t("volume")}
+						options={[
+							{ value: 100, label: "100ml" },
+							{ value: 200, label: "200ml" },
+							{ value: 300, label: "300ml" },
+							{ value: 400, label: "400ml" },
+							{ value: 500, label: "500ml" },
+						]}
+					/>
+
 					{product.content?.rendered && (
 						<div className="mb-6">
 							<h2 className="text-2xl text-[#7A7A7A] font-bold">
-								Особенности
+								{t("features")}
 							</h2>
 							<div
 								className="prose"
@@ -85,99 +94,12 @@ export default async function ProductPage({
 							/>
 						</div>
 					)}
-
-					<div className="mb-6">
-						<h2 className="text-2xl text-[#7A7A7A] font-bold mb-4">
-							Характеристики
-						</h2>
-						<div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
-							<table className="w-full border border-gray-300 rounded">
-								<tbody>
-									{product.neckFinish && (
-										<tr>
-											<td className="border px-4 py-2 font-medium">
-												Neck Finish
-											</td>
-											<td className="border px-4 py-2">
-												{product.neckFinish}
-											</td>
-										</tr>
-									)}
-									{product.beverageType && (
-										<tr>
-											<td className="border px-4 py-2 font-medium">
-												Beverage Type
-											</td>
-											<td className="border px-4 py-2">
-												{product.beverageType}
-											</td>
-										</tr>
-									)}
-									{product.numberOfParts && (
-										<tr>
-											<td className="border px-4 py-2 font-medium">
-												Number of Parts
-											</td>
-											<td className="border px-4 py-2">
-												{product.numberOfParts}
-											</td>
-										</tr>
-									)}
-									{product.material && (
-										<tr>
-											<td className="border px-4 py-2 font-medium">
-												Material
-											</td>
-											<td className="border px-4 py-2">
-												{product.material}
-											</td>
-										</tr>
-									)}
-								</tbody>
-							</table>
-
-							<table className="w-full border border-gray-300 rounded">
-								<tbody>
-									{product.slipAgent && (
-										<tr>
-											<td className="border px-4 py-2 font-medium">
-												Slip Agent
-											</td>
-											<td className="border px-4 py-2">
-												{product.slipAgent}
-											</td>
-										</tr>
-									)}
-									{product.weight && (
-										<tr>
-											<td className="border px-4 py-2 font-medium">
-												Weight
-											</td>
-											<td className="border px-4 py-2">
-												{product.weight}
-											</td>
-										</tr>
-									)}
-									{product.tetheredCap && (
-										<tr>
-											<td className="border px-4 py-2 font-medium">
-												Tethered Cap
-											</td>
-											<td className="border px-4 py-2">
-												{product.tetheredCap}
-											</td>
-										</tr>
-									)}
-								</tbody>
-							</table>
-						</div>
-					</div>
 				</div>
 
 				{product.drawingUrl && (
 					<div className="md:col-start-2">
 						<h2 className="text-2xl text-[#7A7A7A] font-bold mb-4">
-							Чертёж
+							{t("drawing")}
 						</h2>
 						<img
 							src={product.drawingUrl}

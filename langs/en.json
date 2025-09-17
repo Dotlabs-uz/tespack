@@ -310,5 +310,10 @@
             "previous": "Previous",
             "next": "Next"
         }
+    },
+    "Product": {
+        "features": "Features",
+        "drawing": "Drawing",
+        "volume": "Volume"
     }
 }

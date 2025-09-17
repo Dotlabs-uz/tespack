@@ -14,6 +14,7 @@ import {
 	CarouselContent,
 	CarouselItem
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay"
 
 const images = [
 	{ src: "/Hero1.webp", alt: "hero" },
@@ -47,7 +48,7 @@ export default function Home() {
 						</p>
 					</div>
 					<div className="mt-3 md:mt-10 flex justify-center">
-						<Carousel opts={{ loop: true }}>
+						<Carousel opts={{ loop: true }} plugins={[ Autoplay({delay: 2000, stopOnInteraction: false}),]}>
 							<div className="py-10 overflow-hidden mx-auto">
 								<CarouselContent className="flex">
 									{images.map((img, i) => (

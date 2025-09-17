@@ -310,5 +310,10 @@
             "previous": "Oldingi",
             "next": "Keyingi"
         }
+    },
+    "Product": {
+        "features": "Xususiyatlar",
+        "drawing": "Chizma",
+        "volume": "Hajm"
     }
 }

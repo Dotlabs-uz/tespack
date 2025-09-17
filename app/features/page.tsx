@@ -13,6 +13,7 @@ import { FiPackage, FiThermometer } from "react-icons/fi";
 import { GoClock } from "react-icons/go";
 import { useTranslations } from "next-intl";
 import React from "react";
+import Autoplay from "embla-carousel-autoplay"
 
 const images_first = [
     { src: "/Features1.webp", alt: "features" },
@@ -55,7 +56,7 @@ export default function Features() {
 
             <main className="container mx-auto px-4 md:px-0 py-10">
                 <section className="mb-12">
-                    <Carousel opts={{ loop: true }}>
+                    <Carousel opts={{ loop: true }} plugins={[ Autoplay({delay: 2000, stopOnInteraction: false}),]}>
                         <div className="flex flex-col xl:flex-row justify-between items-start xl:gap-8">
                             <div className="max-w-xl">
                                 <h2 className="text-4xl md:text-5xl font-bold text-[#03156B] uppercase mb-4">
@@ -199,7 +200,7 @@ export default function Features() {
                         })}
                     </div>
 
-                    <Carousel opts={{ loop: true }}>
+                    <Carousel opts={{ loop: true }} plugins={[ Autoplay({delay: 2000, stopOnInteraction: false}),]}>
                         <div className="py-10 overflow-hidden mx-auto">
                             <CarouselContent className="flex">
                                 {images_second.map((img, i) => (

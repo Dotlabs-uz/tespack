@@ -10,7 +10,6 @@ import { MdKeyboardArrowDown } from "react-icons/md"
 import { Skeleton } from "@/components/ui/skeleton"
 import { useTranslations } from "next-intl"
 import Image from "next/image"
-import ModelView from "./[id]/ModelView"
 
 const WP_API_URL = process.env.NEXT_PUBLIC_WORDPRESS_URL
 const ITEMS_PER_PAGE = 12
@@ -191,23 +190,41 @@ export default function Products() {
 									<Skeleton className="h-6 w-3/4 rounded bg-gray-200/70" />
 								</div>
 							))
-							: paginatedProducts.map((product: any) => (
-								<div key={product.id} className="flex flex-col w-full">
-									<div className="w-full aspect-square flex items-center justify-center bg-white rounded-3xl shadow-[0_0_4px_0_rgba(2,15,35,0.3),0_2px_6px_0_rgba(0,0,0,0.2)]">
+							: paginatedProducts.map((product: any) => {
+								const image =
+									product._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
+									"/placeholder.jpg"
+
+								return (
+									<div key={product.id} className="flex flex-col w-full">
 										<div className="w-full aspect-square flex items-center justify-center bg-white rounded-3xl shadow-[0_0_4px_0_rgba(2,15,35,0.3),0_2px_6px_0_rgba(0,0,0,0.2)]">
-											<ModelView imageUrl={product.glbUrl} product={product} showWheel={false} />
+											<div className="w-full aspect-square flex items-center justify-center bg-white rounded-3xl shadow-[0_0_4px_0_rgba(2,15,35,0.3),0_2px_6px_0_rgba(0,0,0,0.2)]">
+												<Link href={`/products/${product.id}`}>
+													<img
+														src={image}
+														alt=""
+														className="rounded-xl object-fill w-full h-[256px]"
+													/>
+												</Link>
+											</div>
+										</div>
+										<div className="flex items-center justify-between mt-2">
+											<Link
+												href={`/products/${product.id}`}
+												className="text-[#03156B] text-lg font-semibold"
+											>
+												{product.title.rendered}
+											</Link>
+											<Link
+												href={`/products/${product.id}`}
+												className="text-[#062BD9] text-2xl"
+											>
+												<FaArrowRightLong />
+											</Link>
 										</div>
 									</div>
-									<div className="flex items-center justify-between mt-2">
-										<Link href={`/products/${product.id}`} className="text-[#03156B] text-lg font-semibold">
-											{product.title.rendered}
-										</Link>
-										<Link href={`/products/${product.id}`} className="text-[#062BD9] text-2xl">
-											<FaArrowRightLong />
-										</Link>
-									</div>
-								</div>
-							))}
+								)
+							})}
 					</div>
 
 					<div className="flex justify-center items-center gap-2 mt-8">
