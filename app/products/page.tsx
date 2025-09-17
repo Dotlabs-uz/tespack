@@ -201,12 +201,20 @@ export default function Products() {
 									>
 										<div className="w-full aspect-square flex items-center justify-center bg-white rounded-3xl shadow-[0_0_4px_0_rgba(2,15,35,0.3),0_2px_6px_0_rgba(0,0,0,0.2)]">
 											<div className="w-full aspect-square flex items-center justify-center bg-white rounded-3xl shadow-[0_0_4px_0_rgba(2,15,35,0.3),0_2px_6px_0_rgba(0,0,0,0.2)]">
-												<ModelView
-													imageUrl={product.glbUrl}
-													product={product}
-													showWheel={false}
-													cameraControls={false}
-												/>
+												{product._embedded?.["wp:featuredmedia"]?.[0]?.source_url ? (
+													<img
+														src={product._embedded["wp:featuredmedia"][0].source_url}
+														alt={product.title.rendered}
+														className="object-cover"
+													/>
+												) : (
+													<ModelView
+														imageUrl={product.glbUrl}
+														product={product}
+														showWheel={false}
+														cameraControls={false}
+													/>
+												)}
 											</div>
 										</div>
 
@@ -219,7 +227,6 @@ export default function Products() {
 											</span>
 										</div>
 									</Link>
-
 								)
 							})}
 					</div>
