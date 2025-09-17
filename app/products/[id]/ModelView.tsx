@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
-import { RgbaColorPicker } from "react-colorful";
+import { HexColorPicker } from "react-colorful";
 
 const ModelViewer = dynamic(() => import("@/components/custom/ModelViewer"), { ssr: false });
 
@@ -11,19 +11,25 @@ interface ModelViewProps {
 	product?: { title: { rendered: string } };
 	showWheel?: boolean;
 	height?: string;
+	cameraControls?: boolean;
 }
 
-const ModelView: React.FC<ModelViewProps> = ({ imageUrl, height = "h-96" }) => {
+const ModelView: React.FC<ModelViewProps> = ({
+	imageUrl,
+	height = "h-96",
+	showWheel = true,
+	cameraControls = true,
+}) => {
 	const ref = useRef<any>(null);
-	const [color, setColor] = useState({ r: 55, g: 120, b: 230, a: 1 });
+	const [color, setColor] = useState("#3778e6");
 
-	const applyColor = (rgba: { r: number; g: number; b: number; a: number }) => {
+	const applyColor = (hex: string) => {
 		const mv = ref.current;
 		if (!mv) return;
 
-		const r = rgba.r / 255;
-		const g = rgba.g / 255;
-		const b = rgba.b / 255;
+		const r = parseInt(hex.slice(1, 3), 16) / 255;
+		const g = parseInt(hex.slice(3, 5), 16) / 255;
+		const b = parseInt(hex.slice(5, 7), 16) / 255;
 
 		const material = mv.model?.materials?.[0];
 		if (material) {
@@ -34,8 +40,14 @@ const ModelView: React.FC<ModelViewProps> = ({ imageUrl, height = "h-96" }) => {
 	useEffect(() => {
 		const mv = ref.current;
 		if (!mv) return;
-		mv.addEventListener("load", () => applyColor(color));
+
+		mv.onload = () => applyColor(color);
+
+		return () => {
+			mv.onload = null;
+		};
 	}, []);
+
 
 	return (
 		<div className={`relative w-full ${height}`}>
@@ -43,19 +55,27 @@ const ModelView: React.FC<ModelViewProps> = ({ imageUrl, height = "h-96" }) => {
 				ref={ref}
 				src={imageUrl || ""}
 				alt="3D Model"
-				camera-controls
+				camera-controls={cameraControls}
+				auto-rotate
+				rotation-per-second="40deg"
 				className="w-full h-96 flex justify-center"
+				{...(cameraControls && {
+					"min-camera-orbit": "auto auto 1m",
+					"max-camera-orbit": "auto auto 2m",
+				})}
 			/>
 
-			<div className="absolute bottom-4 right-4 bg-white p-2 rounded-xl shadow">
-				<RgbaColorPicker
-					color={color}
-					onChange={(newColor) => {
-						setColor(newColor);
-						applyColor(newColor);
-					}}
-				/>
-			</div>
+			{showWheel && (
+				<div className="absolute bottom-4 right-4 bg-white p-2 rounded-xl shadow">
+					<HexColorPicker
+						color={color}
+						onChange={(newColor) => {
+							setColor(newColor);
+							applyColor(newColor);
+						}}
+					/>
+				</div>
+			)}
 		</div>
 	);
 };

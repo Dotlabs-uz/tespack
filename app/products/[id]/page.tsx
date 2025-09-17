@@ -47,7 +47,7 @@ export default async function ProductPage({
 		<main className="container mx-auto px-4 md:px-0 py-10">
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-10">
 				{imageUrl && (
-					<div className="sticky max-w-2xl flex items-center justify-center bg-white rounded-3xl shadow-[0_0_4px_0_rgba(2,15,35,0.3),0_2px_6px_0_rgba(0,0,0,0.2)]">
+					<div className="sticky max-w-2xl flex items-center justify-center bg-white rounded-3xl shadow-[0_0_4px_0_rgba(2,15,35,0.3),0_2px_6px_0_rgba(0,0,0,0.2)] overflow-visible">
 						<ModelView
 							imageUrl={imageUrl}
 							product={product}
