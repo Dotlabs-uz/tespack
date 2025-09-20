@@ -48,7 +48,7 @@ export default function Home() {
 						</p>
 					</div>
 					<div className="mt-3 md:mt-10 flex justify-center">
-						<Carousel opts={{ loop: true }} plugins={[ Autoplay({delay: 2000, stopOnInteraction: false}),]}>
+						<Carousel opts={{ loop: true }} plugins={[Autoplay({ delay: 6000, stopOnInteraction: false }),]}>
 							<div className="py-10 overflow-hidden mx-auto">
 								<CarouselContent className="flex">
 									{images.map((img, i) => (
@@ -78,13 +78,19 @@ export default function Home() {
 					<p className="text-base md:text-xl max-w-lg mt-4 md:mt-0 text-[#3F3B3A]">
 						{p("description")}
 					</p>
-					<Link href="/products" className="btn mt-4 md:mt-0 px-6 py-2 border border-[#03156B] text-[#03156B] text-sm">
+					<Link
+						href="/products"
+						className="btn mt-4 md:mt-0 px-6 py-2 border border-[#03156B] text-[#03156B] text-sm"
+					>
 						{p("button")}
 					</Link>
 				</div>
 
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
-					<div className="bg-[#03156B] text-white rounded-3xl p-6 md:col-span-2 flex flex-col justify-between relative min-h-[370px]">
+					<Link
+						href="/products"
+						className="bg-[#03156B] text-white rounded-3xl p-6 md:col-span-2 flex flex-col justify-between relative min-h-[370px]"
+					>
 						<div className="flex flex-col h-full">
 							<h3 className="text-2xl md:text-3xl font-bold mb-3 whitespace-pre-line">
 								{p("items.caps_title")}
@@ -118,22 +124,45 @@ export default function Home() {
 								</p>
 							</div>
 						</div>
-					</div>
+					</Link>
 
-					<div className="bg-white text-[#03156B] rounded-3xl p-6 border border-[#EAEAEA] flex flex-col justify-between">
-						<h3 className="text-2xl md:text-3xl font-bold mb-3">{p("items.preforms_title")}</h3>
-						<p className="text-sm md:text-base mt-auto max-w-xs">{p("items.preforms_text")}</p>
-					</div>
+					<Link
+						href="/products"
+						className="bg-white text-[#03156B] rounded-3xl p-6 border border-[#EAEAEA] flex flex-col justify-between"
+					>
+						<h3 className="text-2xl md:text-3xl font-bold mb-3">
+							{p("items.preforms_title")}
+						</h3>
+						<p className="text-sm md:text-base mt-auto max-w-xs">
+							{p("items.preforms_text")}
+						</p>
+					</Link>
 
-					<div className="bg-white text-[#03156B] rounded-2xl p-6 border border-gray-200 flex flex-col justify-between">
-						<h3 className="text-2xl md:text-3xl font-bold mb-3">{p("items.cups_title")}</h3>
-						<p className="text-sm md:text-base mt-auto max-w-xs">{p("items.cups_text")}</p>
-						<button className="btn w-full bg-[#03156B] text-white mt-5 md:hidden" onClick={() => setOpenModal("feedback")}>
+					<Link
+						href="/products"
+						className="bg-white text-[#03156B] rounded-2xl p-6 border border-gray-200 flex flex-col justify-between"
+					>
+						<h3 className="text-2xl md:text-3xl font-bold mb-3">
+							{p("items.cups_title")}
+						</h3>
+						<p className="text-sm md:text-base mt-auto max-w-xs">
+							{p("items.cups_text")}
+						</p>
+						<button
+							className="btn w-full bg-[#03156B] text-white mt-5 md:hidden"
+							onClick={(e) => {
+								e.preventDefault();
+								setOpenModal("feedback");
+							}}
+						>
 							{b("apply")}
 						</button>
-					</div>
+					</Link>
 
-					<div className="bg-[#03156B] text-white rounded-3xl p-6 md:col-span-2 flex flex-col justify-between relative min-h-[370px] overflow-visible">
+					<Link
+						href="/products"
+						className="bg-[#03156B] text-white rounded-3xl p-6 md:col-span-2 flex flex-col justify-between relative min-h-[370px] overflow-visible"
+					>
 						<div className="flex flex-col h-full">
 							<h3 className="text-2xl md:text-3xl font-bold mb-3 whitespace-pre-line">
 								{p("items.bottles_title")}
@@ -153,10 +182,16 @@ export default function Home() {
 								</p>
 							</div>
 						</div>
-						<button className="hidden md:flex btn w-[160px] sm:w-[200px] bg-[#FFFFFF] text-black absolute bottom-6 right-6 z-10" onClick={() => setOpenModal("vacancies")}>
+						<button
+							className="hidden md:flex btn w-[160px] sm:w-[200px] bg-[#FFFFFF] text-black absolute bottom-6 right-6 z-10"
+							onClick={(e) => {
+								e.preventDefault();
+								setOpenModal("vacancies");
+							}}
+						>
 							{b("apply")}
 						</button>
-					</div>
+					</Link>
 				</div>
 			</section>
 

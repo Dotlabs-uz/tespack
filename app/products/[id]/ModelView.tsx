@@ -12,6 +12,7 @@ interface ModelViewProps {
 	showWheel?: boolean;
 	height?: string;
 	cameraControls?: boolean;
+	autoRotate?: boolean;
 }
 
 const ModelView: React.FC<ModelViewProps> = ({
@@ -19,9 +20,10 @@ const ModelView: React.FC<ModelViewProps> = ({
 	height = "h-96",
 	showWheel = true,
 	cameraControls = true,
+	autoRotate = false,
 }) => {
 	const ref = useRef<any>(null);
-	const [color, setColor] = useState("#3778e6");
+	const [color, setColor] = useState("#ffffff");
 
 	const applyColor = (hex: string) => {
 		const mv = ref.current;
@@ -59,6 +61,7 @@ const ModelView: React.FC<ModelViewProps> = ({
 				auto-rotate
 				rotation-per-second="40deg"
 				className="w-full h-96 flex justify-center"
+				{...(autoRotate && { "auto-rotate": false })}
 				{...(cameraControls && {
 					"min-camera-orbit": "auto auto 1m",
 					"max-camera-orbit": "auto auto 2m",

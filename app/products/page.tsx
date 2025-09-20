@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { FaArrowRightLong, FaArrowLeft } from "react-icons/fa6"
+import { FaArrowRightLong } from "react-icons/fa6"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 import { Checkbox } from "@/components/ui/checkbox"
@@ -12,14 +12,11 @@ import { useTranslations } from "next-intl"
 import Image from "next/image"
 import ModelView from "./[id]/ModelView"
 
-
 const WP_API_URL = process.env.NEXT_PUBLIC_WORDPRESS_URL
-const ITEMS_PER_PAGE = 12
 
 export default function Products() {
 	const [products, setProducts] = useState<any[]>([])
 	const [loading, setLoading] = useState(true)
-	const [currentPage, setCurrentPage] = useState(1)
 	const [currentLang, setCurrentLang] = useState("ru")
 
 	const t = useTranslations("Products")
@@ -57,10 +54,6 @@ export default function Products() {
 		return item.link?.includes(langSuffix)
 	})
 
-	const totalPages = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE)
-	const startIndex = (currentPage - 1) * ITEMS_PER_PAGE
-	const paginatedProducts = filteredProducts.slice(startIndex, startIndex + ITEMS_PER_PAGE)
-
 	const categoryOptions = [
 		"noncarbonated",
 		"sensitive",
@@ -81,34 +74,10 @@ export default function Products() {
 				</div>
 				<div className="flex-1 relative flex flex-col md:flex-row justify-center items-center mt-8 md:mt-0 min-h-[300px] overflow-visible">
 					<div className="relative flex flex-col md:flex-row justify-center items-center w-full">
-						<Image
-							src="/BottleCap3.webp"
-							alt=""
-							width={240}
-							height={111}
-							className="absolute top-2 left-[35%] sm:left-[30%] xs:left-[25%] -translate-x-1/2 object-contain z-30 w-[150px] sm:w-[180px] md:w-[240px] h-[120px] sm:h-[150px] md:h-[180px]"
-						/>
-						<Image
-							src="/BottleCap2.webp"
-							alt=""
-							width={210}
-							height={114}
-							className="absolute left-[15%] sm:left-[20%] -translate-x-1/2 object-contain -rotate-10 z-10 w-[160px] sm:w-[180px] md:w-[210px] h-[140px] sm:h-[160px] md:h-[240px]"
-						/>
-						<Image
-							src="/BottleCap.webp"
-							alt=""
-							width={210}
-							height={151}
-							className="absolute left-[45%] sm:left-[45%] xs:left-[40%] -translate-x-1/2 object-contain rotate-9 z-20 w-[130px] sm:w-[200px] md:w-[210px] h-[150px] sm:h-[200px] md:h-[250px]"
-						/>
-						<Image
-							src="/Bottles.webp"
-							alt=""
-							width={300}
-							height={200}
-							className="absolute right-[5%] sm:right-[10%] xs:right-[15%] w-[150px] sm:w-[200px] md:w-[250px]"
-						/>
+						<Image src="/BottleCap3.webp" alt="" width={240} height={111} className="absolute top-2 left-[35%] sm:left-[30%] xs:left-[25%] -translate-x-1/2 object-contain z-30 w-[150px] sm:w-[180px] md:w-[240px] h-[120px] sm:h-[150px] md:h-[180px]" />
+						<Image src="/BottleCap2.webp" alt="" width={210} height={114} className="absolute left-[15%] sm:left-[20%] -translate-x-1/2 object-contain -rotate-10 z-10 w-[160px] sm:w-[180px] md:w-[210px] h-[140px] sm:h-[160px] md:h-[240px]" />
+						<Image src="/BottleCap.webp" alt="" width={210} height={151} className="absolute left-[45%] sm:left-[45%] xs:left-[40%] -translate-x-1/2 object-contain rotate-9 z-20 w-[130px] sm:w-[200px] md:w-[210px] h-[150px] sm:h-[200px] md:h-[250px]" />
+						<Image src="/Bottles.webp" alt="" width={300} height={200} className="absolute right-[5%] sm:right-[10%] xs:right-[15%] w-[150px] sm:w-[200px] md:w-[250px]" />
 					</div>
 				</div>
 			</section>
@@ -186,78 +155,45 @@ export default function Products() {
 				<section className="col-span-12 md:col-span-9">
 					<div className="grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6 min-h-[400px]">
 						{loading
-							? Array.from({ length: ITEMS_PER_PAGE }).map((_, i) => (
+							? Array.from({ length: 12 }).map((_, i) => (
 								<div key={i} className="flex flex-col w-full animate-pulse gap-2">
 									<Skeleton className="w-full aspect-square rounded-3xl bg-gray-200/70" />
 									<Skeleton className="h-6 w-3/4 rounded bg-gray-200/70" />
 								</div>
 							))
-							: paginatedProducts.map((product: any) => {
-								return (
-									<Link
-										key={product.id}
-										href={`/products/${product.id}`}
-										className="flex flex-col w-full cursor-pointer"
-									>
-										<div className="w-full aspect-square flex items-center justify-center bg-white rounded-3xl shadow-[0_0_4px_0_rgba(2,15,35,0.3),0_2px_6px_0_rgba(0,0,0,0.2)]">
-											<div className="w-full aspect-square flex items-center justify-center bg-white rounded-3xl shadow-[0_0_4px_0_rgba(2,15,35,0.3),0_2px_6px_0_rgba(0,0,0,0.2)]">
-												{product._embedded?.["wp:featuredmedia"]?.[0]?.source_url ? (
-													<img
-														src={product._embedded["wp:featuredmedia"][0].source_url}
-														alt={product.title.rendered}
-														className="object-cover"
-													/>
-												) : (
-													<ModelView
-														imageUrl={product.glbUrl}
-														product={product}
-														showWheel={false}
-														cameraControls={false}
-													/>
-												)}
-											</div>
-										</div>
+							: filteredProducts.map((product: any) => (
+								<Link
+									key={product.id}
+									href={`/products/${product.id}`}
+									className="flex flex-col w-full cursor-pointer"
+								>
+									<div className="w-full aspect-square flex items-center justify-center bg-white rounded-3xl shadow">
+										{product._embedded?.["wp:featuredmedia"]?.[0]?.source_url ? (
+											<img
+												src={product._embedded["wp:featuredmedia"][0].source_url}
+												alt={product.title.rendered}
+												className="object-cover"
+											/>
+										) : (
+											<ModelView
+												imageUrl={product.glbUrl}
+												product={product}
+												showWheel={false}
+												cameraControls={false}
+											/>
+										)}
+									</div>
 
-										<div className="flex items-center justify-between mt-2">
-											<span className="text-[#03156B] text-lg font-semibold">
-												{product.title.rendered}
-											</span>
-											<span className="text-[#062BD9] text-2xl">
-												<FaArrowRightLong />
-											</span>
-										</div>
-									</Link>
-								)
-							})}
-					</div>
-
-					<div className="flex justify-center items-center gap-2 mt-8">
-						<button
-							onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
-							disabled={currentPage === 1}
-							className="px-3 py-1 bg-[#03156B] text-white rounded disabled:opacity-50 cursor-pointer"
-							title={t("pagination.previous")}
-						>
-							<FaArrowLeft />
-						</button>
-						{Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-							<button
-								key={page}
-								onClick={() => setCurrentPage(page)}
-								className={`px-3 py-1 rounded ${page === currentPage ? "bg-[#062BD9] text-white" : "bg-gray-200"
-									} cursor-pointer`}
-							>
-								{page}
-							</button>
-						))}
-						<button
-							onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
-							disabled={currentPage === totalPages}
-							className="px-3 py-1 bg-[#03156B] text-white rounded disabled:opacity-50 cursor-pointer"
-							title={t("pagination.next")}
-						>
-							<FaArrowRightLong />
-						</button>
+									<div className="flex items-center justify-between mt-2">
+										<span className="text-[#03156B] text-lg font-semibold">
+											{product.title.rendered}
+										</span>
+										<span className="text-[#062BD9] text-2xl">
+											<FaArrowRightLong />
+										</span>
+									</div>
+								</Link>
+							))}
 					</div>
 				</section>
 			</main>
