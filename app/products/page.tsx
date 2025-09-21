@@ -16,17 +16,28 @@ const WP_API_URL = process.env.NEXT_PUBLIC_WORDPRESS_URL
 
 export default function Products() {
 	const [products, setProducts] = useState<any[]>([])
+	const [categories, setCategories] = useState<any[]>([])
+	const [selectedCategories, setSelectedCategories] = useState<number[]>([])
 	const [loading, setLoading] = useState(true)
 	const [currentLang, setCurrentLang] = useState("ru")
 
 	const t = useTranslations("Products")
 
 	useEffect(() => {
-		async function fetchProducts() {
+		async function fetchData() {
 			try {
-				const res = await fetch(`${WP_API_URL}/products?_embed&per_page=100`)
-				const data = await res.json()
-				setProducts(data)
+				const [productsRes, categoriesRes] = await Promise.all([
+					fetch(`${WP_API_URL}/products?_embed&per_page=100`),
+					fetch(`${WP_API_URL}/product_category?per_page=100`),
+				])
+
+				const [productsData, categoriesData] = await Promise.all([
+					productsRes.json(),
+					categoriesRes.json(),
+				])
+
+				setProducts(productsData)
+				setCategories(categoriesData)
 			} catch (e) {
 				console.error(e)
 			} finally {
@@ -34,7 +45,7 @@ export default function Products() {
 			}
 		}
 
-		fetchProducts()
+		fetchData()
 
 		const langFromCookie = document.cookie.match(/locale=(\w{2,5})/)?.[1]
 		if (langFromCookie) setCurrentLang(langFromCookie)
@@ -46,7 +57,7 @@ export default function Products() {
 		uz: "/uz/",
 	}
 
-	const filteredProducts = products.filter((item) => {
+	let filteredProducts = products.filter((item) => {
 		const langSuffix = langMap[currentLang]
 		if (!langSuffix) {
 			return !item.link?.includes("/en/") && !item.link?.includes("/uz/")
@@ -54,16 +65,17 @@ export default function Products() {
 		return item.link?.includes(langSuffix)
 	})
 
-	const categoryOptions = [
-		"noncarbonated",
-		"sensitive",
-		"sparkling",
-		"low_calorie",
-		"organic",
-		"sugar_free",
-		"flavored",
-		"caffeine_free",
-	]
+	if (selectedCategories.length > 0) {
+		filteredProducts = filteredProducts.filter((product) =>
+			product.product_category?.some((catId: number) => selectedCategories.includes(catId))
+		)
+	}
+
+	const toggleCategory = (id: number) => {
+		setSelectedCategories((prev) =>
+			prev.includes(id) ? prev.filter((c) => c !== id) : [...prev, id]
+		)
+	}
 
 	return (
 		<div>
@@ -85,37 +97,24 @@ export default function Products() {
 			<main className="container mx-auto grid grid-cols-12 gap-6 mt-12 px-4 md:px-0">
 				<aside className="col-span-12 md:col-span-3 pr-4">
 					<div className="flex flex-col gap-6 md:gap-8">
-						<div className="flex flex-col gap-8 md:hidden">
-							<div className="flex flex-col gap-3">
-								<h2 className="text-[#03156B] text-xl font-bold">{t("pet_containers")}</h2>
-								<Carousel className="w-full">
-									<CarouselContent className="flex">
-										{categoryOptions.map((option, i) => (
-											<CarouselItem key={i} className="pl-2 basis-auto shrink-0 snap-center">
-												<label className="flex items-center gap-2 text-sm rounded-xl px-3 py-2">
-													<Checkbox className="border-2 border-[#03156B] data-[state=checked]:bg-[#03156B] data-[state=checked]:text-white" />
-													{t(`categories.${option}`)}
-												</label>
-											</CarouselItem>
-										))}
-									</CarouselContent>
-								</Carousel>
-							</div>
-							<div className="flex flex-col gap-3">
-								<h2 className="text-[#03156B] text-xl font-bold">{t("polymer_closures")}</h2>
-								<Carousel className="w-full">
-									<CarouselContent className="flex">
-										{categoryOptions.slice(0, 4).map((option, i) => (
-											<CarouselItem key={i} className="pl-2 basis-auto shrink-0 snap-center">
-												<label className="flex items-center gap-2 text-sm rounded-xl px-3 py-2">
-													<Checkbox className="border-2 border-[#03156B] data-[state=checked]:bg-[#03156B] data-[state=checked]:text-white" />
-													{t(`categories.${option}`)}
-												</label>
-											</CarouselItem>
-										))}
-									</CarouselContent>
-								</Carousel>
-							</div>
+						<div className="flex flex-col gap-3 md:hidden">
+							<h2 className="text-[#03156B] text-xl font-bold">{t("pet_containers")}</h2>
+							<Carousel className="w-full">
+								<CarouselContent className="flex">
+									{categories.map((cat) => (
+										<CarouselItem key={cat.id} className="pl-2 basis-auto shrink-0 snap-center">
+											<label className="flex items-center gap-2 text-sm rounded-xl px-3 py-2 cursor-pointer">
+												<Checkbox
+													checked={selectedCategories.includes(cat.id)}
+													onCheckedChange={() => toggleCategory(cat.id)}
+													className="border-2 border-[#03156B] data-[state=checked]:bg-[#03156B] data-[state=checked]:text-white cursor-pointer"
+												/>
+												{cat.name}
+											</label>
+										</CarouselItem>
+									))}
+								</CarouselContent>
+							</Carousel>
 						</div>
 
 						<div className="hidden md:flex md:flex-col gap-4 overflow-visible">
@@ -125,25 +124,14 @@ export default function Products() {
 									<MdKeyboardArrowDown className="h-5 w-5 text-[#03156B] transition-transform group-data-[state=open]:rotate-180 cursor-pointer" />
 								</CollapsibleTrigger>
 								<CollapsibleContent className="mt-3 flex flex-col gap-2 text-left">
-									{categoryOptions.map((option, i) => (
-										<label key={i} className="flex items-center gap-2 text-sm text-left">
-											<Checkbox className="border-2 border-[#03156B] data-[state=checked]:bg-[#03156B] data-[state=checked]:text-white" />
-											{t(`categories.${option}`)}
-										</label>
-									))}
-								</CollapsibleContent>
-							</Collapsible>
-
-							<Collapsible className="min-w-[250px] shrink-0 mb-6">
-								<CollapsibleTrigger className="flex items-center justify-between w-full group">
-									<h2 className="text-[#03156B] text-xl font-bold cursor-pointer text-left">{t("polymer_closures")}</h2>
-									<MdKeyboardArrowDown className="h-5 w-5 text-[#03156B] transition-transform group-data-[state=open]:rotate-180 cursor-pointer" />
-								</CollapsibleTrigger>
-								<CollapsibleContent className="mt-3 flex flex-col gap-2 text-left">
-									{categoryOptions.slice(0, 4).map((option, i) => (
-										<label key={i} className="flex items-center gap-2 text-sm text-left">
-											<Checkbox className="border-2 border-[#03156B] data-[state=checked]:bg-[#03156B] data-[state=checked]:text-white" />
-											{t(`categories.${option}`)}
+									{categories.map((cat) => (
+										<label key={cat.id} className="flex items-center gap-2 text-sm text-left cursor-pointer">
+											<Checkbox
+												checked={selectedCategories.includes(cat.id)}
+												onCheckedChange={() => toggleCategory(cat.id)}
+												className="border-2 border-[#03156B] data-[state=checked]:bg-[#03156B] data-[state=checked]:text-white  cursor-pointer"
+											/>
+											{cat.name}
 										</label>
 									))}
 								</CollapsibleContent>

@@ -294,22 +294,7 @@
     "Products": {
         "title": "ПРОДУКЦИЯ TESPACK",
         "description": "Пластиковые изделия, полимерные покрытия, PET-преформы и многое другое в одном каталоге.",
-        "pet_containers": "ПЭТ-Контейнеры",
-        "polymer_closures": "Полимерные закрытия",
-        "categories": {
-            "noncarbonated": "Негазированные",
-            "sensitive": "Чувствительные",
-            "sparkling": "Газированные",
-            "low_calorie": "Низкокалорийные",
-            "organic": "Органические",
-            "sugar_free": "Без сахара",
-            "flavored": "Ароматизированные",
-            "caffeine_free": "Без кофеина"
-        },
-        "pagination": {
-            "previous": "Предыдущая",
-            "next": "Следующая"
-        }
+        "pet_containers": "ПЭТ-Контейнеры"
     },
     "Product": {
         "features": "Возможности",
