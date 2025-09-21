@@ -11,6 +11,7 @@ import { Skeleton } from "@/components/ui/skeleton"
 import { useTranslations } from "next-intl"
 import Image from "next/image"
 import ModelView from "./[id]/ModelView"
+import { useSearchParams } from "next/navigation"
 
 const WP_API_URL = process.env.NEXT_PUBLIC_WORDPRESS_URL
 
@@ -22,6 +23,8 @@ export default function Products() {
 	const [currentLang, setCurrentLang] = useState("ru")
 
 	const t = useTranslations("Products")
+	const searchParams = useSearchParams()
+	const categoryFromQuery = searchParams.get("category")
 
 	useEffect(() => {
 		async function fetchData() {
@@ -50,6 +53,15 @@ export default function Products() {
 		const langFromCookie = document.cookie.match(/locale=(\w{2,5})/)?.[1]
 		if (langFromCookie) setCurrentLang(langFromCookie)
 	}, [])
+
+	useEffect(() => {
+		if (categoryFromQuery) {
+			const catId = parseInt(categoryFromQuery, 10)
+			if (!isNaN(catId)) {
+				setSelectedCategories([catId])
+			}
+		}
+	}, [categoryFromQuery, categories])
 
 	const langMap: Record<string, string | null> = {
 		ru: null,

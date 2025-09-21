@@ -88,7 +88,7 @@ export default function Home() {
 
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
 					<Link
-						href="/products"
+						href={{ pathname: "/products", query: { category: 75 } }}
 						className="bg-[#03156B] text-white rounded-3xl p-6 md:col-span-2 flex flex-col justify-between relative min-h-[370px]"
 					>
 						<div className="flex flex-col h-full">
@@ -160,7 +160,7 @@ export default function Home() {
 					</Link>
 
 					<Link
-						href="/products"
+						href={{ pathname: "/products", query: { category: 69 } }}
 						className="bg-[#03156B] text-white rounded-3xl p-6 md:col-span-2 flex flex-col justify-between relative min-h-[370px] overflow-visible"
 					>
 						<div className="flex flex-col h-full">
