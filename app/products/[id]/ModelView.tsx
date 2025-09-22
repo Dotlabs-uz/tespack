@@ -58,8 +58,6 @@ const ModelView: React.FC<ModelViewProps> = ({
 				src={imageUrl || ""}
 				alt="3D Model"
 				camera-controls={cameraControls}
-				auto-rotate
-				rotation-per-second="40deg"
 				className="w-full h-96 flex justify-center"
 				{...(autoRotate && { "auto-rotate": false })}
 				{...(cameraControls && {

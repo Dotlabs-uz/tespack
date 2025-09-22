@@ -51,7 +51,6 @@ export default async function ProductPage({
 						<ModelView
 							imageUrl={imageUrl}
 							product={product}
-							autoRotate
 							height="h-150"
 						/>
 					</div>
