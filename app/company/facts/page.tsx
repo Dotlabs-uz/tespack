@@ -3,9 +3,25 @@
 import SubHeader from "@/components/custom/SubHeader";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 export default function FactsPage() {
     const f = useTranslations("Company.facts");
+
+    const logos = [
+        { src: "/PureMilkyLogo.webp", alt: "Puremilk", w: 100 },
+        { src: "/SofinLogo.webp", alt: "Sofin", w: 80 },
+        { src: "/MusaffoLogo.webp", alt: "Musaffo", w: 100 },
+        { src: "/AgroBravoLogo.webp", alt: "Agro Bravo", w: 100 },
+        { src: "/SaxovatLogo.webp", alt: "Saxovat", w: 100 },
+        { src: "/EverLogo.webp", alt: "Ever", w: 80 },
+        { src: "/SayhunLogo.webp", alt: "Sayhun", w: 100 },
+    ];
 
     return (
         <div>
@@ -46,14 +62,38 @@ export default function FactsPage() {
                         {f("partners_text")}
                     </p>
 
-                    <div className="flex flex-wrap justify-around items-center gap-8 md:gap-0">
-                        <Image src="/PureMilkyLogo.webp" alt="Puremilk" width={100} height={60} />
-                        <Image src="/SofinLogo.webp" alt="Sofin" width={80} height={60} />
-                        <Image src="/MusaffoLogo.webp" alt="Musaffo" width={100} height={60} />
-                        <Image src="/AgroBravoLogo.webp" alt="Agro Bravo" width={100} height={60} />
-                        <Image src="/SaxovatLogo.webp" alt="Saxovat" width={100} height={60} />
-                        <Image src="/EverLogo.webp" alt="Ever" width={80} height={60} />
-                        <Image src="/SayhunLogo.webp" alt="Sayhun" width={100} height={60} />
+                    <div className="md:hidden">
+                        <Carousel
+                            opts={{ loop: true }}
+                            plugins={[Autoplay({ delay: 6000, stopOnInteraction: false })]}
+                        >
+                            <CarouselContent>
+                                {logos.map((logo, i) => (
+                                    <CarouselItem key={i} className="basis-1/3 flex justify-center">
+                                        <Image
+                                            src={logo.src}
+                                            alt={logo.alt}
+                                            width={logo.w}
+                                            height={60}
+                                            className="object-contain"
+                                        />
+                                    </CarouselItem>
+                                ))}
+                            </CarouselContent>
+                        </Carousel>
+                    </div>
+
+                    <div className="hidden md:flex flex-wrap justify-around items-center gap-8">
+                        {logos.map((logo, i) => (
+                            <Image
+                                key={i}
+                                src={logo.src}
+                                alt={logo.alt}
+                                width={logo.w}
+                                height={60}
+                                className="object-contain"
+                            />
+                        ))}
                     </div>
                 </div>
 
