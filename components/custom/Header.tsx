@@ -13,10 +13,13 @@ import {
     NavigationMenuItem,
     NavigationMenuList,
     NavigationMenuTrigger,
+    NavigationMenuLink,
 } from "@/components/ui/navigation-menu";
 import { useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import Forms from "./Forms";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 export default function Header() {
     const [query, setQuery] = useState("");
@@ -120,9 +123,63 @@ export default function Header() {
                         />
                     </div> */}
 
-                    <nav className="flex gap-8 text-sm">
+                    <nav className="flex items-center gap-8 text-sm">
                         <Link href="/">{t("menu.home")}</Link>
-                        <Link href="/products">{t("menu.products")}</Link>
+
+                        <NavigationMenu>
+                            <NavigationMenuList>
+                                <NavigationMenuItem>
+                                    <NavigationMenuTrigger className="cursor-pointer bg-transparent border-0 shadow-none px-0 py-0 h-auto text-sm font-normal">
+                                        <Link
+                                            href="/products"
+                                            className="px-3 py-2 cursor-pointer"
+                                        >
+                                            {t("menu.products")}
+                                        </Link>
+                                    </NavigationMenuTrigger>
+                                    <NavigationMenuContent className="p-3 bg-white text-[#03156B] border-0">
+                                        <div className="grid gap-3 w-56 text-[#03156B] font-bold">
+                                            <NavigationMenuLink asChild>
+                                                <Link
+                                                    href={{ pathname: "/products", query: { category: 69 } }}
+                                                    className="block px-2 py-1 hover:bg-gray-100 rounded-md"
+                                                >
+                                                    {t("menu.categories.petPreforms")}
+                                                </Link>
+                                            </NavigationMenuLink>
+
+                                            <NavigationMenuLink asChild>
+                                                <Link
+                                                    href={{ pathname: "/products", query: { category: 75 } }}
+                                                    className="block px-2 py-1 hover:bg-gray-100 rounded-md"
+                                                >
+                                                    {t("menu.categories.polymerClosures")}
+                                                </Link>
+                                            </NavigationMenuLink>
+
+                                            <NavigationMenuLink asChild>
+                                                <Link
+                                                    href={{ pathname: "/products", query: { category: 76 } }}
+                                                    className="block px-2 py-1 hover:bg-gray-100 rounded-md"
+                                                >
+                                                    {t("menu.categories.petContainers")}
+                                                </Link>
+                                            </NavigationMenuLink>
+
+                                            <NavigationMenuLink asChild>
+                                                <Link
+                                                    href={{ pathname: "/products", query: { category: 77 } }}
+                                                    className="block px-2 py-1 hover:bg-gray-100 rounded-md"
+                                                >
+                                                    {t("menu.categories.plasticProducts")}
+                                                </Link>
+                                            </NavigationMenuLink>
+                                        </div>
+                                    </NavigationMenuContent>
+                                </NavigationMenuItem>
+                            </NavigationMenuList>
+                        </NavigationMenu>
+
                         <Link href="/company">{t("menu.about")}</Link>
                         <Link href="/features">{t("menu.features")}</Link>
                         <Link href="/contacts">{t("menu.contacts")}</Link>
@@ -201,9 +258,45 @@ export default function Header() {
                         <Link href="/" onClick={() => setMenuOpen(false)}>
                             {t("menu.home")}
                         </Link>
-                        <Link href="/products" onClick={() => setMenuOpen(false)}>
-                            {t("menu.products")}
-                        </Link>
+
+                        <Collapsible>
+                            <CollapsibleTrigger className="flex w-full justify-between items-center cursor-pointer text-[#03156B] group">
+                                {t("menu.products")}
+                                <MdKeyboardArrowDown className="h-5 w-5 text-[#03156B] transition-transform group-data-[state=open]:rotate-180" />
+                            </CollapsibleTrigger>
+
+                            <CollapsibleContent className="mt-2 ml-3 flex flex-col gap-2 text-sm text-[#03156B]">
+                                <Link
+                                    href={{ pathname: "/products", query: { category: 69 } }}
+                                    onClick={() => setMenuOpen(false)}
+                                    className="px-2 py-1 hover:bg-gray-100 rounded-md"
+                                >
+                                    {t("menu.categories.petPreforms")}
+                                </Link>
+                                <Link
+                                    href={{ pathname: "/products", query: { category: 75 } }}
+                                    onClick={() => setMenuOpen(false)}
+                                    className="px-2 py-1 hover:bg-gray-100 rounded-md"
+                                >
+                                    {t("menu.categories.polymerClosures")}
+                                </Link>
+                                <Link
+                                    href={{ pathname: "/products", query: { category: 76 } }}
+                                    onClick={() => setMenuOpen(false)}
+                                    className="px-2 py-1 hover:bg-gray-100 rounded-md"
+                                >
+                                    {t("menu.categories.petContainers")}
+                                </Link>
+                                <Link
+                                    href={{ pathname: "/products", query: { category: 77 } }}
+                                    onClick={() => setMenuOpen(false)}
+                                    className="px-2 py-1 hover:bg-gray-100 rounded-md"
+                                >
+                                    {t("menu.categories.plasticProducts")}
+                                </Link>
+                            </CollapsibleContent>
+                        </Collapsible>
+
                         <Link href="/company" onClick={() => setMenuOpen(false)}>
                             {t("menu.about")}
                         </Link>
@@ -215,7 +308,7 @@ export default function Header() {
                         </Link>
                     </nav>
 
-                    <button className="btn w-full mt-6 bg-[#03156B] text-white" onClick={() => {setOpenModal("feedback");  setMenuOpen(false)}}>
+                    <button className="btn w-full mt-6 bg-[#03156B] text-white" onClick={() => { setOpenModal("feedback"); setMenuOpen(false) }}>
                         {b("apply")}
                     </button>
                 </div>

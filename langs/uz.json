@@ -6,7 +6,13 @@
             "about": "Kompaniya haqida",
             "news": "Yangiliklar",
             "features": "Imkoniyatlar",
-            "contacts": "Aloqa"
+            "contacts": "Aloqa",
+            "categories": {
+                "petPreforms": "PET Preformalar",
+                "polymerClosures": "Polimer qopqoqlar",
+                "petContainers": "PET konteynerlar",
+                "plasticProducts": "Plastmassa mahsulotlari"
+            }
         }
     },
     "Buttons": {

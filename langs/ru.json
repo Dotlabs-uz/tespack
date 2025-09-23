@@ -6,7 +6,13 @@
             "about": "О компании",
             "news": "Новости",
             "features": "Возможности",
-            "contacts": "Контакты"
+            "contacts": "Контакты",
+            "categories": {
+                "petPreforms": "ПЭТ-Преформы",
+                "polymerClosures": "Полимерные закрытия",
+                "petContainers": "ПЭТ-Контейнеры",
+                "plasticProducts": "Пластиковые изделия"
+            }
         }
     },
     "Buttons": {

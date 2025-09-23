@@ -6,7 +6,13 @@
             "about": "About Us",
             "news": "News",
             "features": "Features",
-            "contacts": "Contacts"
+            "contacts": "Contacts",
+            "categories": {
+                "petPreforms": "PET Preforms",
+                "polymerClosures": "Polymer Closures",
+                "petContainers": "PET Containers",
+                "plasticProducts": "Plastic Products"
+            }
         }
     },
     "Buttons": {
