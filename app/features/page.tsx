@@ -1,19 +1,11 @@
 "use client";
 
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/components/ui/carousel";
 import Image from "next/image";
 import { LuMilk } from "react-icons/lu";
 import { FiPackage, FiThermometer } from "react-icons/fi";
 import { GoClock } from "react-icons/go";
 import { useTranslations } from "next-intl";
 import React from "react";
-import Autoplay from "embla-carousel-autoplay"
 
 const images_first = [
     { src: "/Features1.webp", alt: "features" },
@@ -56,47 +48,38 @@ export default function Features() {
 
             <main className="container mx-auto px-4 md:px-0 py-10">
                 <section className="mb-12">
-                    <Carousel opts={{ loop: true }} plugins={[ Autoplay({delay: 6000, stopOnInteraction: false}),]}>
-                        <div className="flex flex-col xl:flex-row justify-between items-start xl:gap-8">
-                            <div className="max-w-xl">
-                                <h2 className="text-4xl md:text-5xl font-bold text-[#03156B] uppercase mb-4">
-                                    {t("overview.title")}
-                                </h2>
-                                <p className="text-base md:text-lg mb-6">
-                                    {t("overview.text1")}
-                                </p>
-                            </div>
+                    <div className="flex flex-col xl:flex-row justify-between items-start xl:gap-8">
+                        <div className="max-w-xl">
+                            <h2 className="text-4xl md:text-5xl font-bold text-[#03156B] uppercase mb-4">
+                                {t("overview.title")}
+                            </h2>
+                            <p className="text-base md:text-lg mb-6">
+                                {t("overview.text1")}
+                            </p>
+                        </div>
 
-                            <div className="max-w-xl mb-8 xl:mb-0">
-                                <p className="text-base md:text-lg">
-                                    {t("overview.text2")}
-                                </p>
-                            </div>
+                        <div className="max-w-xl mb-8 xl:mb-0">
+                            <p className="text-base md:text-lg">
+                                {t("overview.text2")}
+                            </p>
+                        </div>
+                    </div>
 
-                            <div className="flex max-w-xl">
-                                <div className="flex gap-2">
-                                    <CarouselPrevious className="static flex items-center justify-center w-[71px] h-[37px] !bg-[#03156B] border-none rounded-xl cursor-pointer" />
-                                    <CarouselNext className="static flex items-center justify-center w-[71px] h-[37px] !bg-[#03156B] border-none rounded-xl cursor-pointer" />
+                    <div className="relative py-10 overflow-hidden mx-auto">
+                        <div className="flex gap-4 animate-marquee">
+                            {[...images_first, ...images_first].map((img, i) => (
+                                <div key={i} className="shrink-0">
+                                    <Image
+                                        src={img.src}
+                                        alt={img.alt}
+                                        width={645}
+                                        height={379}
+                                        className="rounded-[12px] w-[645px] h-[379px] object-cover"
+                                    />
                                 </div>
-                            </div>
+                            ))}
                         </div>
-
-                        <div className="py-10 overflow-hidden">
-                            <CarouselContent className="flex">
-                                {images_first.map((img, i) => (
-                                    <CarouselItem key={i} className="shrink-0 basis-full md:basis-1/2">
-                                        <Image
-                                            src={img.src}
-                                            alt={img.alt}
-                                            width={645}
-                                            height={379}
-                                            className="rounded-[12px] w-[645px] h-[379px] object-cover opacity-100"
-                                        />
-                                    </CarouselItem>
-                                ))}
-                            </CarouselContent>
-                        </div>
-                    </Carousel>
+                    </div>
                 </section>
 
                 <section>
@@ -200,28 +183,21 @@ export default function Features() {
                         })}
                     </div>
 
-                    <Carousel opts={{ loop: true }} plugins={[ Autoplay({delay: 6000, stopOnInteraction: false}),]}>
-                        <div className="py-10 overflow-hidden mx-auto">
-                            <CarouselContent className="flex">
-                                {images_second.map((img, i) => (
-                                    <CarouselItem key={i} className="shrink-0 basis-full md:basis-1/2">
-                                        <Image
-                                            src={img.src}
-                                            alt={img.alt}
-                                            width={645}
-                                            height={379}
-                                            className="rounded-[12px] w-[645px] h-[379px] object-cover opacity-100"
-                                        />
-                                    </CarouselItem>
-                                ))}
-                            </CarouselContent>
-
-                            <div className="flex justify-center gap-4 mt-10">
-                                <CarouselPrevious className="static flex items-center justify-center w-[71px] h-[37px] !bg-[#03156B] text-white border-none rounded-xl cursor-pointer" />
-                                <CarouselNext className="static flex items-center justify-center w-[71px] h-[37px] !bg-[#03156B] text-white border-none rounded-xl cursor-pointer" />
-                            </div>
+                    <div className="relative py-10 overflow-hidden mx-auto">
+                        <div className="flex gap-4 animate-marquee">
+                            {[...images_second, ...images_second].map((img, i) => (
+                                <div key={i} className="shrink-0">
+                                    <Image
+                                        src={img.src}
+                                        alt={img.alt}
+                                        width={645}
+                                        height={379}
+                                        className="rounded-[12px] w-[645px] h-[379px] object-cover"
+                                    />
+                                </div>
+                            ))}
                         </div>
-                    </Carousel>
+                    </div>
                 </section>
             </main>
         </div>

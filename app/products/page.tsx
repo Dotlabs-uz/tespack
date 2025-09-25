@@ -33,12 +33,10 @@ export default function Products() {
 					fetch(`${WP_API_URL}/products?_embed&per_page=100`),
 					fetch(`${WP_API_URL}/product_category?per_page=100`),
 				])
-
 				const [productsData, categoriesData] = await Promise.all([
 					productsRes.json(),
 					categoriesRes.json(),
 				])
-
 				setProducts(productsData)
 				setCategories(categoriesData)
 			} catch (e) {
@@ -47,9 +45,7 @@ export default function Products() {
 				setLoading(false)
 			}
 		}
-
 		fetchData()
-
 		const langFromCookie = document.cookie.match(/locale=(\w{2,5})/)?.[1]
 		if (langFromCookie) setCurrentLang(langFromCookie)
 	}, [])
@@ -63,19 +59,7 @@ export default function Products() {
 		}
 	}, [categoryFromQuery, categories])
 
-	const langMap: Record<string, string | null> = {
-		ru: null,
-		en: "/en/",
-		uz: "/uz/",
-	}
-
-	let filteredProducts = products.filter((item) => {
-		const langSuffix = langMap[currentLang]
-		if (!langSuffix) {
-			return !item.link?.includes("/en/") && !item.link?.includes("/uz/")
-		}
-		return item.link?.includes(langSuffix)
-	})
+	let filteredProducts = products
 
 	if (selectedCategories.length > 0) {
 		filteredProducts = filteredProducts.filter((product) =>
@@ -87,6 +71,12 @@ export default function Products() {
 		setSelectedCategories((prev) =>
 			prev.includes(id) ? prev.filter((c) => c !== id) : [...prev, id]
 		)
+	}
+
+	const getTranslatedTitle = (product: any) => {
+		if (currentLang === "uz") return product.title_uz || product.title.rendered
+		if (currentLang === "en") return product.title_en || product.title.rendered
+		return product.title.rendered
 	}
 
 	return (
@@ -171,7 +161,7 @@ export default function Products() {
 										{product._embedded?.["wp:featuredmedia"]?.[0]?.source_url ? (
 											<img
 												src={product._embedded["wp:featuredmedia"][0].source_url}
-												alt={product.title.rendered}
+												alt={getTranslatedTitle(product)}
 												className="object-cover"
 											/>
 										) : (
@@ -183,10 +173,9 @@ export default function Products() {
 											/>
 										)}
 									</div>
-
 									<div className="flex items-center justify-between mt-2">
 										<span className="text-[#03156B] text-lg font-semibold">
-											{product.title.rendered}
+											{getTranslatedTitle(product)}
 										</span>
 										<span className="text-[#062BD9] text-2xl">
 											<FaArrowRightLong />

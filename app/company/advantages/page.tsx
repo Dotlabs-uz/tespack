@@ -3,8 +3,11 @@
 import SubHeader from "@/components/custom/SubHeader";
 import { useTranslations } from "next-intl";
 import { LuMilk } from "react-icons/lu";
-import { FiPackage } from "react-icons/fi";
 import { PiRecycle } from "react-icons/pi";
+import { AiOutlineSolution } from "react-icons/ai";
+import { FaShieldAlt } from "react-icons/fa";
+import { FaShippingFast } from "react-icons/fa";
+import { GiEcology } from "react-icons/gi";
 
 export default function AdvantagesPage() {
     const d = useTranslations("Company.advantages");
@@ -31,7 +34,7 @@ export default function AdvantagesPage() {
                         <p>{d("grid.item1")}</p>
                     </div>
                     <div>
-                        <FiPackage className="mx-auto mb-3 h-12 w-12 text-[#062BD9]"/>
+                        <GiEcology className="mx-auto mb-3 h-12 w-12 text-[#062BD9]"/>
                         <p>{d("grid.item2")}</p>
                     </div>
                     <div>
@@ -39,15 +42,15 @@ export default function AdvantagesPage() {
                         <p>{d("grid.item3")}</p>
                     </div>
                     <div>
-                        <LuMilk  className="mx-auto mb-3 h-12 w-12 text-[#062BD9]"/>
+                        <AiOutlineSolution  className="mx-auto mb-3 h-12 w-12 text-[#062BD9]"/>
                         <p>{d("grid.item4")}</p>
                     </div>
                     <div>
-                        <FiPackage className="mx-auto mb-3 h-12 w-12 text-[#062BD9]"/>
+                        <FaShieldAlt className="mx-auto mb-3 h-12 w-12 text-[#062BD9]"/>
                         <p>{d("grid.item5")}</p>
                     </div>
                     <div>
-                        <FiPackage className="mx-auto mb-3 h-12 w-12 text-[#062BD9]"/>
+                        <FaShippingFast className="mx-auto mb-3 h-12 w-12 text-[#062BD9]"/>
                         <p>{d("grid.item6")}</p>
                     </div>
                 </div>

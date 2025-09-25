@@ -6,8 +6,8 @@ import { FaArrowRightLong } from "react-icons/fa6";
 
 type Address = {
     id: number;
-    textKey: string; 
-    mapSrc: string;     
+    textKey: string;
+    mapSrc: string;
 };
 
 export default function Contacts() {
@@ -24,13 +24,13 @@ export default function Contacts() {
             id: 1,
             textKey: "address_text_1",
             mapSrc:
-                "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7634.819569058129!2d66.78600996298292!3d39.55149816908007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4d03381ba34b81%3A0x3cb0380f682574e7!2sTespack%20Investment%20LLC!5e1!3m2!1sru!2s!4v1758039894964!5m2!1sru!2s"
+                "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.21604336766!2d66.94101887650521!3d39.71829289785151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f17.0!3m3!1m2!1s0x3f4d1969ba726c73%3A0xfa025676d2ff00fb!2sTespack%2C%20Tesco%20Plus%20Company!5e1!3m2!1sru!2s!4v1757200051035!5m2!1sru!2s"
         },
         {
             id: 2,
             textKey: "address_text_2",
             mapSrc:
-                "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.21604336766!2d66.94101887650521!3d39.71829289785151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f17.0!3m3!1m2!1s0x3f4d1969ba726c73%3A0xfa025676d2ff00fb!2sTespack%2C%20Tesco%20Plus%20Company!5e1!3m2!1sru!2s!4v1757200051035!5m2!1sru!2s"
+                "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7634.819569058129!2d66.78600996298292!3d39.55149816908007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f4d03381ba34b81%3A0x3cb0380f682574e7!2sTespack%20Investment%20LLC!5e1!3m2!1sru!2s!4v1758039894964!5m2!1sru!2s"
         },
         {
             id: 3,

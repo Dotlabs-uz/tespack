@@ -79,7 +79,7 @@ export default function Header() {
                         <NavigationMenuList>
                             <NavigationMenuItem>
                                 <NavigationMenuTrigger className="bg-gray-300 rounded-lg text-black cursor-pointer text-sm">
-                                    {languages.find((l) => l.code === currentLang)?.label || "RU"}
+                                    {languages.find((l) => l.code === currentLang)?.label || "EN"}
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent className="bg-gray-300">
                                     <ul className="grid">
@@ -190,7 +190,7 @@ export default function Header() {
                             <NavigationMenuList>
                                 <NavigationMenuItem>
                                     <NavigationMenuTrigger className="bg-gray-300 rounded-lg text-black cursor-pointer">
-                                        {languages.find((l) => l.code === currentLang)?.label || "RU"}
+                                        {languages.find((l) => l.code === currentLang)?.label || "EN"}
                                     </NavigationMenuTrigger>
                                     <NavigationMenuContent className="bg-gray-300">
                                         <ul className="grid w-full md:w-[120px]">
