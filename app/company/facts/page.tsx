@@ -62,25 +62,20 @@ export default function FactsPage() {
                         {f("partners_text")}
                     </p>
 
-                    <div className="md:hidden">
-                        <Carousel
-                            opts={{ loop: true }}
-                            plugins={[Autoplay({ delay: 6000, stopOnInteraction: false })]}
-                        >
-                            <CarouselContent>
-                                {logos.map((logo, i) => (
-                                    <CarouselItem key={i} className="basis-1/3 flex justify-center">
-                                        <Image
-                                            src={logo.src}
-                                            alt={logo.alt}
-                                            width={logo.w}
-                                            height={60}
-                                            className="object-contain"
-                                        />
-                                    </CarouselItem>
-                                ))}
-                            </CarouselContent>
-                        </Carousel>
+                    <div className="md:hidden overflow-hidden relative">
+                        <div className="flex animate-marquee space-x-8">
+                            {[...logos, ...logos].map((logo, i) => (
+                                <div key={i} className="flex-shrink-0 flex justify-center">
+                                    <Image
+                                        src={logo.src}
+                                        alt={logo.alt}
+                                        width={logo.w}
+                                        height={60}
+                                        className="object-contain"
+                                    />
+                                </div>
+                            ))}
+                        </div>
                     </div>
 
                     <div className="hidden md:flex flex-wrap justify-around items-center gap-8">
