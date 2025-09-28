@@ -321,5 +321,9 @@
         "features": "Features",
         "drawing": "Drawing",
         "volume": "Volume"
+    },
+    "Services": {
+        "title": "Additional Services",
+        "button": "Order Service"
     }
 }

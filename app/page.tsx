@@ -23,7 +23,6 @@ const images = [
 	{ src: "/Hero4.webp", alt: "hero" },
 ];
 
-
 export default function Home() {
 	const b = useTranslations("Buttons");
 	const h = useTranslations("Hero");

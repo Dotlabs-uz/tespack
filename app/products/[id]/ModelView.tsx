@@ -25,7 +25,7 @@ const ModelView: React.FC<ModelViewProps> = ({
 	const ref = useRef<any>(null);
 	const [color, setColor] = useState("#ffffff");
 
-	const applyColor = (hex: string) => {
+	const applyColor = async (hex: string) => {
 		const mv = ref.current;
 		if (!mv) return;
 
@@ -35,6 +35,10 @@ const ModelView: React.FC<ModelViewProps> = ({
 
 		const material = mv.model?.materials?.[0];
 		if (material) {
+			if (typeof material.ensureLoaded === "function") {
+				await material.ensureLoaded();
+			}
+
 			material.pbrMetallicRoughness.setBaseColorFactor([r, g, b, 1]);
 		}
 	};
@@ -43,13 +47,14 @@ const ModelView: React.FC<ModelViewProps> = ({
 		const mv = ref.current;
 		if (!mv) return;
 
-		mv.onload = () => applyColor(color);
+		mv.onload = () => {
+			applyColor(color);
+		};
 
 		return () => {
 			mv.onload = null;
 		};
-	}, []);
-
+	}, [color]);
 
 	return (
 		<div className={`relative w-full ${height}`}>
@@ -58,11 +63,11 @@ const ModelView: React.FC<ModelViewProps> = ({
 				src={imageUrl || ""}
 				alt="3D Model"
 				camera-controls={cameraControls}
-				className="w-full h-96 flex justify-center"
+				className="w-full h-96"
 				{...(autoRotate && { "auto-rotate": false })}
 				{...(cameraControls && {
-					"min-camera-orbit": "auto auto 1m",
-					"max-camera-orbit": "auto auto 2m",
+					"min-camera-orbit": "auto auto 0.3m",
+					"max-camera-orbit": "auto auto 1.5m",
 				})}
 			/>
 

@@ -321,5 +321,9 @@
         "features": "Xususiyatlar",
         "drawing": "Chizma",
         "volume": "Hajm"
+    },
+    "Services": {
+        "title": "Qo'shimcha xizmatlar",
+        "button": "Xizmatni buyurtma qilish"
     }
 }
