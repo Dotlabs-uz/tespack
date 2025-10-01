@@ -107,37 +107,30 @@ export default function Products() {
 						<Image
 							src="/BottleCap3.webp"
 							alt=""
-							width={500}
-							height={500}
-							className="absolute top-0 left-[10%] -translate-x-1/2 object-contain z-30 w-[150px] sm:w-[180px] md:w-[240px] h-[120px]"
-						/>
-						<Image
-							src="/BottleCap2.webp"
-							alt=""
-							width={500}
-							height={500}
-							className="absolute -top-13 left-[18%] -translate-x-1/2 object-contain rotate-9 z-10 w-[160px] sm:w-[180px] md:w-[210px] h-[140px]"
+							width={1500}
+							height={1500}
+							className="absolute top-0 left-[10%] -translate-x-8 md:-translate-x-1/2 object-contain z-30 w-[230px] md:w-[318px] h-[178px]"
 						/>
 						<Image
 							src="/BottleCap.webp"
 							alt=""
-							width={500}
-							height={500}
-							className="absolute -top-15 left-8 -translate-x-1/2 object-contain -rotate-9 z-20 w-[130px] sm:w-[200px] md:w-[210px] h-[150px]"
+							width={1500}
+							height={1500}
+							className="absolute -top-30 left-8 md:left-[23%] md:-translate-x-1/2 object-contain rotate-9 z-10 w-[300px] md:w-[538px] h-[302px]"
 						/>
 						<Image
-							src="/Bottle1.webp"
+							src="/BottleCap2.webp"
 							alt=""
-							width={500}
-							height={500}
-							className="absolute right-[15%] -rotate-10 w-100 md:w-130 lg:w-150"
+							width={1500}
+							height={1500}
+							className="absolute -top-23 -left-20 md:left-0 md:-translate-x-1/2 object-contain -rotate-9 z-20 w-[300px] md:w-[454px] h-[255px]"
 						/>
 						<Image
-							src="/Bottle2.webp"
+							src="/Bottles.webp"
 							alt=""
-							width={500}
-							height={500}
-							className="absolute right-0 rotate-10 w-100 md:w-130 lg:w-150"
+							width={1500}
+							height={1500}
+							className="absolute right-0 translate-x-[27%] md:translate-x-0 w-100 md:w-130 lg:w-150"
 						/>
 					</div>
 				</div>
@@ -208,7 +201,7 @@ export default function Products() {
 										href={`/products/${product.id}`}
 										className="flex flex-col w-full cursor-pointer"
 									>
-										<div className="w-full aspect-square flex items-center justify-center bg-[#E5E5E5] hover:bg-[#B7DCFF] rounded-3xl shadow transition-colors overflow-hidden">
+										<div className="w-full aspect-square flex items-center justify-center bg-[#FAFAFA] hover:bg-[#B7DCFF] rounded-3xl shadow transition-colors overflow-hidden">
 											{product._embedded?.[
 												"wp:featuredmedia"
 											]?.[0]?.source_url ? (

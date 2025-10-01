@@ -14,7 +14,6 @@ export interface ProductType {
 	imageUrl?: string;
 	drawingUrl?: string;
 	glbUrl?: string;
-	volume?: number;
 	title_ru?: string;
 	title_uz?: string;
 	title_en?: string;
@@ -47,7 +46,6 @@ export default async function ProductPage({
 	const t = await getTranslations("Product");
 
 	const imageUrl = product.glbUrl || null;
-	const volume = product.volume ? Number(product.volume) : 0;
 
 	const localizedTitle =
 		locale === "uz"
@@ -86,13 +84,6 @@ export default async function ProductPage({
 						</p>
 					)}
 
-					<div className="my-6">
-						<h3 className="text-2xl text-[#7A7A7A] font-bold mb-2">{t("volume")}</h3>
-						<p className="text-3xl font-bold text-[#03156B]">
-							{product.volume}
-						</p>
-					</div>
-
 					{localizedContent && (
 						<div className="mb-6">
 							<h2 className="text-2xl text-[#7A7A7A] font-bold">
@@ -120,7 +111,7 @@ export default async function ProductPage({
 				)}
 			</div>
 
-			<ServicesList />
+			<ServicesList categories={product._embedded?.["wp:term"]?.[0] || []} />
 		</main>
 	);
 }

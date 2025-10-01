@@ -99,23 +99,23 @@ export default function Home() {
 									<Image
 										src="/BottleCap.webp"
 										alt=""
-										width={500}
-										height={500}
-										className="absolute right-1/2 translate-x-1/2 object-contain z-10 w-[300px] h-[280px] sm:w-[430px] sm:h-[380px]"
+										width={1500}
+										height={1500}
+										className="absolute right-1/2 translate-x-1/2 translate-y-1/4 object-contain z-10 w-[600px] sm:h-[300px]"
 									/>
 									<Image
-										src="/BottleCap2.webp"
+										src="/BottleCap.webp"
 										alt=""
-										width={500}
-										height={500}
-										className="absolute -bottom-8 right-[20%] object-contain rotate-12 z-[9] w-[300px] h-[220px] sm:w-[340px] sm:h-[300px]"
+										width={1500}
+										height={1500}
+										className="absolute -bottom-5 md:-bottom-13 -right-1/4 md:right-[15%] object-contain rotate-10 md:rotate-6 z-9 w-[490px] sm:h-[276px]"
 									/>
 									<Image
-										src="/BottleCap3.webp"
+										src="/BottleCap.webp"
 										alt=""
-										width={500}
-										height={500}
-										className="absolute bottom-[25%] right-[38%] object-contain -rotate-13 z-[8] w-[200px] h-[150px] sm:w-[200px] sm:h-[260px]"
+										width={1500}
+										height={1500}
+										className="absolute -bottom-[25%] md:-bottom-[33%] -right-0 md:right-[36%] object-contain -rotate-13 z-8 w-[457px] h-[257px]"
 									/>
 								</div>
 								<p className="text-sm md:text-base max-w-xs mt-4 relative z-10">
@@ -171,16 +171,23 @@ export default function Home() {
 									<Image
 										src="/Bottle1.webp"
 										alt=""
-										width={500}
-										height={500}
-										className="absolute right-1/2 translate-x-[40%] -rotate-10 w-100 md:w-130 lg:w-150 object-contain md:translate-y-20"
+										width={1500}
+										height={1500}
+										className="absolute translate-x-[15%] md:translate-x-0 top-0 md:-top-3 w-50 md:w-50 lg:w-80 object-contain z-9 md:translate-y-20"
 									/>
 									<Image
 										src="/Bottle2.webp"
 										alt=""
-										width={500}
-										height={500}
-										className="absolute right-1/2 translate-x-[65%] rotate-10 w-100 md:w-130 lg:w-150 object-contain md:translate-y-20"
+										width={1500}
+										height={1500}
+										className="absolute -top-10 md:-top-23 translate-x-[38%] md:translate-x-[23%] w-70 md:w-80 lg:w-120 z-9 object-contain md:translate-y-20"
+									/>
+									<Image
+										src="/Bottle3.webp"
+										alt=""
+										width={1500}
+										height={1500}
+										className="absolute right-1/2 translate-x-[70%] md:translate-x-[60%] z-8 w-100 md:w-130 lg:w-150 object-contain translate-y-5 md:translate-y-20"
 									/>
 								</div>
 								<p className="text-sm md:text-base max-w-xs mt-4 relative z-10">

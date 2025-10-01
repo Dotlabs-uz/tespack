@@ -5,19 +5,26 @@ import Link from "next/link";
 import Forms from "./Forms";
 import { useTranslations } from "next-intl";
 
+type Category = {
+    id: number;
+    name: string;
+    slug: string;
+};
+
 type Service = {
     id: number;
     title: { rendered: string };
     excerpt: { rendered: string };
     link: string;
     _embedded?: {
+        ["wp:term"]?: Category[][];
         ["wp:featuredmedia"]?: { source_url: string }[];
     };
 };
 
 const WP_API_URL = process.env.NEXT_PUBLIC_WORDPRESS_URL;
 
-export default function ServicesList() {
+export default function ServicesList({ categories }: { categories: Category[] }) {
     const [services, setServices] = useState<Service[]>([]);
     const [openModal, setOpenModal] = useState<"feedback" | "vacancies" | null>(null);
     const [currentLang, setCurrentLang] = useState("ru");
@@ -40,12 +47,19 @@ export default function ServicesList() {
         uz: "/uz/",
     };
 
-    const filteredServices = services.filter((service) => {
+    const langFiltered = services.filter((service) => {
         const langSuffix = langMap[currentLang];
         if (!langSuffix) {
             return !service.link?.includes("/en/") && !service.link?.includes("/uz/");
         }
         return service.link?.includes(langSuffix);
+    });
+
+    const filteredServices = langFiltered.filter((service) => {
+        const serviceCategories = service._embedded?.["wp:term"]?.[0] || [];
+        return serviceCategories.some((cat) =>
+            categories.some((productCat) => productCat.id === cat.id)
+        );
     });
 
     if (filteredServices.length === 0) return null;
@@ -97,4 +111,3 @@ export default function ServicesList() {
         </section>
     );
 }
-
