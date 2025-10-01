@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import ModelView from "./ModelView";
 import { getTranslations, getLocale } from "next-intl/server";
-import VolumeSelector from "./VolumeSelector";
 import ServicesList from "@/components/custom/ServicesList";
 
 const WP_API_URL = process.env.WORDPRESS_URL;
@@ -87,17 +86,12 @@ export default async function ProductPage({
 						</p>
 					)}
 
-					<VolumeSelector
-						value={volume}
-						title={t("volume")}
-						options={[
-							{ value: 100, label: "100ml" },
-							{ value: 200, label: "200ml" },
-							{ value: 300, label: "300ml" },
-							{ value: 400, label: "400ml" },
-							{ value: 500, label: "500ml" },
-						]}
-					/>
+					<div className="my-6">
+						<h3 className="text-2xl text-[#7A7A7A] font-bold mb-2">{t("volume")}</h3>
+						<p className="text-3xl font-bold text-[#03156B]">
+							{product.volume}
+						</p>
+					</div>
 
 					{localizedContent && (
 						<div className="mb-6">

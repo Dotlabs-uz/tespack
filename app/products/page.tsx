@@ -87,11 +87,12 @@ export default function Products() {
 					<p className="mt-4 text-base md:text-xl max-w-lg">{t("description")}</p>
 				</div>
 				<div className="flex-1 relative flex flex-col md:flex-row justify-center items-center mt-8 md:mt-0 min-h-[300px] overflow-visible">
-					<div className="relative flex flex-col md:flex-row justify-center items-center w-full">
-						<Image src="/BottleCap3.webp" alt="" width={240} height={111} className="absolute top-2 left-[35%] sm:left-[30%] xs:left-[25%] -translate-x-1/2 object-contain z-30 w-[150px] sm:w-[180px] md:w-[240px] h-[120px] sm:h-[150px] md:h-[180px]" />
-						<Image src="/BottleCap2.webp" alt="" width={210} height={114} className="absolute left-[15%] sm:left-[20%] -translate-x-1/2 object-contain -rotate-10 z-10 w-[160px] sm:w-[180px] md:w-[210px] h-[140px] sm:h-[160px] md:h-[240px]" />
-						<Image src="/BottleCap.webp" alt="" width={210} height={151} className="absolute left-[45%] sm:left-[45%] xs:left-[40%] -translate-x-1/2 object-contain rotate-9 z-20 w-[130px] sm:w-[200px] md:w-[210px] h-[150px] sm:h-[200px] md:h-[250px]" />
-						<Image src="/Bottles.webp" alt="" width={300} height={200} className="absolute right-[5%] sm:right-[10%] xs:right-[15%] w-[150px] sm:w-[200px] md:w-[250px]" />
+					<div className="relative flex flex-col justify-center md:flex-row items-center w-full">
+						<Image src="/BottleCap3.webp" alt="" width={500} height={500} className="absolute top-0 left-[10%] -translate-x-1/2 object-contain z-30 w-[150px] sm:w-[180px] md:w-[240px] h-[120px]" />
+						<Image src="/BottleCap2.webp" alt="" width={500} height={500} className="absolute -top-13 left-[18%] -translate-x-1/2 object-contain rotate-9 z-10 w-[160px] sm:w-[180px] md:w-[210px] h-[140px]" />
+						<Image src="/BottleCap.webp" alt="" width={500} height={500} className="absolute -top-15 left-8 -translate-x-1/2 object-contain -rotate-9 z-20 w-[130px] sm:w-[200px] md:w-[210px] h-[150px]" />
+						<Image src="/Bottle1.webp" alt="" width={500} height={500} className="absolute right-[15%] -rotate-10 w-100 md:w-130 lg:w-150" />
+						<Image src="/Bottle2.webp" alt="" width={500} height={500} className="absolute right-0 rotate-10 w-100 md:w-130 lg:w-150" />
 					</div>
 				</div>
 			</section>
@@ -157,7 +158,7 @@ export default function Products() {
 									href={`/products/${product.id}`}
 									className="flex flex-col w-full cursor-pointer"
 								>
-									<div className="w-full aspect-square flex items-center justify-center bg-white rounded-3xl shadow">
+									<div className="w-full aspect-square flex items-center justify-center bg-[#E5E5E5] hover:bg-[#B7DCFF] rounded-3xl shadow transition-colors overflow-hidden">
 										{product._embedded?.["wp:featuredmedia"]?.[0]?.source_url ? (
 											<img
 												src={product._embedded["wp:featuredmedia"][0].source_url}
