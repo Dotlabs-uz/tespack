@@ -141,7 +141,7 @@ export default function Header() {
                                         <div className="grid gap-3 w-56 text-[#03156B] font-bold">
                                             <NavigationMenuLink asChild>
                                                 <Link
-                                                    href={{ pathname: "/products", query: { category: 69 } }}
+                                                    href={{ pathname: "/products", query: { category: 73 } }}
                                                     className="block px-2 py-1 hover:bg-gray-100 rounded-md"
                                                 >
                                                     {t("menu.categories.petPreforms")}
