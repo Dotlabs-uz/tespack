@@ -31,7 +31,7 @@ export default function Home() {
 	const [openModal, setOpenModal] = useState<"feedback" | "vacancies" | null>(null);
 
 	return (
-		<main>
+		<main className="overflow-x-hidden">
 			<section className="relative text-white overflow-hidden">
 				<div className="absolute top-0 left-0 w-full h-[80%] bg-[#03156B] rounded-b-2xl md:rounded-b-3xl md:h-[60%]" />
 				<div className="container mx-auto relative px-4 sm:px-0">
