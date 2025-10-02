@@ -138,7 +138,7 @@ export default function Home() {
 					</Link>
 
 					<Link
-						href="/products"
+						href={{ pathname: "/products", query: { category: 73 } }}
 						className="bg-white text-[#03156B] rounded-2xl p-6 border border-gray-200 flex flex-col justify-between"
 					>
 						<h3 className="text-2xl md:text-3xl font-bold mb-3">
