@@ -3,18 +3,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
-import {
-	Collapsible,
-	CollapsibleContent,
-	CollapsibleTrigger,
-} from "@/components/ui/collapsible";
-import {
-	Carousel,
-	CarouselContent,
-	CarouselItem,
-} from "@/components/ui/carousel";
-import { Checkbox } from "@/components/ui/checkbox";
-import { MdKeyboardArrowDown } from "react-icons/md";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -222,6 +210,7 @@ export default function Products() {
 													product={product}
 													showWheel={false}
 													cameraControls={false}
+													defaultColor="#ffffff"
 												/>
 											)}
 										</div>

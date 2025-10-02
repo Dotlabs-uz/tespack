@@ -13,6 +13,7 @@ interface ModelViewProps {
 	height?: string;
 	cameraControls?: boolean;
 	autoRotate?: boolean;
+	defaultColor?: string;
 }
 
 const ModelView: React.FC<ModelViewProps> = ({
@@ -21,9 +22,10 @@ const ModelView: React.FC<ModelViewProps> = ({
 	showWheel = true,
 	cameraControls = true,
 	autoRotate = false,
+	defaultColor = "#ffffff",
 }) => {
 	const ref = useRef<any>(null);
-	const [color, setColor] = useState("#ffffff");
+	const [color, setColor] = useState(defaultColor);
 
 	const applyColor = async (hex: string) => {
 		const mv = ref.current;
