@@ -24,15 +24,15 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 export default function Header() {
     const [query, setQuery] = useState("");
     const [menuOpen, setMenuOpen] = useState(false);
-    const [currentLang, setCurrentLang] = useState("ru");
+    const [currentLang, setCurrentLang] = useState<string | null>(null);
     const t = useTranslations("Header");
     const b = useTranslations("Buttons");
     const pathname = usePathname();
     const [openModal, setOpenModal] = useState<"feedback" | "vacancies" | null>(null);
 
     useEffect(() => {
-        const lang = document.cookie.match(/locale=(\w{2,5})/)?.[1];
-        if (lang) setCurrentLang(lang);
+        const lang = document.cookie.match(/locale=(\w{2,5})/)?.[1] || "en";
+        setCurrentLang(lang);
     }, []);
 
     const languages = [

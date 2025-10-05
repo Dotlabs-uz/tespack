@@ -111,6 +111,6 @@ export default async function ProductPage({
 
 			<ServicesList categories={product._embedded?.["wp:term"]?.[0] || []} />
 		</main>
-
+		
 	);
 }
