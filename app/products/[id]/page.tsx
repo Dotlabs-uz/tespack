@@ -88,9 +88,9 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 export default async function ProductPage({
 	params,
 }: {
-	params: Promise<{ id: string }>;
+	params: { id: string };
 }) {
-	const product = await getProduct((await params).id);
+	const product = await getProduct(params.id);
 	if (!product) return notFound();
 
 	const locale = await getLocale();
