@@ -6,7 +6,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import ModelView from "./[id]/ModelView";
+import ModelView from "../../components/custom/ModelView";
 import { useSearchParams } from "next/navigation";
 
 const WP_API_URL = process.env.NEXT_PUBLIC_WORDPRESS_URL;

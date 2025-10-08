@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import ModelView from "./ModelView";
+import ModelView from "@/components/custom/ModelView";
 import { getTranslations, getLocale } from "next-intl/server";
 import ServicesList from "@/components/custom/ServicesList";
 import { Metadata } from "next";
