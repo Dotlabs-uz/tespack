@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
-import ModelView from "@/components/custom/ModelView";
 import { getTranslations, getLocale } from "next-intl/server";
 import ServicesList from "@/components/custom/ServicesList";
 import { Metadata } from "next";
+import ModelView from "./ModelView";
 
 const WP_API_URL = process.env.WORDPRESS_URL;
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL;
@@ -37,7 +37,8 @@ async function getProduct(id: string): Promise<ProductType | null> {
 }
 
 export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-	const product = await getProduct(params.id);
+	const { id } = await params;
+	const product = await getProduct(id);
 	if (!product) return {};
 
 	const locale = await getLocale();
@@ -63,7 +64,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 		openGraph: {
 			title: `${title} – Tespack`,
 			description: plainDescription,
-			url: `${SITE_URL}/products/${params.id}`,
+			url: `${SITE_URL}/products/${id}`,
 			siteName: "Tespack",
 			images: [
 				{
@@ -88,9 +89,9 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
 export default async function ProductPage({
 	params,
 }: {
-	params: { id: string };
+	params: Promise<{ id: string }>
 }) {
-	const product = await getProduct(params.id);
+	const product = await getProduct((await params).id);
 	if (!product) return notFound();
 
 	const locale = await getLocale();
