@@ -1,8 +1,92 @@
-"use client";
-
 import SubHeader from "@/components/custom/SubHeader";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { Metadata } from "next";
+import { getLocale } from "next-intl/server";
+
+export async function generateMetadata(): Promise<Metadata> {
+    const locale: any = await getLocale();
+    const baseUrl = `${process.env.NEXT_PUBLIC_SITE_URL}`;
+
+    const metaContent: any = {
+        ru: {
+            title: "Деятельность Tespack — инновационные решения в упаковке",
+            description:
+                "Компания Tespack предлагает полный цикл производства пластиковой упаковки, от идеи до реализации. Мы работаем на мировом уровне, обеспечивая качество, устойчивость и стратегическое партнёрство.",
+            keywords: [
+                "деятельность Tespack",
+                "производство упаковки",
+                "инновационные решения",
+                "ПЭТ продукция",
+                "упаковочные технологии",
+            ],
+        },
+        uz: {
+            title: "Tespack faoliyati — qadoqlash bo‘yicha innovatsion yechimlar",
+            description:
+                "Tespack kompaniyasi plastik qadoqlash ishlab chiqarishda to‘liq xizmatlar siklini taklif etadi. Biz sifat, barqarorlik va hamkorlikni ta'minlaymiz.",
+            keywords: [
+                "Tespack faoliyati",
+                "qadoqlash ishlab chiqarish",
+                "innovatsion yechimlar",
+                "PET mahsulotlari",
+                "qadoqlash texnologiyalari",
+            ],
+        },
+        en: {
+            title: "Tespack Activities — Innovative Packaging Solutions",
+            description:
+                "Tespack provides a full cycle of plastic packaging production, from idea to realization. We deliver quality, sustainability, and strategic partnerships worldwide.",
+            keywords: [
+                "Tespack activities",
+                "packaging production",
+                "innovative solutions",
+                "PET products",
+                "packaging technologies",
+            ],
+        },
+    };
+
+    return {
+        title: metaContent[locale].title,
+        description: metaContent[locale].description,
+        keywords: metaContent[locale].keywords,
+        alternates: {
+            canonical: `${baseUrl}/company/activity`,
+            languages: {
+                "x-default": `${baseUrl}/company/activity`,
+                ru: `${baseUrl}/company/activity?lang=ru`,
+                uz: `${baseUrl}/company/activity?lang=uz`,
+                en: `${baseUrl}/company/activity?lang=en`,
+            },
+        },
+        openGraph: {
+            type: "article",
+            title: metaContent[locale].title,
+            description: metaContent[locale].description,
+            url: `${baseUrl}/company/activity`,
+            images: [
+                {
+                    url: `${baseUrl}/Company2.webp`,
+                    width: 1200,
+                    height: 630,
+                    alt:
+                        locale === "ru"
+                            ? "Деятельность компании Tespack"
+                            : locale === "uz"
+                                ? "Tespack kompaniyasi faoliyati"
+                                : "Tespack company activity",
+                },
+            ],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: metaContent[locale].title,
+            description: metaContent[locale].description,
+            images: [`${baseUrl}/Company2.webp`],
+        },
+    };
+}
 
 export default function Activity() {
     const a = useTranslations("Company.activity");

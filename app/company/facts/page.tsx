@@ -1,16 +1,94 @@
-"use client";
-
 import SubHeader from "@/components/custom/SubHeader";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
+import { Metadata } from "next";
+import { getLocale } from "next-intl/server";
 
-export default function FactsPage() {
+export async function generateMetadata(): Promise<Metadata> {
+	const locale: any = await getLocale();
+	const baseUrl = `${process.env.NEXT_PUBLIC_SITE_URL}`;
+
+	const metaContent: any = {
+		ru: {
+			title: "Факты о Tespack — лидере в производстве пластиковой упаковки",
+			description:
+				"Более 18 лет Tespack производит надёжную и экологичную пластиковую упаковку: системы, бутылки, крышки, литые изделия. 300+ корпоративных клиентов, 5+ стран поставок, 100 000 м² производственных площадей.",
+			keywords: [
+				"Tespack факты",
+				"производство упаковки",
+				"пластиковые бутылки",
+				"ПЭТ изделия",
+				"партнёры Tespack",
+			],
+		},
+		uz: {
+			title: "Tespack haqidagi faktlar — plastik qadoqlash sohasidagi yetakchi",
+			description:
+				"18 yildan ortiq tajribaga ega Tespack plastik qadoqlash ishlab chiqaradi: tizimlar, butilkalar, qopqoqlar, quyma mahsulotlar. 300+ korporativ mijozlar, 5+ mamlakatga yetkazib berish, 100 000 m² ishlab chiqarish maydoni.",
+			keywords: [
+				"Tespack faktlar",
+				"qadoqlash ishlab chiqarish",
+				"plastik butilkalar",
+				"PET mahsulotlar",
+				"Tespack hamkorlar",
+			],
+		},
+		en: {
+			title: "Tespack Facts — A Leader in Plastic Packaging Production",
+			description:
+				"With over 18 years of experience, Tespack manufactures reliable and eco-friendly plastic packaging: systems, bottles, caps, and molded products. 300+ corporate clients, 5+ countries, 100,000 m² of production space.",
+			keywords: [
+				"Tespack facts",
+				"packaging production",
+				"plastic bottles",
+				"PET products",
+				"Tespack partners",
+			],
+		},
+	};
+
+	return {
+		title: metaContent[locale].title,
+		description: metaContent[locale].description,
+		keywords: metaContent[locale].keywords,
+		alternates: {
+			canonical: `${baseUrl}/company/facts`,
+			languages: {
+				"x-default": `${baseUrl}/company/facts`,
+				ru: `${baseUrl}/company/facts?lang=ru`,
+				uz: `${baseUrl}/company/facts?lang=uz`,
+				en: `${baseUrl}/company/facts?lang=en`,
+			},
+		},
+		openGraph: {
+			type: "article",
+			title: metaContent[locale].title,
+			description: metaContent[locale].description,
+			url: `${baseUrl}/company/facts`,
+			images: [
+				{
+					url: `${baseUrl}/Company3.webp`,
+					width: 1200,
+					height: 630,
+					alt:
+						locale === "ru"
+							? "Факты о компании Tespack"
+							: locale === "uz"
+							? "Tespack kompaniyasi haqidagi faktlar"
+							: "Tespack company facts",
+				},
+			],
+		},
+		twitter: {
+			card: "summary_large_image",
+			title: metaContent[locale].title,
+			description: metaContent[locale].description,
+			images: [`${baseUrl}/Company3.webp`],
+		},
+	};
+}
+
+export default function Facts() {
     const f = useTranslations("Company.facts");
 
     const logos = [

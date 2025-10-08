@@ -2,8 +2,10 @@ import { notFound } from "next/navigation";
 import ModelView from "./ModelView";
 import { getTranslations, getLocale } from "next-intl/server";
 import ServicesList from "@/components/custom/ServicesList";
+import { Metadata } from "next";
 
 const WP_API_URL = process.env.WORDPRESS_URL;
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL;
 
 export interface ProductType {
 	id: number;
@@ -34,6 +36,55 @@ async function getProduct(id: string): Promise<ProductType | null> {
 	}
 }
 
+export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
+	const product = await getProduct(params.id);
+	if (!product) return {};
+
+	const locale = await getLocale();
+	const title =
+		locale === "uz"
+			? product.title_uz || product.title.rendered
+			: locale === "en"
+				? product.title_en || product.title.rendered
+				: product.title_ru || product.title.rendered;
+
+	const description =
+		locale === "uz"
+			? product.content_uz || ""
+			: locale === "en"
+				? product.content_en || ""
+				: product.content_ru || "";
+
+	const plainDescription = description.replace(/<[^>]*>?/gm, "").slice(0, 160);
+
+	return {
+		title: `${title} – Tespack`,
+		description: plainDescription,
+		openGraph: {
+			title: `${title} – Tespack`,
+			description: plainDescription,
+			url: `${SITE_URL}/products/${params.id}`,
+			siteName: "Tespack",
+			images: [
+				{
+					url: product.imageUrl || `${SITE_URL}/default-og.jpg`,
+					width: 1200,
+					height: 630,
+					alt: title,
+				},
+			],
+			locale,
+			type: "article",
+		},
+		twitter: {
+			card: "summary_large_image",
+			title: `${title} – Tespack`,
+			description: plainDescription,
+			images: [product.imageUrl || `${SITE_URL}/default-og.jpg`],
+		},
+	};
+}
+
 export default async function ProductPage({
 	params,
 }: {
@@ -60,7 +111,6 @@ export default async function ProductPage({
 			: locale === "en"
 				? product.content_en || product.content.rendered
 				: product.content_ru || product.content.rendered;
-
 
 	return (
 		<main className="container mx-auto px-4 md:px-0 py-10">
@@ -111,6 +161,5 @@ export default async function ProductPage({
 
 			<ServicesList categories={product._embedded?.["wp:term"]?.[0] || []} />
 		</main>
-		
 	);
 }

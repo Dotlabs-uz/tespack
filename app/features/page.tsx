@@ -1,11 +1,94 @@
-"use client";
-
 import Image from "next/image";
 import { LuMilk } from "react-icons/lu";
 import { FiPackage, FiThermometer } from "react-icons/fi";
 import { GoClock } from "react-icons/go";
 import { useTranslations } from "next-intl";
-import React from "react";
+import { Metadata } from "next";
+import { getLocale } from "next-intl/server";
+
+export async function generateMetadata(): Promise<Metadata> {
+    const locale: any = await getLocale();
+    const baseUrl = `${process.env.NEXT_PUBLIC_SITE_URL}`;
+
+    const metaContent: any = {
+        ru: {
+            title: "Возможности Tespack — пластиковые изделия, покрытия и PET-преформы",
+            description:
+                "Изучите полный каталог Tespack: пластиковые изделия, полимерные покрытия, PET-преформы, упаковочные решения и многое другое. Надёжные технологии и инновации в одном месте.",
+            keywords: [
+                "пластиковые изделия",
+                "PET-преформы",
+                "полимерные покрытия",
+                "производство упаковки",
+                "Tespack каталог",
+            ],
+        },
+        uz: {
+            title: "Tespack imkoniyatlari — plastik mahsulotlar, qoplamalar va PET-preformalar",
+            description:
+                "Tespack katalogini ko'rib chiqing: plastik mahsulotlar, polimer qoplamalar, PET-preformalar va boshqa yechimlar. Ishonchli texnologiyalar va innovatsiyalar bir joyda.",
+            keywords: [
+                "plastik mahsulotlar",
+                "PET prefomalari",
+                "polimer qoplamalar",
+                "qadoqlash ishlab chiqarish",
+                "Tespack katalogi",
+            ],
+        },
+        en: {
+            title: "Tespack Capabilities — Plastic Products, Coatings & PET Preforms",
+            description:
+                "Explore the complete Tespack catalog: plastic products, polymer coatings, PET preforms, and more. Reliable technology and innovation all in one place.",
+            keywords: [
+                "plastic products",
+                "PET preforms",
+                "polymer coatings",
+                "packaging production",
+                "Tespack catalog",
+            ],
+        },
+    };
+
+    return {
+        title: metaContent[locale].title,
+        description: metaContent[locale].description,
+        keywords: metaContent[locale].keywords,
+        alternates: {
+            canonical: `${baseUrl}/features`,
+            languages: {
+                "x-default": `${baseUrl}/features`,
+                ru: `${baseUrl}/features?lang=ru`,
+                uz: `${baseUrl}/features?lang=uz`,
+                en: `${baseUrl}/features?lang=en`,
+            },
+        },
+        openGraph: {
+            type: "article",
+            title: metaContent[locale].title,
+            description: metaContent[locale].description,
+            url: `${baseUrl}/features`,
+            images: [
+                {
+                    url: `${baseUrl}/FeaturesHero.webp`,
+                    width: 1200,
+                    height: 630,
+                    alt:
+                        locale === "ru"
+                            ? "Пластиковые изделия и технологии Tespack"
+                            : locale === "uz"
+                                ? "Tespack plastik mahsulotlari va texnologiyalari"
+                                : "Tespack plastic products and technologies",
+                },
+            ],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: metaContent[locale].title,
+            description: metaContent[locale].description,
+            images: [`${baseUrl}/FeaturesHero.webp`],
+        },
+    };
+}
 
 const images_first = [
     { src: "/Features1.webp", alt: "features" },
