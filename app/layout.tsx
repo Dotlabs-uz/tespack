@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/custom/Header";
 import { NextIntlClientProvider } from "next-intl";
 import Footer from "@/components/custom/Footer";
+import Maintenance from "@/components/custom/Maintenance";
 
 export default async function RootLayout({
 	children,
@@ -11,14 +12,16 @@ export default async function RootLayout({
 }>) {
 	const locale = await getLocale();
 	const messages = await getMessages();
+	const underMaintenance = true;
 
 	return (
 		<html lang={locale}>
 			<body>
 				<NextIntlClientProvider locale={locale} messages={messages}>
-					<Header />
+					{/* <Header />
 					{children}
-					<Footer />
+					<Footer /> */}
+					{underMaintenance ? <Maintenance /> : null}
 				</NextIntlClientProvider>
 				<script
 					type="module"

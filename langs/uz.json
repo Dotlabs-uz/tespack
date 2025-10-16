@@ -325,5 +325,11 @@
     "Services": {
         "title": "Qo'shimcha xizmatlar",
         "button": "Xizmatni buyurtma qilish"
+    },
+    "Maintenance": {
+        "title": "Texnik xizmat ko‘rsatish",
+        "subtitle": "Sayt texnik xizmatda, tez orada qaytamiz!",
+        "contactTitle": "Aloqa ma'lumotlari",
+        "salesDepartment": "Savdo bo‘limi"
     }
 }

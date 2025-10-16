@@ -325,5 +325,11 @@
     "Services": {
         "title": "Additional Services",
         "button": "Order Service"
+    },
+    "Maintenance": {
+        "title": "Maintenance",
+        "subtitle": "The website is under maintenance, we'll be back soon!",
+        "contactTitle": "Contact Information",
+        "salesDepartment": "Sales Department"
     }
 }
