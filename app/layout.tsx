@@ -12,16 +12,16 @@ export default async function RootLayout({
 }>) {
 	const locale = await getLocale();
 	const messages = await getMessages();
-	const underMaintenance = true;
+	// const underMaintenance = true;
 
 	return (
 		<html lang={locale}>
 			<body>
 				<NextIntlClientProvider locale={locale} messages={messages}>
-					{/* <Header />
+					<Header />
 					{children}
-					<Footer /> */}
-					{underMaintenance ? <Maintenance /> : null}
+					<Footer />
+					{/* {underMaintenance ? <Maintenance /> : null} */}
 				</NextIntlClientProvider>
 				<script
 					type="module"
