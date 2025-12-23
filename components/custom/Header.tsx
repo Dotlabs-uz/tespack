@@ -267,7 +267,7 @@ export default function Header() {
 
                             <CollapsibleContent className="mt-2 ml-3 flex flex-col gap-2 text-sm text-[#03156B]">
                                 <Link
-                                    href={{ pathname: "/products", query: { category: 69 } }}
+                                    href={{ pathname: "/products", query: { category: 73 } }}
                                     onClick={() => setMenuOpen(false)}
                                     className="px-2 py-1 hover:bg-gray-100 rounded-md"
                                 >
