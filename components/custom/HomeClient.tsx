@@ -137,7 +137,7 @@ export default function HomeClient() {
                     </Link>
 
                     <Link
-                        href={{ pathname: "/products", query: { category: 77 } }}
+                        href={{ pathname: "/products", query: { category: 73 } }}
                         className="bg-white text-[#03156B] rounded-2xl p-6 border border-gray-200 flex flex-col justify-between"
                     >
                         <h3 className="text-2xl md:text-3xl font-bold mb-3">
@@ -158,7 +158,7 @@ export default function HomeClient() {
                     </Link>
 
                     <Link
-                        href={{ pathname: "/products", query: { category: 73 } }}
+                        href={{ pathname: "/products", query: { category: 77 } }}
                         className="bg-[#03156B] text-white rounded-3xl p-6 md:col-span-2 flex flex-col justify-between relative min-h-[370px] overflow-visible"
                     >
                         <div className="flex flex-col h-full">
